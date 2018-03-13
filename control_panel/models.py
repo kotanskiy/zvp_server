@@ -3,6 +3,8 @@ from django.db import models
 
 class TeacherRank(models.Model):
 
+    link = 'Редагувати'
+
     class Meta:
         db_table = 'Teacher\'s ranks'
         verbose_name = 'Звання викладача'
@@ -15,6 +17,8 @@ class TeacherRank(models.Model):
 
 
 class Teacher(models.Model):
+
+    link = 'Редагувати'
 
     class Meta:
         db_table = 'Teachers'
@@ -32,6 +36,8 @@ class Teacher(models.Model):
 
 class Department(models.Model):
 
+    link = 'Редагувати'
+
     class Meta:
         db_table = 'Departments'
         verbose_name = 'Кафедра'
@@ -46,6 +52,8 @@ class Department(models.Model):
 
 
 class Student(models.Model):
+
+    link = 'Редагувати'
 
     class Meta:
         db_table = 'Students'
@@ -65,6 +73,8 @@ class Student(models.Model):
 
 class Discipline(models.Model):
 
+    link = 'Редагувати'
+
     class Meta:
         db_table = 'Disciplines'
         verbose_name = 'Предмет'
@@ -78,6 +88,8 @@ class Discipline(models.Model):
 
 
 class Troop(models.Model):
+
+    link = 'Редагувати'
 
     class Meta:
         db_table = 'Troops'

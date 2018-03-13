@@ -21,5 +21,5 @@ from control_panel import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^', control_panel.views.index_render),
+    path('', control_panel.views.index_render, name='index'),
 ]
