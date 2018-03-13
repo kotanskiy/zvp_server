@@ -22,8 +22,6 @@ class QuestionLayout(admin.ModelAdmin):
     )
 
 
-
-
 class QuizLayout(admin.ModelAdmin):
     list_display = (
         'quiz_title',
