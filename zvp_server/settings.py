@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ZVP_QUIZ.urls'
+ROOT_URLCONF = 'zvp_server.urls'
 
 TEMPLATES = [
     {
