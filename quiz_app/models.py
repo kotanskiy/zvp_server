@@ -69,51 +69,90 @@ class Question(models.Model):
                                             verbose_name='Предмет'
                                             )
 
+    question_first_answer_content = models.CharField(
+        max_length=450,
+        help_text='Варіант відповіді під літерою А',
+        verbose_name='А',
+        blank=False
+    )
+    question_first_answer_state = models.BooleanField(
+        default=False,
+        blank=False,
+        help_text='Показчик чи є відповідь вірною',
+        verbose_name='Правильна відповідь'
+    )
+
+    question_second_answer_content = models.CharField(
+        max_length=450,
+        help_text='Варіант відповіді під літерою А',
+        verbose_name='Б',
+        blank=False
+    )
+    question_second_answer_state = models.BooleanField(
+        default=False,
+        blank=False,
+        help_text='Показчик чи є відповідь вірною',
+        verbose_name = 'Правильна відповідь'
+    )
+
+    question_third_answer_content = models.CharField(
+        max_length=450,
+        help_text='Варіант відповіді під літерою А',
+        verbose_name='В',
+        blank=False
+    )
+    question_third_answer_state = models.BooleanField(
+        default=False,
+        blank=False,
+        help_text='Показчик чи є відповідь вірною',
+        verbose_name = 'Правильна відповідь'
+    )
+
+    question_fourth_answer_content = models.CharField(
+        max_length=450,
+        help_text='Варіант відповіді під літерою А',
+        verbose_name='Г',
+        blank=False
+    )
+    question_fourth_answer_state = models.BooleanField(
+        default=False,
+        blank=False,
+        help_text='Показчик чи є відповідь вірною',
+        verbose_name = 'Правильна відповідь'
+    )
+
+    question_fifth_answer_content = models.CharField(
+        max_length=450,
+        help_text='Варіант відповіді під літерою А',
+        verbose_name='Д',
+        blank=False
+    )
+    question_fifth_answer_state = models.BooleanField(
+        default=False,
+        blank=False,
+        help_text='Показчик чи є відповідь вірною',
+        verbose_name='Правильна відповідь'
+    )
+
     def __str__(self):
         return self.question_content
 
+    def get_answers(self):
+
+        question_answer_list = (
+            'A' + ': ' + str(self.question_first_answer_content),
+            'Б' + ': ' + str(self.question_second_answer_content),
+            'В' + ': ' + str(self.question_third_answer_content),
+            'Г' + ': ' + str(self.question_fourth_answer_content),
+            'Д' + ': ' + str(self.question_fifth_answer_content)
+        )
+
+        return ',\n'.join(question_answer_list)
+
+    get_answers.short_description = 'Відповіді'
 
     def get_quizzes(self):
         return ',\n'.join([q.quiz_title for q in self.question_quiz.all()])
 
     get_quizzes.short_description = 'Тести'
-
-    def get_answers(self):
-        return Answer.objects.filter(answer_question=self)
-
-    get_answers.short_description = 'Відповіді'
-
-
-class Answer(models.Model):
-
-    link = 'Редагувати'
-
-    class Meta:
-        db_table = 'Answers'
-        verbose_name = 'Відповідь до питання'
-        verbose_name_plural = 'Відповіді до питаннь'
-
-    answer_question = models.ForeignKey(
-        Question,
-        on_delete=models.CASCADE,
-        blank=False,
-        verbose_name='Питання',
-        help_text='Питання до якого відноситься відповідь'
-    )
-
-    answer_title = models.CharField(
-        max_length=200,
-        blank=False,
-        verbose_name='Відповідь'
-    )
-
-    answer_is_correct = models.BooleanField(
-        blank=False,
-        default=False,
-        help_text='Позначення, що відповідь на питання є вірною',
-        verbose_name='Правильна відповідь? '
-    )
-
-    def __str__(self):
-        return self.answer_title
 

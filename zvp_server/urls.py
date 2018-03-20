@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-import control_panel
+import control_panel,quiz_app
 from control_panel import views
+from quiz_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', control_panel.views.index_render, name='index'),
+    path('quiz_app/questions', quiz_app.views.render_question_list, name='questions'),
 ]

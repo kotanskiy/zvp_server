@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 
 
 class TeacherRank(models.Model):
@@ -51,7 +52,20 @@ class Department(models.Model):
         return self.department_name
 
 
-class Student(models.Model):
+class StudentUserManager(BaseUserManager):
+
+    def create_student(self, login, password=None):
+        if not login:
+            raise ValueError('Студент має мати логін')
+
+        student = self.model()
+
+        student.set_password(password)
+        student.save(using=self._db)
+        return student
+
+
+class Student(AbstractBaseUser):
 
     link = 'Редагувати'
 
@@ -60,6 +74,11 @@ class Student(models.Model):
         verbose_name = 'Студент'
         verbose_name_plural = 'Студенти'
 
+    student_login = models.CharField(max_length=100, verbose_name='Логін студента', unique=True)
+    objects = StudentUserManager()
+
+    active = models.BooleanField(default=True)
+
     student_full_name = models.CharField(max_length=200, default=None, verbose_name="ПІБ")
     student_university_group = models.CharField(max_length=10, default=None, verbose_name="Группа")
     student_faculty = models.CharField(max_length=15, default=None, verbose_name="Факультет або ВНЗ")
@@ -67,8 +86,18 @@ class Student(models.Model):
     student_state = models.CharField(max_length=100,default=None, blank=True, verbose_name="Статус")
     student_notes = models.TextField(default=None, blank=True, verbose_name="Примітки")
 
+    USERNAME_FIELD = 'student_login'
+    REQUIRED_FIELDS = []
+
     def __str__(self):
         return self.student_full_name
+
+    def get_full_name(self):
+        return self.student_full_name
+
+    @property
+    def is_active(self):
+        return self.active
 
 
 class Discipline(models.Model):
