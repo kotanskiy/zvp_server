@@ -1,4 +1,5 @@
 import xlrd, xlwt
+from transliterate import slugify
 
 
 class StudentUploader(object):
@@ -22,3 +23,7 @@ class StudentUploader(object):
         sheet = rb.sheet_by_index(0)
         values = [sheet.row_values(rownum) for rownum in range(sheet.nrows)]
         return values
+
+    @staticmethod
+    def add_user_in_base(fullname: str):
+        surname = slugify(fullname.split(' ')[0], 'uk')
