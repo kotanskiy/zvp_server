@@ -11,6 +11,7 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+    'control_panel',
         migrations.AddField(
             model_name='question',
             name='question_answers',
