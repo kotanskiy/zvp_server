@@ -6,6 +6,7 @@ from django.http.response import HttpResponse
 from .forms import UploadFileForm
 from .students_uploader import StudentUploader
 import os
+import codecs
 
 
 @staff_member_required
@@ -29,12 +30,11 @@ def render_student_uploader(request):
 def download_file(request):
     try:
         filename = request.GET['filename']
-        with open(StudentUploader.PATH_FOR_SAVING + filename) as f:
-            current_file = File(f)
+        with open(StudentUploader.PATH_FOR_SAVING + filename, "rb") as f:
+            current_file = f.read()
             response = HttpResponse(content=current_file,
                                     content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-            response['Content-Disposition'] = 'attachment; filename=this-is-your-filename.xlsx'
-            print(response)
+            response['Content-Disposition'] = 'attachment; filename={}'.format(filename)
             return response
     except Exception as e:
         print('[ERROR]{}'.format(e))

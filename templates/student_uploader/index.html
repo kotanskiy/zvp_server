@@ -3,13 +3,25 @@
 {% load static %}
 
 {% block content %}
+    <div class="module">
     <form enctype="multipart/form-data" method="POST">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Завантажити" />
     </form>
-    <h3>{{ message }}</h3>
-      {% for file in directory %}
-          <a href="/download?&filename={{ file }}">{{ file }}</a>
-      {% endfor %}
+    </div>
 {% endblock %}
+
+{% block sidebar %}
+    <div class="module">
+    <table>
+        <h2>Файли:</h2>
+
+      {% for file in directory %}
+          <ul class="actionlist"><a target="_blank" href="/download?&filename={{ file }}">{{ file }}</a></ul>
+      {% endfor %}
+
+    </table>
+    </div>
+{% endblock %}
+
