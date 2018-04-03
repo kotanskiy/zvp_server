@@ -1,4 +1,5 @@
-import xlrd, xlwt
+import xlrd
+import xlwt
 import os
 from transliterate import slugify
 
