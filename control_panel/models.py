@@ -83,7 +83,7 @@ class Student(AbstractBaseUser):
     student_university_group = models.CharField(max_length=10, default=None, verbose_name="Группа")
     student_faculty = models.CharField(max_length=15, default=None, verbose_name="Факультет або ВНЗ")
     student_grade = models.IntegerField(default=None, verbose_name="Курс")
-    student_state = models.CharField(max_length=100,default=None, blank=True, verbose_name="Статус")
+    student_state = models.CharField(max_length=100, default=None, blank=True, verbose_name="Статус")
     student_notes = models.TextField(default=None, blank=True, verbose_name="Примітки")
 
     USERNAME_FIELD = 'student_login'
