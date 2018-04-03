@@ -8,9 +8,6 @@ class StudentUploader(object):
 
     PATH_FOR_SAVING = 'group_docs/'
 
-    def file_validator(self):
-        pass
-
     @classmethod
     def handle_uploaded_file(cls, file, file_name: str):
         with open(cls.PATH_FOR_SAVING + file_name + '.xls', 'wb+') as destination:
@@ -59,4 +56,3 @@ class StudentUploader(object):
         except Exception as e:
             print('[ERROR] {}'.format(e))
             return False
-
