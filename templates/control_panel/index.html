@@ -1,40 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load staticfiles %}
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Bootstrap 4 Minimal Template</title>
+
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="apple-touch-icon" href=""> {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href='{% static "/bootstrap/css/bootstrap.css" %}'>
+    <!-- Link to your css file -->
+    <link rel="stylesheet" href='{% static "style.css" %}'>
+
 </head>
+
 <body>
-
-   <!--<div class="container-fluid" align="center">
-       <form class="form-inline" action="/admin/" method="get" enctype="multipart/form-data">
-        <button type="submit" class="btn btn-primary">To admin panel</button>
-       </form>
-    </div>-->
-
-
-    <div class="container-fluid">
-    <div class="row">
-        {% for i in quiz_list %}
-       <div class="col-sm-3">
-        <div class="card">
-           <div class="card-body">
-               <h4 class="card-title">{{ i.quiz_title }}</h4>
-               <h5 class="card-title">{{ i.quiz_discipline }}</h5>
-                   <p class="card-text">{{ i.quiz_description }}</p>
-                   <a href="#" class="btn btn-primary">Розпочати тестування</a>
-               </div>
-           </div>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+        <a class="navbar-brand" href="#">
+                Кафедра ЗВП
+            </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+<!--
+        <div class="collapse navbar-collapse ml-5" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#short_info">Тести</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Уроки</a>
+                </li>
+            </ul>
+        </div>
+-->
+    </nav>
+    <h1>Hello, world!</h1>
+    <div class="container w-25">
+         <div class="wrapper">
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Логін</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введіть логін">
+                <small id="emailHelp" class="form-text text-muted">Ваше прізвище та ініціали англійською</small>
             </div>
-           {% endfor %}
+            <div class="form-group">
+                <label for="exampleInputPassword1">Пароль</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Пароль">
+            </div>
+            <button type="submit" class="btn btn-primary">Вхід</button>
+        </form>
         </div>
     </div>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script
+    <!-- do not forget download jquery (http://jquery.com/download/)-->
+    <!--    <script src="js/jquery-3.2.1.min.js"></script>-->
+    <!-- do not forget download popper.js (https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js) -->
+    <!--
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+-->
 </body>
+
 </html>
