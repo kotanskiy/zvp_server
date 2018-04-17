@@ -1,5 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
+from django.contrib.auth.models import User
+from django.contrib.auth.models import Group
 
 
 class TeacherRank(models.Model):
@@ -18,6 +19,7 @@ class TeacherRank(models.Model):
 
 
 class Teacher(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     link = 'Редагувати'
 
@@ -52,21 +54,39 @@ class Department(models.Model):
         return self.department_name
 
 
-class StudentUserManager(BaseUserManager):
+class StudentManager(models.Manager):
 
-    def create_student(self, login, password=None):
-        if not login:
-            raise ValueError('Студент має мати логін')
+    def create_student(self, full_name, uni_group, faculty, grade, state, notes):
+        if type(full_name) is not str or full_name == '':
+            return "Incorrect name {0}".format(full_name)
 
-        student = self.model()
+        if type(uni_group) is not str or uni_group == '':
+            return "Incorrect group {0}".format(uni_group)
 
-        student.set_password(password)
-        student.save(using=self._db)
-        return student
+        if type(faculty) is not str or faculty == '':
+            return "Incorrect faculty {0}".format(faculty)
+
+        if type(grade) is not int or (type(grade) is not str and not grade.isdecimal()):
+            return "Incorrect grade {0}".format(grade)
+
+        try:
+            student = self.create(
+                student_full_name=full_name,
+                student_university_group=uni_group,
+                student_faculty=faculty,
+                student_grade=int(grade),
+                student_state=state,
+                student_notes=notes,
+                user=User.objects.create_user(username=full_name, email=None, password=full_name)
+            )
+        except Exception as e:
+            return '[ERROR] {0}'.format(e)
+        else:
+            return 'OK'
 
 
-class Student(AbstractBaseUser):
-
+class Student(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True)
     link = 'Редагувати'
 
     class Meta:
@@ -74,31 +94,22 @@ class Student(AbstractBaseUser):
         verbose_name = 'Студент'
         verbose_name_plural = 'Студенти'
 
-    student_login = models.CharField(max_length=100, verbose_name='Логін студента', unique=True)
-    objects = StudentUserManager()
+    student_active = models.BooleanField(default=True)
 
-    active = models.BooleanField(default=True)
+    objects = StudentManager()
 
-    student_full_name = models.CharField(max_length=200, default=None, verbose_name="ПІБ")
-    student_university_group = models.CharField(max_length=10, default=None, verbose_name="Группа")
-    student_faculty = models.CharField(max_length=15, default=None, verbose_name="Факультет або ВНЗ")
-    student_grade = models.IntegerField(default=None, verbose_name="Курс")
-    student_state = models.CharField(max_length=100, default=None, blank=True, verbose_name="Статус")
-    student_notes = models.TextField(default=None, blank=True, verbose_name="Примітки")
-
-    USERNAME_FIELD = 'student_login'
-    REQUIRED_FIELDS = []
-
-    def __str__(self):
-        return self.student_full_name
+    student_full_name = models.CharField(max_length=200, default=None, verbose_name="ПІБ", blank=True, null=True)
+    student_university_group = models.CharField(max_length=10, default=None, verbose_name="Группа",  blank=True, null=True)
+    student_faculty = models.CharField(max_length=15, default=None, verbose_name="Факультет або ВНЗ",  blank=True, null=True)
+    student_grade = models.IntegerField(default=None, verbose_name="Курс",  blank=True, null=True)
+    student_state = models.CharField(max_length=100,default=None, blank=True, verbose_name="Статус", null=True)
+    student_notes = models.TextField(default=None, blank=True, verbose_name="Примітки", null=True)
 
     def get_full_name(self):
         return self.student_full_name
 
-    @property
-    def is_active(self):
-        return self.active
 
+Student.objects.create_student("Borys", "IT-51", "FICT", "3", None, None)
 
 class Discipline(models.Model):
 
@@ -127,6 +138,7 @@ class Troop(models.Model):
 
     troop_id = models.IntegerField(default=None, verbose_name="Номер взводу")
     troop_head = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='+', blank=True, null=True, verbose_name="Куратор")
+
     troop_head_rank = models.ForeignKey(TeacherRank, on_delete=models.CASCADE, related_name='+', blank=True, null=True, verbose_name="Звання Куратора")
     troop_department = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='+', blank=True, null=True, verbose_name="Кафедра")
 

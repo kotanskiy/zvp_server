@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.auth import get_user_model
 from control_panel.models import *
 from control_panel.forms import *
 
@@ -60,6 +61,7 @@ admin.site.register(TeacherRank, TeacherRankLayout)
 
 
 class StudentLayout(admin.ModelAdmin):
+
     list_display = (
         'student_full_name',
         'student_university_group',
