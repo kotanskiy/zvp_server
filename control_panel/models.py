@@ -56,7 +56,7 @@ class Department(models.Model):
 
 class StudentManager(models.Manager):
 
-    def create_student(self, full_name, uni_group, faculty, grade, state, notes):
+    def create_student(self, username, full_name, uni_group, faculty, grade, state, notes):
         if type(full_name) is not str or full_name == '':
             return "Incorrect name {0}".format(full_name)
 
@@ -66,18 +66,18 @@ class StudentManager(models.Manager):
         if type(faculty) is not str or faculty == '':
             return "Incorrect faculty {0}".format(faculty)
 
-        if type(grade) is not int or (type(grade) is not str and not grade.isdecimal()):
+        if type(grade) is not int and (type(grade) is not str and not grade.isdecimal()):
             return "Incorrect grade {0}".format(grade)
 
         try:
-            student = self.create(
+            self.create(
                 student_full_name=full_name,
                 student_university_group=uni_group,
                 student_faculty=faculty,
                 student_grade=int(grade),
                 student_state=state,
                 student_notes=notes,
-                user=User.objects.create_user(username=full_name, email=None, password=full_name)
+                user=User.objects.create_user(username=username, email=None, password=full_name)
             )
         except Exception as e:
             return '[ERROR] {0}'.format(e)
@@ -108,8 +108,6 @@ class Student(models.Model):
     def get_full_name(self):
         return self.student_full_name
 
-
-Student.objects.create_student("Borys", "IT-51", "FICT", "3", None, None)
 
 class Discipline(models.Model):
 

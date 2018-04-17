@@ -1,12 +1,10 @@
 from django.contrib.admin.views.decorators import staff_member_required
 from django.shortcuts import render
-from django.core.files import File
 from django.http.response import HttpResponse
 
 from .forms import UploadFileForm
 from .students_uploader import StudentUploader
 import os
-import codecs
 
 
 @staff_member_required
@@ -15,9 +13,9 @@ def render_student_uploader(request):
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
             file = StudentUploader.handle_uploaded_file(request.FILES['file'], request.POST['title'])
-            print(StudentUploader.parse_file(file))
+            response_message = StudentUploader.parse_file(file)
             return render(request, 'student_uploader/index.html', {'form': form,
-                                                                   'message': 'Успішно завантажено',
+                                                                   'message': response_message,
                                                                    'directory': os.listdir(StudentUploader.PATH_FOR_SAVING)})
     else:
         form = UploadFileForm()
