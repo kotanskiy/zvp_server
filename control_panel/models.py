@@ -57,7 +57,7 @@ class Department(models.Model):
 
 class StudentManager(models.Manager):
 
-    def create_student(self, username, full_name, uni_group, faculty, grade, state, notes):
+    def create_student(self, username, full_name, uni_group, faculty, grade, state, notes, password):
         if type(full_name) is not str or full_name == '':
             return "Incorrect name {0}".format(full_name)
 
@@ -69,7 +69,6 @@ class StudentManager(models.Manager):
 
         if type(grade) is not int and (type(grade) is not str and not grade.isdecimal()):
             return "Incorrect grade {0}".format(grade)
-
         try:
             self.create(
                 student_full_name=full_name,
@@ -78,7 +77,7 @@ class StudentManager(models.Manager):
                 student_grade=int(grade),
                 student_state=state,
                 student_notes=notes,
-                user=User.objects.create_user(username=username, email=None, password=username)
+                user=User.objects.create_user(username=username, email=None, password=password)
             )
         except Exception as e:
             return '[ERROR] {0}'.format(e)

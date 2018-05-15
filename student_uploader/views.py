@@ -13,7 +13,7 @@ def render_student_uploader(request):
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
             file = StudentUploader.handle_uploaded_file(request.FILES['file'], request.POST['title'])
-            response_message = StudentUploader.parse_file(file)
+            response_message = StudentUploader.register_method(file)
             return render(request, 'student_uploader/index.html', {'form': form,
                                                                    'message': response_message,
                                                                    'directory': os.listdir(StudentUploader.PATH_FOR_SAVING)})
