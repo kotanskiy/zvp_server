@@ -55,6 +55,52 @@ class Department(models.Model):
         return self.department_name
 
 
+class Mark(models.Model):
+
+    class Meta:
+        db_table = 'Marks'
+        verbose_name = 'Оцінка'
+        verbose_name_plural = 'Оцінки'
+        unique_together = (
+            'student',
+            'discipline',
+            'quiz'
+        )
+
+    student = models.ForeignKey(
+        'control_panel.Student',
+        on_delete=models.CASCADE,
+        verbose_name='Студент',
+        blank=False,
+        null=False,
+    )
+
+    discipline = models.ForeignKey(
+        'control_panel.Discipline',
+        on_delete=models.CASCADE,
+        verbose_name='Предмет',
+        blank=False,
+        null=False
+    )
+
+    quiz = models.ForeignKey(
+        'quiz_app.Quiz',
+        on_delete=models.CASCADE,
+        verbose_name='Назва тесту',
+        null=False,
+        blank=False
+    )
+
+    mark = models.PositiveIntegerField(
+        default=None,
+        blank=True,
+        null=True,
+    )
+
+    def __str__(self):
+        return str(self.quiz) + ':\n Оцінка - ' + str(self.mark) + '\n'
+
+
 class StudentManager(models.Manager):
 
     def create_student(self, username, full_name, uni_group, faculty, grade, state, notes, password):
@@ -104,22 +150,18 @@ class Student(models.Model):
     student_grade = models.IntegerField(default=None, verbose_name="Курс",  blank=True, null=True)
     student_state = models.CharField(max_length=100,default=None, blank=True, verbose_name="Статус", null=True)
     student_notes = models.TextField(default=None, blank=True, verbose_name="Примітки", null=True)
-    student_quizzes = PickledObjectField()
+    student_marks = models.ManyToManyField(
+        Mark,
+        verbose_name='Оцінки',
+        related_name='+'
+    )
 
     def __str__(self):
         return self.student_full_name
 
-    def set_mark(self, quiz, mark,):
-        print(quiz)
-        print(mark)
-        mylist = list(self.student_quizzes)
-        mylist.append({quiz: mark})
-        self.student_quizzes = mylist
-        self.save()
-
     def show_marks(self):
-        marks = self.student_quizzes
-        return marks
+        marks = [str(obj) for obj in Mark.objects.all().filter(student=self)]
+        return ''.join(marks)
 
 
 class Discipline(models.Model):

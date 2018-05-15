@@ -67,9 +67,9 @@ class StudentLayout(admin.ModelAdmin):
         'student_university_group',
         'student_faculty',
         'student_grade',
+        'show_marks',
         'student_state',
         'student_notes',
-        'show_marks',
         'link'
     )
 
@@ -124,3 +124,22 @@ class DisciplineLayout(admin.ModelAdmin):
 
 
 admin.site.register(Discipline, DisciplineLayout)
+
+
+class MarkAdmin(admin.ModelAdmin):
+
+    list_display = (
+        'student',
+        'discipline',
+        'quiz',
+        'mark'
+    )
+
+    list_editable = (
+        'mark',
+    )
+
+    list_display_links = None
+
+
+admin.site.register(Mark, MarkAdmin)
