@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import Group
+from picklefield.fields import PickledObjectField
 
 
 class TeacherRank(models.Model):
@@ -77,7 +78,7 @@ class StudentManager(models.Manager):
                 student_grade=int(grade),
                 student_state=state,
                 student_notes=notes,
-                user=User.objects.create_user(username=username, email=None, password=full_name)
+                user=User.objects.create_user(username=username, email=None, password=username)
             )
         except Exception as e:
             return '[ERROR] {0}'.format(e)
@@ -104,9 +105,22 @@ class Student(models.Model):
     student_grade = models.IntegerField(default=None, verbose_name="Курс",  blank=True, null=True)
     student_state = models.CharField(max_length=100,default=None, blank=True, verbose_name="Статус", null=True)
     student_notes = models.TextField(default=None, blank=True, verbose_name="Примітки", null=True)
+    student_quizzes = PickledObjectField()
 
-    def get_full_name(self):
+    def __str__(self):
         return self.student_full_name
+
+    def set_mark(self, quiz, mark,):
+        print(quiz)
+        print(mark)
+        mylist = list(self.student_quizzes)
+        mylist.append({quiz: mark})
+        self.student_quizzes = mylist
+        self.save()
+
+    def show_marks(self):
+        marks = self.student_quizzes
+        return marks
 
 
 class Discipline(models.Model):

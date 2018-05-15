@@ -22,7 +22,7 @@ from quiz_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', control_panel.views.index_render, name='index'),
+    #path('', control_panel.views.index_render, name='index'),
     path('quiz_app/questions', quiz_app.views.render_question_list, name='questions'),
     url(r'', include('student_uploader.urls')),
 ]

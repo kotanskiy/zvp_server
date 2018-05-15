@@ -59,7 +59,7 @@ class StudentUploader(object):
         try:
             rb = xlrd.open_workbook(file_path)
             sheet = rb.sheet_by_index(0)
-            values = [sheet.row_values(row_number) for row_number in range(sheet.nrows)]
+            values = [sheet.row_values(row_number) for row_number in range(sheet.nrows) if row_number > 0]
             return values
         except Exception as e:
             print('[ERROR] {}'.format(e))

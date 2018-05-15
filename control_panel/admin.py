@@ -4,6 +4,7 @@ from control_panel.models import *
 from control_panel.forms import *
 
 
+
 admin.site.site_title = 'Кафедра Військової Підготовки. Адміністрування'
 admin.site.site_header = 'Кафедра Військової Підготовки. Адміністрування'
 
@@ -69,6 +70,8 @@ class StudentLayout(admin.ModelAdmin):
         'student_grade',
         'student_state',
         'student_notes',
+        'show_marks',
+        'set_mark'
         'link'
     )
 

@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import *
+from control_panel.models import Student
 
 admin.site.site_title = 'Кафедра Військової Підготовки. Адміністрування'
 admin.site.site_header = 'Кафедра Військової Підготовки. Адміністрування'
@@ -24,6 +25,7 @@ class QuestionLayout(admin.ModelAdmin):
 
 
 class QuizLayout(admin.ModelAdmin):
+
     list_display = (
         'quiz_title',
         'quiz_description',
