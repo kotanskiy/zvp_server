@@ -16,13 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include, url
-import control_panel,quiz_app
+import control_panel
 from control_panel import views
-from quiz_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('', control_panel.views.index_render, name='index'),
-    path('quiz_app/questions', quiz_app.views.render_question_list, name='questions'),
+    path('', control_panel.views.index_render, name='index'),
     url(r'', include('student_uploader.urls')),
+    url(r'', include('control_panel.urls')),
+    url(r'', include('quiz_app.urls'))
 ]
