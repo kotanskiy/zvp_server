@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Tests</title>
-</head>
-<body>
+{% extends 'quiz_app/quiz_base.html' %}
 
-</body>
-</html>
+{% block content %}
+    <div class="container" id="massmedia">
+    {% for test in tests %}
+        <div class="row">
+            <div class="container col-sm-9">
+                <div class="card text-center">
+                    <div class="card-header">{{ test.quiz_title }}</div>
+                    <div class="card-body">
+{#                        <h4 class="card-title">Студенти НТУУ «КПІ ім. І.Сікорського» створили бота для пошуку розеток</h4>#}
+                        <p class="card-text">{{ test.quiz_description }}, з дисципліни {{ test.quiz_discipline }}</p>
+                            {% if test.quiz_single_attempt %}
+                                <p class="description">(Одна спроба)</p>
+                            {% endif %}
+                        <a href="/start_quiz&id={{ test.id }}" class="btn btn-primary">Почати тест</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p></p>
+    {% endfor %}
+    </div>
+{% endblock %}

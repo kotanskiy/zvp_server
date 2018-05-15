@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import LoginForm
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 
 
 def index_render(request):
@@ -20,6 +20,7 @@ def login_user(request):
                           'control_panel/index.html',
                           {'message': 'Невірний логін чи пароль',
                            'form': form})
+        login(request, user)
         return redirect('/tests')
     else:
         form = LoginForm()

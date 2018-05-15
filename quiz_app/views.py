@@ -11,5 +11,10 @@ def render_question_list(request):
 
 @login_required
 def render_tests_page(request):
-    return render(request, 'quiz_app/tests.html')
+    tests = Quiz.objects.all()
+    return render(request, 'quiz_app/tests.html', {'tests': tests})
 
+
+@login_required
+def render_results(request):
+    return render(request, 'quiz_app/results.html')
