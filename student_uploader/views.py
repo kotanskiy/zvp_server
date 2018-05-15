@@ -1,7 +1,6 @@
 from django.contrib.admin.views.decorators import staff_member_required
 from django.shortcuts import render
 from django.http.response import HttpResponse
-
 from .forms import UploadFileForm
 from .students_uploader import StudentUploader
 import os
