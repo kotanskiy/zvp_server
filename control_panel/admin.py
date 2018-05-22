@@ -132,14 +132,18 @@ class MarkAdmin(admin.ModelAdmin):
         'student',
         'discipline',
         'quiz',
-        'mark'
+        'show_attempts',
+        'show_mark',
+        'link'
     )
 
-    list_editable = (
-        'mark',
-    )
+    # list_editable = (
+    #     'show_marks',
+    # )
 
-    list_display_links = None
+    list_display_links = (
+        'link',
+    )
 
 
 admin.site.register(Mark, MarkAdmin)
