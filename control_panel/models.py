@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import Group
-from picklefield.fields import PickledObjectField
 
 
 class TeacherRank(models.Model):
@@ -57,6 +56,8 @@ class Department(models.Model):
 
 class Mark(models.Model):
 
+    link = 'Редагувати'
+
     class Meta:
         db_table = 'Marks'
         verbose_name = 'Оцінка'
@@ -91,14 +92,63 @@ class Mark(models.Model):
         blank=False
     )
 
-    mark = models.PositiveIntegerField(
+    attempts = models.PositiveIntegerField(
+        default=3,
+        verbose_name='Кількість спроб'
+    )
+
+    first_attempt_mark = models.PositiveIntegerField(
         default=None,
         blank=True,
         null=True,
+        verbose_name='Оцінка за першу спробу'
+    )
+
+    second_attempt_mark = models.PositiveIntegerField(
+        default=None,
+        blank=True,
+        null=True,
+        verbose_name='Оцінка за другу спробу'
+    )
+
+    third_attempt_mark = models.PositiveIntegerField(
+        default=None,
+        blank=True,
+        null=True,
+        verbose_name='Оцінка за третю спробу'
     )
 
     def __str__(self):
-        return str(self.quiz) + ':\n Оцінка - ' + str(self.mark) + '\n'
+        return str(self.quiz) + ':\n Оцінка - ' + str(self.show_mark()) + '\n'
+
+    def show_attempts(self):
+        if self.first_attempt_mark is not None:
+            self.attempts -= 1
+        if self.second_attempt_mark is not None:
+            self.attempts -= 1
+        if self.third_attempt_mark is not None:
+            self.attempts -= 1
+        return self.attempts
+
+    def show_mark(self):
+
+        mark_list = list()
+
+        if self.first_attempt_mark is not None:
+            mark_list.append(self.first_attempt_mark)
+        if self.second_attempt_mark is not None:
+            mark_list.append(self.second_attempt_mark)
+        if self.third_attempt_mark is not None:
+            mark_list.append(self.third_attempt_mark)
+
+        max_mark = None
+
+        if len(mark_list) == 1:
+            max_mark = mark_list[0]
+
+        max_mark = max(mark_list)
+
+        return max_mark
 
 
 class StudentManager(models.Manager):
@@ -153,7 +203,8 @@ class Student(models.Model):
     student_marks = models.ManyToManyField(
         Mark,
         verbose_name='Оцінки',
-        related_name='+'
+        related_name='+',
+        blank=False
     )
 
     def __str__(self):
