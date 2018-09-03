@@ -12,7 +12,13 @@ class TeacherRank(models.Model):
         verbose_name = 'Звання викладача'
         verbose_name_plural = 'Звання викладачів'
 
-    teacher_rank = models.CharField(max_length=100, verbose_name="Звання")
+    teacher_rank = models.CharField(
+        max_length=100,
+        verbose_name="Звання",
+        unique=True,
+        null=True,
+        blank=True
+    )
 
     def __str__(self):
         return self.teacher_rank
