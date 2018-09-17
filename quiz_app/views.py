@@ -3,6 +3,9 @@ from .models import *
 from django.contrib.auth.decorators import login_required
 from datetime import datetime, timedelta
 
+import logging
+log = logging.getLogger(__name__)
+
 
 @login_required
 def render_question_list(request):

@@ -2,6 +2,9 @@
 import os
 import sys
 
+import logging
+log = logging.getLogger(__name__)
+
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "zvp_server.settings")
     try:

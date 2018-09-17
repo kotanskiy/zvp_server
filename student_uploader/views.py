@@ -6,6 +6,9 @@ from .students_uploader import StudentUploader
 import os
 from transliterate import slugify
 
+import logging
+log = logging.getLogger(__name__)
+
 
 @staff_member_required
 def render_student_uploader(request):

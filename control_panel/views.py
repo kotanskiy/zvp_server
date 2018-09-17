@@ -2,10 +2,13 @@ from django.shortcuts import render, redirect
 from .forms import LoginForm
 from django.contrib.auth import authenticate, login
 
+import logging
+log = logging.getLogger(__name__)
+
 
 def index_render(request):
     form = LoginForm()
-    return render(request, 'control_panel/index.html', {'form': form})
+    return render(request, 'control_panel/index.html', {'form': form, 'message': ''})
 
 
 def login_user(request):
