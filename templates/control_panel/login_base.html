@@ -16,8 +16,11 @@
     <link rel="stylesheet" href='{% static "style.css" %}'>
 
 </head>
-<body style="background: linear-gradient(to right, rgba(5, 5, 3, 1), transparent 23%), url(/static/img/building_back.png) no-repeat center center fixed; background-size: 150%;">
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+<body style="background: linear-gradient(to right, rgba(5, 5, 3, 1), transparent 23%), url(/static/img/building_back.png) no-repeat center center fixed; -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top" style="box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
         <a class="navbar-brand" href="#">
                 <img src="/static/img/logo.png" style="max-width:50px; margin-top: -7px;">Кафедра ЗВП
             </a>
