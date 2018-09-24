@@ -1,9 +1,16 @@
-from django.conf.urls import url
-from . import views
+from django.urls import path
+from .views import (
+    render_tests_page,
+    render_results,
+    render_question_list,
+    start_test,
+    stop_test
+)
 
 urlpatterns = [
-    url(r'^tests', views.render_tests_page, name='tests'),
-    url(r'^results', views.render_results, name='results'),
-    url(r'^questions', views.render_question_list, name='questions'),
-    url(r'^start-test', views.start_test, name='test'),
+    path('tests/', render_tests_page, name='tests'),
+    path('results/', render_results, name='results'),
+    path('questions/', render_question_list, name='questions'),
+    path('start-test/<int:quiz_id>', start_test, name='test'),
+    path('stop/<int:quiz_id>', stop_test, name='stop_test')
 ]

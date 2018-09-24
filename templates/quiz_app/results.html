@@ -1,5 +1,7 @@
 {% extends 'quiz_app/quiz_base.html' %}
 
 {% block content %}
-
+    {% for answer in answers %}
+        <p>{{ answer }}</p>
+    {% endfor %}
 {% endblock %}

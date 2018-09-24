@@ -6,14 +6,17 @@
         <div class="row">
             <div class="container col-sm-9">
                 <div class="card text-center">
-                    <div class="card-header">{{ test.quiz_title }}</div>
+                    <div class="card-header">{{ test.quiz_title }} з {{ test.quiz_discipline }}</div>
                     <div class="card-body">
 {#                        <h4 class="card-title">Студенти НТУУ «КПІ ім. І.Сікорського» створили бота для пошуку розеток</h4>#}
-                        <p class="card-text">{{ test.quiz_description }}, з дисципліни {{ test.quiz_discipline }}</p>
+                        <p class="card-text">{{ test.test_description }}</p>
                             {% if test.quiz_single_attempt %}
                                 <p class="description">(Одна спроба)</p>
                             {% endif %}
-                        <a href="/start_quiz&id={{ test.id }}" class="btn btn-primary">Почати тест</a>
+                    <form action="{% url 'test' test.id %}" method="post" style="padding: 0; border: none;">
+                        {% csrf_token %}
+                        <input type="submit" class="btn btn-primary" value="Розпочати">
+                    </form>
                     </div>
                 </div>
             </div>

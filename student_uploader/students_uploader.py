@@ -90,7 +90,7 @@ class StudentUploader(object):
 
     @classmethod
     def handle_uploaded_file(cls, file, file_name: str):
-        with open(cls.PATH_FOR_SAVING + file_name + '.xlsx', 'wb+') as destination:
+        with open(cls.PATH_FOR_SAVING + slugify(file_name, 'uk') + '.xlsx', 'wb+') as destination:
             for chunk in file.chunks():
                 destination.write(chunk)
             file_path = cls.PATH_FOR_SAVING + file_name + '.xlsx'
