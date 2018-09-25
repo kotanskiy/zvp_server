@@ -1,0 +1,13 @@
+{% extends 'quiz_app/quiz_base.html' %}
+
+{% block content %}
+        {% for result in results %}
+            <div class="container border border-warning" style="margin: 13px;">
+                <h3 style="margin: 13px;">{{ result.student.student_full_name }}</h3>
+                <h4 style="margin: 13px;">{{ result.test.quiz_title }}</h4>
+                <a href="{% url 'result' result.id %}" class="btn btn-primary" style="margin: 13px;">Переглянути</a>
+            </div>
+        {% endfor %}
+    
+    
+{% endblock %}

@@ -1,5 +1,5 @@
 from django.db import models
-from control_panel.models import Discipline
+from control_panel.models import Discipline, Student
 
 
 class Quiz(models.Model):
@@ -170,3 +170,47 @@ class Question(models.Model):
 
     get_true_answer.short_description = 'Правильна відповідь'
 
+
+class Result(models.Model):
+
+    class Meta:
+        db_table = 'Results'
+        verbose_name = 'Результат'
+        verbose_name_plural = 'Результати'
+        unique_together = (
+            'test',
+            'student'
+        )
+
+    test = models.ForeignKey(
+        Quiz,
+        on_delete=models.CASCADE,
+        null=False,
+        blank=False,
+        verbose_name='Тест',
+        editable=False
+    )
+
+    student = models.ForeignKey(
+        Student,
+        on_delete=models.CASCADE,
+        null=False,
+        blank=False,
+        editable=False,
+        verbose_name='Студент'
+    )
+
+    results = models.TextField(
+        null=False,
+        blank=False,
+        editable=False,
+        verbose_name='Відповіді студента'
+    )
+
+    date_time_stamp = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name='Дата та час складання тесту'
+    )
+
+    def __str__(self):
+        return str(self.test) + ' ' + str(self.student) + ' ' + str(self.date_time_stamp)

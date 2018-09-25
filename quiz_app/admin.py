@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import *
+from .models import Quiz, Question, Result
 from control_panel.models import Student
 
 admin.site.site_title = 'Кафедра Військової Підготовки. Адміністрування'
@@ -45,5 +45,18 @@ class QuizLayout(admin.ModelAdmin):
     )
 
 
+class ResultLayout(admin.ModelAdmin):
+
+    def has_add_permission(self, request, obj=None):
+        return False
+
+    list_display = (
+        'test',
+        'student',
+        'date_time_stamp'
+    )
+
+
 admin.site.register(Question, QuestionLayout)
 admin.site.register(Quiz, QuizLayout)
+admin.site.register(Result, ResultLayout)

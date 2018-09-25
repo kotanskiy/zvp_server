@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Quiz, Question
+from .models import Quiz, Question, Result
 from control_panel.models import Student
 from django.contrib.auth.decorators import login_required
 from datetime import datetime, timedelta
@@ -18,11 +18,6 @@ def render_question_list(request):
 def render_tests_page(request):
     tests = Quiz.objects.all()
     return render(request, 'quiz_app/tests.html', {'tests': tests})
-
-
-@login_required
-def render_results(request):
-    return render(request, 'quiz_app/results.html')
 
 
 @login_required
@@ -53,5 +48,38 @@ def stop_test(request, quiz_id):
         answer_list = {}
         for item in questions:
             answer_list[item.question_content] = data.get(str(item.question_content), "")
-        print(answer_list, quiz, quiz.quiz_discipline)
-    return render(request, 'quiz_app/results.html')
+
+        result = Result.objects.create(
+            student=student,
+            test=quiz,
+            results=answer_list
+        )
+
+        context = {
+            'student_name': student.student_full_name,
+            'quiz_title': quiz.quiz_title,
+            'results': answer_list.keys(),
+            'results_values': answer_list.values()
+        }
+
+        print(context)
+
+    return render(request, 'quiz_app/results.html', context)
+
+
+@login_required
+def render_results(request):
+    student = Student.objects.get(user=request.user)
+    results = Result.objects.all().filter(student=student)
+
+    return render(request, 'quiz_app/all_results.html', {'results': results})
+
+
+@login_required
+def render_result(request, result_id):
+    result = get_object_or_404(Result, pk=result_id)
+    result_dict = {}
+    return render(request, 'quiz_app/result.html', {'result': result})
+
+
+
