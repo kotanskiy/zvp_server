@@ -45,6 +45,16 @@ def stop_test(request, quiz_id):
     student = Student.objects.get(user=request.user)
     questions = Question.objects.all().filter(question_quiz=quiz)
 
+    # TODO end with true answer list!
+
+    # true_answers = {}
+
+    # for question in questions:
+    #     if question.question_first_answer_state:
+    #         true_answers[question.question_content] = question.question_first_answer_content
+    #     elif question.question_second_answer_state:
+    #         true_answers[question.question_content] = question.question_second_answer_content
+
     if request.POST:
         data = request.POST.copy()
         answer_list = {}
@@ -57,15 +67,7 @@ def stop_test(request, quiz_id):
             results=answer_list
         )
 
-        context = {
-            'student_name': student.student_full_name,
-            'quiz_title': quiz.quiz_title,
-            'results': answer_list
-        }
-
-        print(context)
-
-    return render(request, 'quiz_app/results.html', context)
+    return render(request, 'quiz_app/results.html', {'result': result})
 
 
 @login_required
