@@ -4,7 +4,7 @@
     <div class="container" id="massmedia">
     {% for test in tests %}
         <div class="row">
-            <div class="container col-sm-9">
+            <div class="container col-sm-9" style="box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19); padding: 0;">
                 <div class="card text-center">
                     <div class="card-header">{{ test.quiz_title }} з {{ test.quiz_discipline }}</div>
                     <div class="card-body">
@@ -13,7 +13,7 @@
                             {% if test.quiz_single_attempt %}
                                 <p class="description">(Одна спроба)</p>
                             {% endif %}
-                    <form action="{% url 'test' test.id %}" method="post" style="padding: 0; border: none;">
+                    <form action="{% url 'test' test.id %}" method="post" style="padding: 0; border: none; box-shadow: none;">
                         {% csrf_token %}
                         <input type="submit" class="btn btn-primary" value="Розпочати">
                     </form>

@@ -3,6 +3,7 @@ from .models import Quiz, Question, Result
 from control_panel.models import Student
 from django.contrib.auth.decorators import login_required
 from datetime import datetime, timedelta
+import ast
 
 import logging
 log = logging.getLogger(__name__)
@@ -37,6 +38,7 @@ def start_test(request, quiz_id):
         }
     )
 
+
 @login_required
 def stop_test(request, quiz_id):
     quiz = get_object_or_404(Quiz, pk=quiz_id)
@@ -58,8 +60,7 @@ def stop_test(request, quiz_id):
         context = {
             'student_name': student.student_full_name,
             'quiz_title': quiz.quiz_title,
-            'results': answer_list.keys(),
-            'results_values': answer_list.values()
+            'results': answer_list
         }
 
         print(context)
@@ -78,8 +79,7 @@ def render_results(request):
 @login_required
 def render_result(request, result_id):
     result = get_object_or_404(Result, pk=result_id)
-    result_dict = {}
-    return render(request, 'quiz_app/result.html', {'result': result})
-
+    quiz_results = ast.literal_eval(result.results)
+    return render(request, 'quiz_app/result.html', {'result': result, 'quiz_results': quiz_results})
 
 

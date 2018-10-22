@@ -4,10 +4,8 @@
     <h1>{{ student_name }}</h1>
     <h2>{{ quiz_title }}</h2>
     <ul>
-        {% for result in results %}
-            {% for result_value in results_values %}
-                <li>{{ result }} - {{ results_value }}</li>
-            {% endfor %}
+        {% for key, value in results.items %}
+            <li><b>Питання:</b> {{ key }} <ul><b>Відповідь: </b>{{ value }}</ul></li>
         {% endfor %}
     </ul>
 {% endblock %}
