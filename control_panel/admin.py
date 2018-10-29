@@ -132,7 +132,6 @@ class MarkAdmin(admin.ModelAdmin):
         'student',
         'discipline',
         'quiz',
-        'show_attempts',
         'show_mark',
         'link'
     )

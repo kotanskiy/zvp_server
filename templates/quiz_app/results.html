@@ -1,11 +1,7 @@
 {% extends 'quiz_app/quiz_base.html' %}
 
 {% block content %}
-    <h1>{{ result.student.student_full_name }}</h1>
-    <h2>{{ result.test.quiz_title }}</h2>
-    <ul>
-        {% for key, value in result.results.items %}
-            <li><b>Питання:</b> {{ key }} <ul><b>Відповідь: </b>{{ value }}</ul></li>
-        {% endfor %}
-    </ul>
+    <h1>{{ student.student_full_name }}</h1>
+    <h2>{{ quiz.quiz_title }}</h2>
+    <h3>Оцінка: {{ mark }}/ {{ question_count }}</h3>
 {% endblock %}

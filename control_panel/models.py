@@ -98,11 +98,6 @@ class Mark(models.Model):
         blank=False
     )
 
-    attempts = models.PositiveIntegerField(
-        default=3,
-        verbose_name='Кількість спроб'
-    )
-
     first_attempt_mark = models.PositiveIntegerField(
         default=None,
         blank=True,
@@ -126,15 +121,6 @@ class Mark(models.Model):
 
     def __str__(self):
         return str(self.quiz) + ':\n Оцінка - ' + str(self.show_mark()) + '\n'
-
-    def show_attempts(self):
-        if self.first_attempt_mark is not None:
-            self.attempts -= 1
-        if self.second_attempt_mark is not None:
-            self.attempts -= 1
-        if self.third_attempt_mark is not None:
-            self.attempts -= 1
-        return self.attempts
 
     def show_mark(self):
 
