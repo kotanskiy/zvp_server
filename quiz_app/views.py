@@ -27,7 +27,6 @@ def start_test(request, quiz_id):
     quiz = get_object_or_404(Quiz, pk=quiz_id)
     questions = Question.objects.all().filter(question_quiz=quiz)
     one_answer = QuestionType.objects.get(title="Одна вірна відповідь")
-    print(one_answer)
     return render(
         request,
         'quiz_app/questions.html',
@@ -45,7 +44,7 @@ def stop_test(request, quiz_id):
     student = Student.objects.get(user=request.user)
     questions = Question.objects.all().filter(question_quiz=quiz)
 
-    # TODO end with true answer list!
+    QUESTION_STATES = []
 
     true_answers = {}
 
@@ -66,15 +65,19 @@ def stop_test(request, quiz_id):
     if request.POST:
         data = request.POST.copy()
         answer_list = {}
+        mark = 0
+        max_mark = 0
         for item in questions:
             answer_list[item.question_content] = data.get(str(item.question_content), "")
-        mark = 0
-        for key in true_answers:
+
+        max_mark = sum([x.question_mark_value for x in questions])
+
+        for q, key in zip(questions, answer_list):
             if true_answers[key] == answer_list[key]:
-                mark += 1
+                print(q)
+                mark += q.question_mark_value
 
-        print(answer_list)
-
+        print(mark)
         Result.objects.create(
             student=student,
             test=quiz,
@@ -106,7 +109,7 @@ def stop_test(request, quiz_id):
             'quiz': quiz,
             'student': student,
             'mark': mark,
-            'question_count': len(answer_list)
+            'max_mark': max_mark
         }
 
     return render(request, 'quiz_app/results.html', context)

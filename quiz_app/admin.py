@@ -11,6 +11,7 @@ class QuestionLayout(admin.ModelAdmin):
     list_display = (
         'question_discipline',
         'question_type',
+        'question_mark_value',
         'question_content',
         'get_quizzes',
         'get_answers',

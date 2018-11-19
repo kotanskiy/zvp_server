@@ -2,7 +2,20 @@
 
 {% block content %}
     <div style="z-index: 1; position: fixed; margin-right: 3vw; margin-left: 2vw;"><h3>Залишилось часу:</h3> <h2><span id="timer"></span></h2></div>
-<form name="quiz" method="post" enctype="multipart/form-data" style="box-shadow: none; border: none; padding: 0; width: 100%; max-width: 80em; margin-top: 5vw;">
+<form
+        name="quiz"
+        action="{% url 'stop_test' quiz.id %}"
+        method="post"
+        enctype="multipart/form-data"
+        style="
+         box-shadow: none;
+         border: none;
+         padding: 0;
+         width: 100%;
+         max-width: 80em;
+         margin-top: 5vw;
+         margin-bottom: 5vw;
+">
 {% csrf_token %}
 <div class="row" style="width: auto;">
 {% for q in questions %}
@@ -63,7 +76,7 @@
         </div>
 {% endfor %}
 </div>
-<input type="submit" class="btn btn-primary">
+<input style="margin-top: 2vw;" type="submit" class="btn btn-primary">
 </form>
 
     <script>

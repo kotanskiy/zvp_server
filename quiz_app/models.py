@@ -1,5 +1,6 @@
 from django.db import models
 from control_panel.models import Discipline, Student
+from model_utils.managers import InheritanceManager
 
 
 DEFAULT_QUESTION_TYPE = 1
@@ -69,124 +70,84 @@ class Question(models.Model):
         blank=False
     )
 
-    question_type = models.ForeignKey(
-        'quiz_app.QuestionType',
-        on_delete=models.CASCADE,
-        verbose_name='Тип питання',
-        default=DEFAULT_QUESTION_TYPE
+    question_mark_value = models.PositiveIntegerField(
+        null=False,
+        blank=False,
+        verbose_name="Кількість балів за питання",
+        default=1
     )
-
     question_content = models.CharField(
         verbose_name='Питання',
         max_length=2000,
         help_text='Введіть питання, яке буде відображатися під час тесту'
     )
 
-    question_discipline = models.ForeignKey(Discipline,
-                                            on_delete=models.CASCADE,
-                                            verbose_name='Предмет'
-                                            )
-
-    question_first_answer_content = models.CharField(
-        max_length=450,
-        help_text='Варіант відповіді під літерою А',
-        verbose_name='А',
-        blank=False
-    )
-    question_first_answer_state = models.BooleanField(
-        default=False,
-        blank=False,
-        help_text='Показчик чи є відповідь вірною',
-        verbose_name='Правильна відповідь'
+    question_discipline = models.ForeignKey(
+        Discipline,
+        on_delete=models.CASCADE,
+        verbose_name='Предмет'
     )
 
-    question_second_answer_content = models.CharField(
-        max_length=450,
-        help_text='Варіант відповіді під літерою А',
-        verbose_name='Б',
-        blank=False
-    )
-    question_second_answer_state = models.BooleanField(
-        default=False,
-        blank=False,
-        help_text='Показчик чи є відповідь вірною',
-        verbose_name = 'Правильна відповідь'
-    )
-
-    question_third_answer_content = models.CharField(
-        max_length=450,
-        help_text='Варіант відповіді під літерою А',
-        verbose_name='В',
-        blank=False
-    )
-    question_third_answer_state = models.BooleanField(
-        default=False,
-        blank=False,
-        help_text='Показчик чи є відповідь вірною',
-        verbose_name = 'Правильна відповідь'
-    )
-
-    question_fourth_answer_content = models.CharField(
-        max_length=450,
-        help_text='Варіант відповіді під літерою А',
-        verbose_name='Г',
-        blank=False
-    )
-    question_fourth_answer_state = models.BooleanField(
-        default=False,
-        blank=False,
-        help_text='Показчик чи є відповідь вірною',
-        verbose_name = 'Правильна відповідь'
-    )
-
-    question_fifth_answer_content = models.CharField(
-        max_length=450,
-        help_text='Варіант відповіді під літерою А',
-        verbose_name='Д',
-        blank=False
-    )
-    question_fifth_answer_state = models.BooleanField(
-        default=False,
-        blank=False,
-        help_text='Показчик чи є відповідь вірною',
-        verbose_name='Правильна відповідь'
-    )
+    objects = InheritanceManager()
 
     def __str__(self):
         return self.question_content
-
-    def get_answers(self):
-
-        question_answer_list = (
-            'A' + ': ' + str(self.question_first_answer_content),
-            'Б' + ': ' + str(self.question_second_answer_content),
-            'В' + ': ' + str(self.question_third_answer_content),
-            'Г' + ': ' + str(self.question_fourth_answer_content),
-            'Д' + ': ' + str(self.question_fifth_answer_content)
-        )
-
-        return ',\n'.join(question_answer_list)
-
-    get_answers.short_description = 'Відповіді'
 
     def get_quizzes(self):
         return ',\n'.join([q.quiz_title for q in self.question_quiz.all()])
 
     get_quizzes.short_description = 'Тести'
 
-    def get_true_answer(self):
-        if self.question_first_answer_state:
-            return 'A' + ': ' + str(self.question_first_answer_content)
-        elif self.question_second_answer_state:
-            return 'Б' + ': ' + str(self.question_second_answer_content)
-        elif self.question_third_answer_state:
-            return 'В' + ': ' + str(self.question_third_answer_content)
-        elif self.question_fourth_answer_state:
-            return 'Г' + ': ' + str(self.question_fourth_answer_content)
-        elif self.question_fifth_answer_state:
-            return 'Д' + ': ' + str(self.question_fifth_answer_content)
 
-    get_true_answer.short_description = 'Правильна відповідь'
+class Answer(models.Model):
+
+    class Meta:
+        db_table = 'answers'
+        verbose_name = 'Відповідь'
+        verbose_name_plural = 'Відповіді'
+
+    question = models.ForeignKey(
+        Question,
+        on_delete=models.CASCADE
+    )
+
+    content = models.CharField(
+        max_length=120,
+        null=False,
+        blank=False,
+        verbose_name='Текст відповіді'
+    )
+
+    is_correct = models.BooleanField(
+        verbose_name='Правильна відповідь',
+        default=False
+    )
+
+    def __str__(self):
+        return self.content
+
+
+class MCQuestion(Question):
+
+    class Meta:
+        db_table = 'mc_questions'
+        verbose_name = 'Питання з декількома варіантами відповідей'
+        verbose_name_plural = 'Питання з декількома варіантами відповідей'
+
+    def check_if_correct(self, guess):
+        answer = Answer.objects.get(id=guess)
+
+        if answer.is_correct:
+            return True
+        else:
+            return True
+
+    def get_answers(self):
+        return Answer.objects.filter(question=self)
+
+    def answer_choice_to_string(self, guess):
+        return Answer.objects.get(id=guess).content
+
 
 
 class Result(models.Model):
