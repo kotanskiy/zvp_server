@@ -1,7 +1,8 @@
 {% extends 'quiz_app/questions_base.html' %}
 
 {% block content %}
-<form action="{% url 'stop_test' quiz.id %}" method="post" style="box-shadow: none; border: none; padding: 0; width: 100%; max-width: 80em; ">
+      <div>Time left = <span id="timer"></span></div>
+<form name="quiz" method="post" enctype="multipart/form-data" style="box-shadow: none; border: none; padding: 0; width: 100%; max-width: 80em; ">
 {% csrf_token %}
 <div class="row" style="width: auto;">
 {% for q in questions %}
@@ -38,4 +39,38 @@
 </div>
 <input type="submit" class="btn btn-primary">
 </form>
+
+    <script>
+    var time = "{{ quiz.quiz_time }}".split(":");
+document.getElementById('timer').innerHTML =
+  time[0] + ":" + time[1];
+startTimer();
+
+function startTimer() {
+  var presentTime = document.getElementById('timer').innerHTML;
+  var timeArray = presentTime.split(/[:]+/);
+  var m = timeArray[0];
+  var s = checkSecond((timeArray[1] - 1));
+  if(s==59){m=m-1}
+  if(m<0){
+      var formData = new FormData(document.forms.quiz);
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "{% url 'stop_test' quiz.id %}");
+
+      alert("DONE")
+      xhr.send(formData);
+      window.location.replace("{% url 'results'%}");
+  }
+
+  document.getElementById('timer').innerHTML =
+    m + ":" + s;
+  setTimeout(startTimer, 1000);
+}
+
+function checkSecond(sec) {
+  if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+  if (sec < 0) {sec = "59"};
+  return sec;
+}
+    </script>
 {% endblock %}

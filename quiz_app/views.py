@@ -24,12 +24,9 @@ def render_tests_page(request):
 
 @login_required
 def start_test(request, quiz_id):
-    # quiz_minutes = 20
     quiz = get_object_or_404(Quiz, pk=quiz_id)
     questions = Question.objects.all().filter(question_quiz=quiz)
-    # test_name = 'Тест з ЗВП 1 на тему АК-74'
-    # time_start = datetime.now()
-    # time_end = time_start + timedelta(minutes=quiz_minutes)
+
     return render(
         request,
         'quiz_app/questions.html',
@@ -74,6 +71,8 @@ def stop_test(request, quiz_id):
             if true_answers[key] == answer_list[key]:
                 mark += 1
 
+        print(answer_list)
+
         Result.objects.create(
             student=student,
             test=quiz,
@@ -86,6 +85,7 @@ def stop_test(request, quiz_id):
                 discipline=quiz.quiz_discipline,
                 quiz=quiz,
            )
+
             if ex_mark.first_attempt_mark:
                 ex_mark.second_attempt_mark = mark
             elif ex_mark.second_attempt_mark:
@@ -123,5 +123,3 @@ def render_result(request, result_id):
     result = get_object_or_404(Result, pk=result_id)
     quiz_results = ast.literal_eval(result.results)
     return render(request, 'quiz_app/result.html', {'result': result, 'quiz_results': quiz_results})
-
-

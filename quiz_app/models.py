@@ -39,6 +39,14 @@ class Quiz(models.Model):
         verbose_name='Лише одна спроба'
     )
 
+    quiz_time = models.CharField(
+        max_length=5,
+        null=False,
+        blank=False,
+        verbose_name="Час на складання у форматі - 03:00",
+        default="10:00"
+    )
+
     def __str__(self):
         return self.quiz_title
 

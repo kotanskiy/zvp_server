@@ -84,6 +84,10 @@ class StudentLayout(admin.ModelAdmin):
         'student_notes',
     )
 
+    # list_filter = (
+    #     ''
+    # )
+
 
 admin.site.register(Student, StudentLayout)
 
