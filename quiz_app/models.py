@@ -2,6 +2,9 @@ from django.db import models
 from control_panel.models import Discipline, Student
 
 
+DEFAULT_QUESTION_TYPE = 1
+
+
 class Quiz(models.Model):
 
     link = 'Редагувати'
@@ -64,6 +67,13 @@ class Question(models.Model):
         Quiz,
         verbose_name='Тест',
         blank=False
+    )
+
+    question_type = models.ForeignKey(
+        'quiz_app.QuestionType',
+        on_delete=models.CASCADE,
+        verbose_name='Тип питання',
+        default=DEFAULT_QUESTION_TYPE
     )
 
     question_content = models.CharField(
@@ -222,3 +232,21 @@ class Result(models.Model):
 
     def __str__(self):
         return str(self.test) + ' ' + str(self.student) + ' ' + str(self.date_time_stamp)
+
+
+class QuestionType(models.Model):
+
+    class Meta:
+        db_table = 'question_types'
+        verbose_name = 'Тип питання'
+        verbose_name_plural = 'Типи питання'
+
+    title = models.CharField(
+        max_length=120,
+        null=False,
+        blank=False,
+        default=""
+    )
+
+    def __str__(self):
+        return self.title

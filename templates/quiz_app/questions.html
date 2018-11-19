@@ -1,8 +1,8 @@
 {% extends 'quiz_app/questions_base.html' %}
 
 {% block content %}
-      <div>Time left = <span id="timer"></span></div>
-<form name="quiz" method="post" enctype="multipart/form-data" style="box-shadow: none; border: none; padding: 0; width: 100%; max-width: 80em; ">
+    <div style="z-index: 1; position: fixed; margin-right: 3vw; margin-left: 2vw;"><h3>Залишилось часу:</h3> <h2><span id="timer"></span></h2></div>
+<form name="quiz" method="post" enctype="multipart/form-data" style="box-shadow: none; border: none; padding: 0; width: 100%; max-width: 80em; margin-top: 5vw;">
 {% csrf_token %}
 <div class="row" style="width: auto;">
 {% for q in questions %}
@@ -10,27 +10,53 @@
             <h3>{{ q.question_content }}</h3>
             <ol style=" text-align: left; font-size: 22px;">
                 <li>
-                    <input type="radio" name="{{ q.question_content }}" value="{{ q.question_first_answer_content }}"/>
+                    <input {% if q.question_type == one_answer %}
+                                type="radio"
+                            {% else %}
+                            type="checkbox"
+                            {% endif %}
+                            name="{{ q.question_content }}" value="{{ q.question_first_answer_content }}"/>
+
                     <label style="font-size: 20px;">{{ q.question_first_answer_content }}</label>
                 </li>
 
                 <li>
-                    <input type="radio" name="{{ q.question_content }}" value="{{ q.question_second_answer_content }}"/>
+                    <input {% if q.question_type == one_answer %}
+                                type="radio"
+                            {% else %}
+                            type="checkbox"
+                            {% endif %}
+                            name="{{ q.question_content }}" value="{{ q.question_second_answer_content }}"/>
                     <label style="font-size: 20px;">{{ q.question_second_answer_content }}</label>
                 </li>
 
                 <li>
-                    <input type="radio" name="{{ q.question_content }}" value="{{ q.question_third_answer_content }}"/>
+                    <input {% if q.question_type == one_answer %}
+                                type="radio"
+                            {% else %}
+                            type="checkbox"
+                            {% endif %}
+                            name="{{ q.question_content }}" value="{{ q.question_third_answer_content }}"/>
                     <label style="font-size: 20px;">{{ q.question_third_answer_content }}</label>
                 </li>
 
                 <li>
-                    <input type="radio" name="{{ q.question_content }}" value="{{ q.question_fourth_answer_content }}"/>
+                    <input {% if q.question_type == one_answer %}
+                                type="radio"
+                            {% else %}
+                            type="checkbox"
+                            {% endif %}
+                            name="{{ q.question_content }}" value="{{ q.question_fourth_answer_content }}"/>
                     <label style="font-size: 20px;">{{ q.question_fourth_answer_content }}</label>
                 </li>
 
                 <li>
-                    <input type="radio" name="{{ q.question_content }}" value="{{ q.question_fifth_answer_content }}"/>
+                    <input {% if q.question_type == one_answer %}
+                                type="radio"
+                            {% else %}
+                            type="checkbox"
+                            {% endif %}
+                            name="{{ q.question_content }}" value="{{ q.question_fifth_answer_content }}"/>
                     <label style="font-size: 20px;">{{ q.question_fifth_answer_content }}</label>
                 </li>
             </ol>
@@ -52,6 +78,7 @@ function startTimer() {
   var m = timeArray[0];
   var s = checkSecond((timeArray[1] - 1));
   if(s==59){m=m-1}
+  if(m <= 1){document.getElementById("timer").style.color = "#ff3e3e"}
   if(m<0){
       var formData = new FormData(document.forms.quiz);
       var xhr = new XMLHttpRequest();

@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Quiz, Question, Result
+from .models import Quiz, Question, Result, QuestionType
 from control_panel.models import Student, Mark
 from django.contrib.auth.decorators import login_required
 from datetime import datetime, timedelta
@@ -26,13 +26,15 @@ def render_tests_page(request):
 def start_test(request, quiz_id):
     quiz = get_object_or_404(Quiz, pk=quiz_id)
     questions = Question.objects.all().filter(question_quiz=quiz)
-
+    one_answer = QuestionType.objects.get(title="Одна вірна відповідь")
+    print(one_answer)
     return render(
         request,
         'quiz_app/questions.html',
         {
             'quiz': quiz,
-            'questions': questions
+            'questions': questions,
+            'one_answer': one_answer
         }
     )
 
