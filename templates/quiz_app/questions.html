@@ -2,7 +2,7 @@
 
 {% block content %}
     <div style="z-index: 1; position: fixed; margin-right: 3vw; margin-left: 2vw;"><h3>Залишилось часу:</h3> <h2><span id="timer"></span></h2></div>
-<form name="quiz" method="post" enctype="multipart/form-data" style="box-shadow: none; border: none; padding: 0; width: 100%; max-width: 80em; margin-top: 5vw;">
+<form action="{% url 'stop_test' quiz.id%}" name="quiz" method="post" enctype="multipart/form-data" style="box-shadow: none; border: none; padding: 0; width: 100%; max-width: 80em; margin-top: 5vw;">
 {% csrf_token %}
 <div class="row" style="width: auto;">
 {% for q in questions %}
@@ -82,7 +82,7 @@ function startTimer() {
   if(m<0){
       var formData = new FormData(document.forms.quiz);
       var xhr = new XMLHttpRequest();
-      xhr.open("POST", "{% url 'stop_test' quiz.id %}");
+      xhr.open("POST", "{% url 'stop_test' quiz.id%}");
 
       alert("DONE")
       xhr.send(formData);

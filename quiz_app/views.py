@@ -41,6 +41,7 @@ def start_test(request, quiz_id):
 
 @login_required
 def stop_test(request, quiz_id):
+    print(request.POST)
     quiz = get_object_or_404(Quiz, pk=quiz_id)
     student = Student.objects.get(user=request.user)
     questions = Question.objects.all().filter(question_quiz=quiz)
