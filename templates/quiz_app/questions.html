@@ -10,52 +10,29 @@
             <h3>{{ q.question_content }}</h3>
             <ol style=" text-align: left; font-size: 22px;">
                 <li>
-                    <input {% if q.question_type == one_answer %}
-                                type="radio"
-                            {% else %}
-                            type="checkbox"
-                            {% endif %}
-                            name="{{ q.question_content }}" value="{{ q.question_first_answer_content }}"/>
+                    <input type="radio" name="{{ q.question_content }}" value="{{ q.question_first_answer_content }}"/>
 
                     <label style="font-size: 20px;">{{ q.question_first_answer_content }}</label>
                 </li>
 
                 <li>
-                    <input {% if q.question_type == one_answer %}
-                                type="radio"
-                            {% else %}
-                            type="checkbox"
-                            {% endif %}
-                            name="{{ q.question_content }}" value="{{ q.question_second_answer_content }}"/>
+                    <input type="radio" name="{{ q.question_content }}" value="{{ q.question_second_answer_content }}"/>
                     <label style="font-size: 20px;">{{ q.question_second_answer_content }}</label>
                 </li>
 
                 <li>
-                    <input {% if q.question_type == one_answer %}
-                                type="radio"
-                            {% else %}
-                            type="checkbox"
-                            {% endif %}
-                            name="{{ q.question_content }}" value="{{ q.question_third_answer_content }}"/>
+                    <input type="radio" name="{{ q.question_content }}" value="{{ q.question_third_answer_content }}"/>
                     <label style="font-size: 20px;">{{ q.question_third_answer_content }}</label>
                 </li>
 
                 <li>
-                    <input {% if q.question_type == one_answer %}
-                                type="radio"
-                            {% else %}
-                            type="checkbox"
-                            {% endif %}
+                    <input type="radio"
                             name="{{ q.question_content }}" value="{{ q.question_fourth_answer_content }}"/>
                     <label style="font-size: 20px;">{{ q.question_fourth_answer_content }}</label>
                 </li>
 
                 <li>
-                    <input {% if q.question_type == one_answer %}
-                                type="radio"
-                            {% else %}
-                            type="checkbox"
-                            {% endif %}
+                    <input type="radio"
                             name="{{ q.question_content }}" value="{{ q.question_fifth_answer_content }}"/>
                     <label style="font-size: 20px;">{{ q.question_fifth_answer_content }}</label>
                 </li>

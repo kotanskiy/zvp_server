@@ -69,13 +69,6 @@ class Question(models.Model):
         blank=False
     )
 
-    question_type = models.ForeignKey(
-        'quiz_app.QuestionType',
-        on_delete=models.CASCADE,
-        verbose_name='Тип питання',
-        default=DEFAULT_QUESTION_TYPE
-    )
-
     question_content = models.CharField(
         verbose_name='Питання',
         max_length=2000,
@@ -91,11 +84,11 @@ class Question(models.Model):
         max_length=450,
         help_text='Варіант відповіді під літерою А',
         verbose_name='А',
-        blank=False
+        blank=True
     )
     question_first_answer_state = models.BooleanField(
         default=False,
-        blank=False,
+        blank=True,
         help_text='Показчик чи є відповідь вірною',
         verbose_name='Правильна відповідь'
     )
@@ -104,11 +97,11 @@ class Question(models.Model):
         max_length=450,
         help_text='Варіант відповіді під літерою А',
         verbose_name='Б',
-        blank=False
+        blank=True
     )
     question_second_answer_state = models.BooleanField(
         default=False,
-        blank=False,
+        blank=True,
         help_text='Показчик чи є відповідь вірною',
         verbose_name = 'Правильна відповідь'
     )
@@ -117,11 +110,11 @@ class Question(models.Model):
         max_length=450,
         help_text='Варіант відповіді під літерою А',
         verbose_name='В',
-        blank=False
+        blank=True
     )
     question_third_answer_state = models.BooleanField(
         default=False,
-        blank=False,
+        blank=True,
         help_text='Показчик чи є відповідь вірною',
         verbose_name = 'Правильна відповідь'
     )
@@ -130,11 +123,11 @@ class Question(models.Model):
         max_length=450,
         help_text='Варіант відповіді під літерою А',
         verbose_name='Г',
-        blank=False
+        blank=True
     )
     question_fourth_answer_state = models.BooleanField(
         default=False,
-        blank=False,
+        blank=True,
         help_text='Показчик чи є відповідь вірною',
         verbose_name = 'Правильна відповідь'
     )
@@ -143,11 +136,11 @@ class Question(models.Model):
         max_length=450,
         help_text='Варіант відповіді під літерою А',
         verbose_name='Д',
-        blank=False
+        blank=True
     )
     question_fifth_answer_state = models.BooleanField(
         default=False,
-        blank=False,
+        blank=True,
         help_text='Показчик чи є відповідь вірною',
         verbose_name='Правильна відповідь'
     )
@@ -232,21 +225,3 @@ class Result(models.Model):
 
     def __str__(self):
         return str(self.test) + ' ' + str(self.student) + ' ' + str(self.date_time_stamp)
-
-
-class QuestionType(models.Model):
-
-    class Meta:
-        db_table = 'question_types'
-        verbose_name = 'Тип питання'
-        verbose_name_plural = 'Типи питання'
-
-    title = models.CharField(
-        max_length=120,
-        null=False,
-        blank=False,
-        default=""
-    )
-
-    def __str__(self):
-        return self.title

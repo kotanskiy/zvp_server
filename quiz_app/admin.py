@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Quiz, Question, Result, QuestionType
+from .models import Quiz, Question, Result
 from control_panel.models import Student
 
 admin.site.site_title = 'Кафедра Військової Підготовки. Адміністрування'
@@ -10,7 +10,6 @@ class QuestionLayout(admin.ModelAdmin):
 
     list_display = (
         'question_discipline',
-        'question_type',
         'question_content',
         'get_quizzes',
         'get_answers',
@@ -61,11 +60,3 @@ class ResultLayout(admin.ModelAdmin):
 admin.site.register(Question, QuestionLayout)
 admin.site.register(Quiz, QuizLayout)
 admin.site.register(Result, ResultLayout)
-
-
-@admin.register(QuestionType)
-class QuestionTypeAdmin(admin.ModelAdmin):
-
-    list_display = (
-        'title',
-    )

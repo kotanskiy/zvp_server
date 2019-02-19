@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Quiz, Question, Result, QuestionType
+from .models import Quiz, Question, Result
 from control_panel.models import Student, Mark
 from django.contrib.auth.decorators import login_required
 from datetime import datetime, timedelta
 from django.core.exceptions import ObjectDoesNotExist
 import ast
+from django.db.models import Q
 
 import logging
 log = logging.getLogger(__name__)
@@ -19,22 +20,24 @@ def render_question_list(request):
 @login_required
 def render_tests_page(request):
     tests = Quiz.objects.all()
-    return render(request, 'quiz_app/tests.html', {'tests': tests})
+    user = request.user
+    filtered_tests = []
+    for test in tests:
+        if not Result.objects.filter(student=Student.objects.get(user=user), test=test):
+            filtered_tests.append(test)
+    return render(request, 'quiz_app/tests.html', {'tests': filtered_tests})
 
 
 @login_required
 def start_test(request, quiz_id):
     quiz = get_object_or_404(Quiz, pk=quiz_id)
     questions = Question.objects.all().filter(question_quiz=quiz)
-    one_answer = QuestionType.objects.get(title="Одна вірна відповідь")
-    print(one_answer)
     return render(
         request,
         'quiz_app/questions.html',
         {
             'quiz': quiz,
             'questions': questions,
-            'one_answer': one_answer
         }
     )
 
@@ -73,8 +76,6 @@ def stop_test(request, quiz_id):
         for key in true_answers:
             if true_answers[key] == answer_list[key]:
                 mark += 1
-
-        print(answer_list)
 
         Result.objects.create(
             student=student,
