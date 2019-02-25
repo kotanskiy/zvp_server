@@ -1,5 +1,5 @@
 from django.db import models
-from control_panel.models import Discipline, Student
+from control_panel.models import Discipline, Student, Mark
 
 
 DEFAULT_QUESTION_TYPE = 1
@@ -225,3 +225,11 @@ class Result(models.Model):
 
     def __str__(self):
         return str(self.test) + ' ' + str(self.student) + ' ' + str(self.date_time_stamp)
+
+    def get_mark(self):
+        return Mark.objects.get(
+            student=self.student,
+            quiz=self.test
+        ).show_mark()
+
+    get_mark.short_description = 'Оцінка'

@@ -9,33 +9,39 @@
         <div class="col-12 border" style="margin: 12px; padding: 15px; width: auto; margin: 15px; box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
             <h3>{{ q.question_content }}</h3>
             <ol style=" text-align: left; font-size: 22px;">
+                {% if q.question_first_answer_content %}
                 <li>
                     <input type="radio" name="{{ q.question_content }}" value="{{ q.question_first_answer_content }}"/>
 
                     <label style="font-size: 20px;">{{ q.question_first_answer_content }}</label>
                 </li>
-
+                {% endif %}
+                {% if q.question_second_answer_content %}
                 <li>
                     <input type="radio" name="{{ q.question_content }}" value="{{ q.question_second_answer_content }}"/>
                     <label style="font-size: 20px;">{{ q.question_second_answer_content }}</label>
                 </li>
-
+                {% endif %}
+                {% if q.question_third_answer_content %}
                 <li>
                     <input type="radio" name="{{ q.question_content }}" value="{{ q.question_third_answer_content }}"/>
                     <label style="font-size: 20px;">{{ q.question_third_answer_content }}</label>
                 </li>
-
+                {% endif %}
+                {% if q.question_fourth_answer_content %}
                 <li>
                     <input type="radio"
                             name="{{ q.question_content }}" value="{{ q.question_fourth_answer_content }}"/>
                     <label style="font-size: 20px;">{{ q.question_fourth_answer_content }}</label>
                 </li>
-
+                {% endif %}
+                {% if q.question_fifth_answer_content %}
                 <li>
                     <input type="radio"
                             name="{{ q.question_content }}" value="{{ q.question_fifth_answer_content }}"/>
                     <label style="font-size: 20px;">{{ q.question_fifth_answer_content }}</label>
                 </li>
+                {% endif %}
             </ol>
         </div>
 {% endfor %}

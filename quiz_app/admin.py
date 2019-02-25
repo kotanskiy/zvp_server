@@ -53,7 +53,8 @@ class ResultLayout(admin.ModelAdmin):
     list_display = (
         'test',
         'student',
-        'date_time_stamp'
+        'date_time_stamp',
+        'get_mark'
     )
 
 
