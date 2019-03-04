@@ -24,7 +24,10 @@ def login_user(request):
                           {'message': 'Невірний логін чи пароль',
                            'form': form})
         login(request, user)
-        return redirect('/tests')
+        if request.user.is_superuser:
+            return redirect('/admin')
+        else:
+            return redirect('/tests')
     else:
         form = LoginForm()
         return render(request,

@@ -36,3 +36,18 @@ control_panel.models.Student.DoesNotExist: Student matching query does not exist
 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
 "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
 "GET /download?&filename=463.xlsxpasswords.xls HTTP/1.1" 200 5632
+"GET /student_uploader/ HTTP/1.1" 200 1962
+"GET /static/admin/css/base.css HTTP/1.1" 200 16225
+"GET /static/admin/css/responsive.css HTTP/1.1" 200 17976
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 3717
+"GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+"GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 81348
+"GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 80304
+"GET /admin/ HTTP/1.1" 200 11791
+"GET / HTTP/1.1" 200 2842
+"GET /static/img/logo.png HTTP/1.1" 304 0
+"GET /static/img/building_back.png HTTP/1.1" 304 0
+"POST /login_user HTTP/1.1" 302 0
+"GET /admin HTTP/1.1" 301 0
+"GET /admin/ HTTP/1.1" 200 11791
