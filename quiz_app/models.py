@@ -37,7 +37,7 @@ class Quiz(models.Model):
     quiz_single_attempt = models.BooleanField(
         blank=False,
         default=False,
-        help_text='Якщо так, студент матиме лише одну спробу.' 
+        help_text='Якщо так, студент матиме лише одну спробу.'
                   'Незареєстрованні студенти не зможуть користуватися тестом (іспитом)',
         verbose_name='Лише одна спроба'
     )
@@ -48,6 +48,14 @@ class Quiz(models.Model):
         blank=False,
         verbose_name="Час на складання у форматі - 03:00",
         default="10:00"
+    )
+
+    quiz_start_time = models.CharField(
+        max_length=5,
+        null=False,
+        blank=False,
+        verbose_name="Початок тесту",
+        default="10:00"       
     )
 
     def __str__(self):
@@ -75,10 +83,10 @@ class Question(models.Model):
         help_text='Введіть питання, яке буде відображатися під час тесту'
     )
 
-    question_discipline = models.ForeignKey(Discipline,
-                                            on_delete=models.CASCADE,
-                                            verbose_name='Предмет'
-                                            )
+    question_discipline = models.ForeignKey(
+        Discipline, 
+        on_delete=models.CASCADE, 
+        verbose_name='Предмет')
 
     question_first_answer_content = models.CharField(
         max_length=450,
@@ -146,6 +154,7 @@ class Question(models.Model):
     )
 
     def __str__(self):
+
         return self.question_content
 
     def get_answers(self):

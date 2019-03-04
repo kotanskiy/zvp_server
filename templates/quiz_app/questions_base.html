@@ -41,13 +41,17 @@
         </div>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <p class="navbar-brand" id="demo" style="color: white"></p>
+                <li class="nav-item">                   
+                    <p class="navbar-brand" id="demo" style="color: white; margin-bottom: 0 ">
+                        Залишилось часу: <span id="timer"></span>
+                    </p>
                 </li>
             </ul>
-        </div>
+        </div>        
 
+        
     </nav>
+    
     <div class="spacer">
 
     </div>
@@ -55,7 +59,7 @@
 
         {% endblock %}
 
-
+<!--
 {#<script>#}
 {#// Set the date we're counting down to#}
 {#var countDownDate = new Date({{ end_time }}).getTime();#}
@@ -87,5 +91,6 @@
 {#  }#}
 {#}, 1000);#}
 {#</script>#}
+-->
 </body>
 </html>
