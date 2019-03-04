@@ -140,7 +140,7 @@ class StudentUploader(object):
             for i in range(len(student_data)):
                 for j in range(len(student_data[i])):
                     ws.write(i + 1, j, student_data[i][j])
-            wb.save(file_name + 'passwords_' + '.xlsx')
+            wb.save(file_name + 'passwords' + '.xls')
             os.remove(file_name)
             return True
         except Exception as e:

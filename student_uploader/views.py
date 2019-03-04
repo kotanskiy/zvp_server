@@ -4,7 +4,7 @@ from django.http.response import HttpResponse
 from .forms import UploadFileForm
 from .students_uploader import StudentUploader
 import os
-from transliterate import slugify
+from slugify import slugify
 
 import logging
 log = logging.getLogger(__name__)
@@ -35,7 +35,7 @@ def download_file(request):
             current_file = f.read()
             response = HttpResponse(content=current_file,
                                     content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-            response['Content-Disposition'] = 'attachment; filename={}'.format(slugify(filename, ))
+            response['Content-Disposition'] = 'attachment; filename={}'.format(slugify(filename))
             return response
     except Exception as e:
         print('[ERROR]{}'.format(e))
