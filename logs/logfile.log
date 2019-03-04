@@ -51,3 +51,29 @@ Not Found: /favicon.ico
 "POST /login_user HTTP/1.1" 302 0
 "GET /admin HTTP/1.1" 301 0
 "GET /admin/ HTTP/1.1" 200 11791
+"GET / HTTP/1.1" 200 2842
+"GET /static/img/logo.png HTTP/1.1" 304 0
+"GET /static/img/building_back.png HTTP/1.1" 304 0
+"POST /login_user HTTP/1.1" 302 0
+"GET /admin HTTP/1.1" 301 0
+"GET /admin/ HTTP/1.1" 200 11791
+"GET /static/admin/css/base.css HTTP/1.1" 200 8192
+Internal Server Error: /student_uploader/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/yourash/development/kafedra/zvp_server/student_uploader/views.py", line 27, in render_student_uploader
+    'directory': os.listdir(StudentUploader.PATH_FOR_SAVING)})
+FileNotFoundError: [Errno 2] No such file or directory: '/home/yourash/development/kafedra/zvp_servergroup_docs/'
+"GET /student_uploader/ HTTP/1.1" 500 76414
+"GET /student_uploader/ HTTP/1.1" 200 1962
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+"GET /download?&filename=463.xlsxpasswords.xls HTTP/1.1" 200 5632

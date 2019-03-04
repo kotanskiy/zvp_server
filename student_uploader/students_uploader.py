@@ -10,7 +10,7 @@ import random
 
 class StudentUploader(object):
 
-    PATH_FOR_SAVING = 'group_docs/'
+    PATH_FOR_SAVING = os.path.dirname(os.path.dirname(__file__)) + '/group_docs/'
 
     @staticmethod
     def password_generator(size=6):
