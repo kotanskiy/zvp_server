@@ -6,3 +6,33 @@
 "GET /static/admin/css/login.css HTTP/1.1" 200 1203
 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2315
 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2316
+"GET / HTTP/1.1" 200 2842
+"POST /login_user HTTP/1.1" 200 2901
+"POST /login_user HTTP/1.1" 302 0
+"GET /tests HTTP/1.1" 301 0
+Internal Server Error: /tests/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/yourash/development/kafedra/zvp_server/quiz_app/views.py", line 26, in render_tests_page
+    if not Result.objects.filter(student=Student.objects.get(user=user), test=test):
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 399, in get
+    self.model._meta.object_name
+control_panel.models.Student.DoesNotExist: Student matching query does not exist.
+"GET /tests/ HTTP/1.1" 500 84885
+"GET /admin/ HTTP/1.1" 200 11791
+"GET /student_uploader/ HTTP/1.1" 200 1962
+"GET /download?&filename=463.xlsxpasswords.xls HTTP/1.1" 200 5632
+"GET /student_uploader/ HTTP/1.1" 200 1962
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+"GET /download?&filename=463.xlsxpasswords.xls HTTP/1.1" 200 5632

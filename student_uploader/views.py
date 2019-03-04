@@ -35,7 +35,7 @@ def download_file(request):
             current_file = f.read()
             response = HttpResponse(content=current_file,
                                     content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-            response['Content-Disposition'] = 'attachment; filename={}'.format(slugify(filename))
+            response['Content-Disposition'] = 'attachment; filename={}'.format(slugify(filename).replace('-', '.'))
             return response
     except Exception as e:
         print('[ERROR]{}'.format(e))
