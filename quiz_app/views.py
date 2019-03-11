@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Quiz, Question, Result
+from .models import Quiz, Question, Result, Access
 from control_panel.models import Student, Mark
 from django.contrib.auth.decorators import login_required
 from datetime import datetime, timedelta
@@ -19,12 +19,16 @@ def render_question_list(request):
 
 @login_required
 def render_tests_page(request):
-    tests = Quiz.objects.all()
-    user = request.user
+    student = Student.objects.get(user=request.user)
+    accesses = Access.objects.filter(student=student)
     filtered_tests = []
-    for test in tests:
-        if not Result.objects.filter(student=Student.objects.get(user=user), test=test):
-            filtered_tests.append(test)
+    for access in accesses:
+        result = Result.objects.get(
+            test=access.quiz,
+            student=student
+        )
+        if access.access_granted and not result:
+            filtered_tests.append(access.quiz)
     return render(request, 'quiz_app/tests.html', {'tests': filtered_tests})
 
 
@@ -126,4 +130,29 @@ def render_results(request):
 def render_result(request, result_id):
     result = get_object_or_404(Result, pk=result_id)
     quiz_results = ast.literal_eval(result.results)
-    return render(request, 'quiz_app/result.html', {'result': result, 'quiz_results': quiz_results})
+
+    true_answers = {}
+    questions = Question.objects.filter(question_quiz=result.test)
+
+    for question in questions:
+        if question.question_first_answer_state:
+            true_answers[question.question_content] = question.question_first_answer_content
+        elif question.question_second_answer_state:
+            true_answers[question.question_content] = question.question_second_answer_content
+        elif question.question_third_answer_state:
+            true_answers[question.question_content] = question.question_third_answer_content
+        elif question.question_fourth_answer_state:
+            true_answers[question.question_content] = question.question_fourth_answer_content
+        elif question.question_fifth_answer_state:
+            true_answers[question.question_content] = question.question_fifth_answer_content
+        else:
+            raise NameError
+
+    context = {
+        'result': result,
+        'quiz_results': quiz_results,
+        'mark': result.get_mark(),
+        'max_mark': len(true_answers)
+    }
+
+    return render(request, 'quiz_app/result.html', context)

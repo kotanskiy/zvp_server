@@ -1,11 +1,11 @@
 from django.contrib import admin
-from .models import Quiz, Question, Result
-from control_panel.models import Student
+from .models import Quiz, Question, Result, Access
 
 admin.site.site_title = 'Кафедра Військової Підготовки. Адміністрування'
 admin.site.site_header = 'Кафедра Військової Підготовки. Адміністрування'
 
 
+@admin.register(Question)
 class QuestionLayout(admin.ModelAdmin):
 
     list_display = (
@@ -19,12 +19,8 @@ class QuestionLayout(admin.ModelAdmin):
 
     list_display_links = ('link', )
 
-    list_editable = (
-        'question_discipline',
-        'question_content',
-    )
 
-
+@admin.register(Quiz)
 class QuizLayout(admin.ModelAdmin):
 
     list_display = (
@@ -45,6 +41,7 @@ class QuizLayout(admin.ModelAdmin):
     )
 
 
+@admin.register(Result)
 class ResultLayout(admin.ModelAdmin):
 
     def has_add_permission(self, request, obj=None):
@@ -58,6 +55,11 @@ class ResultLayout(admin.ModelAdmin):
     )
 
 
-admin.site.register(Question, QuestionLayout)
-admin.site.register(Quiz, QuizLayout)
-admin.site.register(Result, ResultLayout)
+@admin.register(Access)
+class AccessModelAdmin(admin.ModelAdmin):
+
+    list_display = (
+        'student',
+        'quiz',
+        'access_granted'
+    )

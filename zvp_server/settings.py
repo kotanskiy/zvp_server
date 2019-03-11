@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'quiz_app',
     'control_panel',
     'student_uploader',
-    'bootstrap4',
 ]
 
 MIDDLEWARE = [

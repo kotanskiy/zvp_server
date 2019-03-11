@@ -49,8 +49,8 @@ class Department(models.Model):
 
     class Meta:
         db_table = 'Departments'
-        verbose_name = 'Кафедра'
-        verbose_name_plural = 'Кафедри'
+        verbose_name = 'ПМК'
+        verbose_name_plural = 'ПМК'
 
     department_name = models.CharField(max_length=100, default=None, verbose_name="Назва")
     department_head = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='+', blank=True, null=True, verbose_name="Голова")
@@ -186,24 +186,65 @@ class Student(models.Model):
 
     objects = StudentManager()
 
-    student_full_name = models.CharField(max_length=200, default=None, verbose_name="ПІБ", blank=True, null=True)
-    student_university_group = models.CharField(max_length=10, default=None, verbose_name="Группа",  blank=True, null=True)
-    student_faculty = models.CharField(max_length=15, default=None, verbose_name="Факультет або ВНЗ",  blank=True, null=True)
-    student_grade = models.IntegerField(default=None, verbose_name="Курс",  blank=True, null=True)
-    student_state = models.CharField(max_length=100,default=None, blank=True, verbose_name="Статус", null=True)
-    student_notes = models.TextField(default=None, blank=True, verbose_name="Примітки", null=True)
-    student_marks = models.ManyToManyField(
-        Mark,
-        verbose_name='Оцінки',
-        related_name='+',
-        blank=False
+    student_full_name = models.CharField(
+        max_length=200,
+        default=None,
+        verbose_name="ПІБ",
+        blank=True,
+        null=True
+    )
+
+    student_troop = models.ForeignKey(
+        'control_panel.Troop',
+        on_delete=models.SET_NULL,
+        verbose_name='Взвод',
+        blank=True,
+        null=True
+    )
+
+    student_university_group = models.CharField(
+        max_length=10,
+        default=None,
+        verbose_name="Группа",
+        blank=True,
+        null=True
+    )
+
+    student_faculty = models.CharField(
+        max_length=15,
+        default=None,
+        verbose_name="Факультет або ВНЗ",
+        blank=True,
+        null=True
+    )
+
+    student_grade = models.IntegerField(
+        default=None,
+        verbose_name="Курс",
+        blank=True,
+        null=True
+    )
+
+    student_state = models.CharField(
+        max_length=100,
+        default=None,
+        blank=True,
+        verbose_name="Статус",
+        null=True
+    )
+
+    student_notes = models.TextField(
+        default=None,
+        blank=True,
+        verbose_name="Примітки",
+        null=True
     )
 
     def __str__(self):
         return self.student_full_name
 
     def show_marks(self):
-        marks = [str(obj) for obj in Mark.objects.all().filter(student=self)]
+        marks = [str(obj) for obj in Mark.objects.filter(student=self)]
         return ''.join(marks)
 
 

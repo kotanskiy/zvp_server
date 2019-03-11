@@ -233,3 +233,32 @@ class Result(models.Model):
         ).show_mark()
 
     get_mark.short_description = 'Оцінка'
+
+
+class Access(models.Model):
+
+    student = models.ForeignKey(
+        'control_panel.Student',
+        on_delete=models.CASCADE,
+        verbose_name='Студент'
+    )
+
+    quiz = models.ForeignKey(
+        'quiz_app.Quiz',
+        on_delete=models.CASCADE,
+        verbose_name='Тест'
+    )
+
+    access_granted = models.BooleanField(
+        default=False,
+        verbose_name='Доступ',
+        help_text='Відмітьте, якщо студент має доступ до складання тесту'
+    )
+
+    def __str__(self):
+        return 'Допуск до тесту: {0}, студента: {1}'.format(self.quiz, self.student)
+
+    class Meta:
+        db_table = 'accesses'
+        verbose_name_plural = 'Допуски'
+        verbose_name = 'Допуск'
