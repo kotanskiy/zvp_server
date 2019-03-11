@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'quiz_app',
     'control_panel',
     'student_uploader',
+    'nested_admin',
 ]
 
 MIDDLEWARE = [

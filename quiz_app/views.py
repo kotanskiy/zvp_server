@@ -48,28 +48,15 @@ def start_test(request, quiz_id):
 
 @login_required
 def stop_test(request, quiz_id):
-    print(request.POST)
     quiz = get_object_or_404(Quiz, pk=quiz_id)
     student = Student.objects.get(user=request.user)
     questions = Question.objects.all().filter(question_quiz=quiz)
-
-    # TODO end with true answer list!
-
     true_answers = {}
 
     for question in questions:
-        if question.question_first_answer_state:
-            true_answers[question.question_content] = question.question_first_answer_content
-        elif question.question_second_answer_state:
-            true_answers[question.question_content] = question.question_second_answer_content
-        elif question.question_third_answer_state:
-            true_answers[question.question_content] = question.question_third_answer_content
-        elif question.question_fourth_answer_state:
-            true_answers[question.question_content] = question.question_fourth_answer_content
-        elif question.question_fifth_answer_state:
-            true_answers[question.question_content] = question.question_fifth_answer_content
-        else:
-            raise NameError
+        for answer in question.get_answers():
+            if answer.is_true:
+                true_answers[question.question_content] = answer.title
 
     if request.POST:
         data = request.POST.copy()
