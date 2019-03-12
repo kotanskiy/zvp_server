@@ -53,10 +53,10 @@ class StudentUploader(object):
                 pass
             else:
                 return 'Вже є в базі {}'.format(student[0])
-            if student[4] is None:
-                student[4] = ''
-            if student[5] is None:
-                student[5] = ''
+            if len(student) == 4:
+                student.append('')
+            if len(student) == 5:
+                student.append('')
             response = cls.register_user(username,
                                          student[0],
                                          student[1],

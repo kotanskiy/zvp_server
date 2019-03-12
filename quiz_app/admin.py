@@ -28,16 +28,6 @@ class QuizLayout(admin.ModelAdmin):
         'quiz_description',
         'quiz_discipline',
         'quiz_single_attempt',
-        'link'
-    )
-
-    list_display_links = ('link', )
-
-    list_editable = (
-        'quiz_title',
-        'quiz_description',
-        'quiz_discipline',
-        'quiz_single_attempt',
     )
 
 

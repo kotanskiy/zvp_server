@@ -5,28 +5,6 @@ from control_panel.models import Discipline, Student, Mark
 DEFAULT_QUESTION_TYPE = 1
 
 
-class Ticket(models.Model):
-
-    title = models.CharField(
-        max_length=120,
-        verbose_name='Названня білету'
-    )
-
-    quiz = models.ForeignKey(
-        'quiz_app.Quiz',
-        on_delete=models.CASCADE,
-        verbose_name='Тест'
-    )
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        db_table = 'tickets'
-        verbose_name = 'Білет'
-        verbose_name_plural = 'Білети'
-
-
 class Quiz(models.Model):
 
     link = 'Редагувати'
@@ -86,7 +64,7 @@ class Answer(models.Model):
 
     title = models.CharField(
         max_length=300,
-        verbose_name='Текст питання'
+        verbose_name='Текст відповіді'
     )
 
     is_true = models.BooleanField(
@@ -94,6 +72,9 @@ class Answer(models.Model):
         verbose_name='Вірне',
         help_text='Вибрати, якщо питання є вірним'
     )
+
+    def __str__(self):
+        return self.title
 
     class Meta:
         db_table = 'answers'
@@ -111,7 +92,7 @@ class Question(models.Model):
         verbose_name_plural = 'Всі питання'
 
     question_ticket = models.ForeignKey(
-        Ticket,
+        'quiz_app.Ticket',
         on_delete=models.SET_NULL,
         verbose_name='Білет',
         blank=False,
@@ -150,6 +131,30 @@ class Question(models.Model):
             return 'Д' + ': ' + str(self.question_fifth_answer_content)
 
     get_true_answer.short_description = 'Правильна відповідь'
+
+
+class Ticket(models.Model):
+    title = models.CharField(
+        max_length=120,
+        verbose_name='Названня білету'
+    )
+
+    quiz = models.ForeignKey(
+        'quiz_app.Quiz',
+        on_delete=models.CASCADE,
+        verbose_name='Тест'
+    )
+
+    def __str__(self):
+        return self.title
+
+    def get_questions(self):
+        return Question.objects.filter(question_ticket=self)
+
+    class Meta:
+        db_table = 'tickets'
+        verbose_name = 'Білет'
+        verbose_name_plural = 'Білети'
 
 
 class Result(models.Model):
