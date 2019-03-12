@@ -272,3 +272,464 @@ Not Found: /nested_admin/v
 "GET /admin/quiz_app/ticket/1/change/ HTTP/1.1" 200 25971
 "GET /nested_admin/server-data.js HTTP/1.1" 200 165
 "GET /admin/jsi18n/ HTTP/1.1" 200 12136
+Not Found: /robots.txt
+"GET /robots.txt HTTP/1.1" 404 3826
+"GET / HTTP/1.1" 200 2842
+"GET /static/style.css HTTP/1.1" 200 496
+"GET /static/img/logo.png HTTP/1.1" 200 18777
+"GET /static/bootstrap/css/bootstrap.css HTTP/1.1" 200 178152
+"GET /static/img/building_back.png HTTP/1.1" 200 1103032
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 3829
+"GET /admin/ HTTP/1.1" 200 11173
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+"GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+"GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+"GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+"GET /admin/quiz_app/quiz/add/ HTTP/1.1" 200 7655
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+"GET /static/admin/css/forms.css HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+"GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+"GET /admin/quiz_app/quiz/ HTTP/1.1" 200 7357
+"GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+"GET /admin/quiz_app/quiz/ HTTP/1.1" 200 5431
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+"GET /admin/quiz_app/ HTTP/1.1" 200 5057
+"GET /admin/quiz_app/ticket/ HTTP/1.1" 200 4912
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /admin/quiz_app/ticket/1/change/ HTTP/1.1" 200 25971
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /static/nested_admin/dist/nested_admin.min.css HTTP/1.1" 304 0
+"GET /static/nested_admin/dist/nested_admin.min.js HTTP/1.1" 304 0
+"GET /static/admin/js/inlines.js HTTP/1.1" 304 0
+"GET /nested_admin/server-data.js HTTP/1.1" 200 165
+"GET /static/admin/img/inline-delete.svg HTTP/1.1" 304 0
+"GET /admin/quiz_app/ticket/1/change/ HTTP/1.1" 200 25987
+"GET /nested_admin/server-data.js HTTP/1.1" 200 165
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"POST /admin/quiz_app/ticket/1/change/ HTTP/1.1" 302 0
+"GET /admin/quiz_app/ticket/ HTTP/1.1" 200 5125
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+"GET /admin/quiz_app/ticket/1/change/ HTTP/1.1" 200 53353
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /nested_admin/server-data.js HTTP/1.1" 200 165
+"GET /admin/quiz_app/ticket/1/change/ HTTP/1.1" 200 53261
+"GET /nested_admin/server-data.js HTTP/1.1" 200 165
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /admin/ HTTP/1.1" 200 11472
+"GET /student_uploader/ HTTP/1.1" 200 1962
+"GET /student_uploader/ HTTP/1.1" 200 1823
+Internal Server Error: /student_uploader/
+Traceback (most recent call last):
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lemes/SELF/ZVP/student_uploader/views.py", line 19, in render_student_uploader
+    response_message = StudentUploader.register_method(file)
+  File "/home/lemes/SELF/ZVP/student_uploader/students_uploader.py", line 56, in register_method
+    if student[4] is None:
+IndexError: list index out of range
+"POST /student_uploader/ HTTP/1.1" 500 85382
+"GET /admin/ HTTP/1.1" 200 11472
+"GET /admin/control_panel/student/ HTTP/1.1" 200 3494
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /admin/ HTTP/1.1" 200 11472
+"GET /student_uploader/ HTTP/1.1" 200 1936
+"GET /download?&filename=463.xlsx HTTP/1.1" 200 6910
+"GET /student_uploader/ HTTP/1.1" 200 1823
+"POST /student_uploader/ HTTP/1.1" 200 1964
+"GET /admin/ HTTP/1.1" 200 11472
+"GET /admin/control_panel/student/ HTTP/1.1" 200 3494
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /admin/ HTTP/1.1" 200 11472
+"GET /student_uploader/ HTTP/1.1" 200 1823
+Internal Server Error: /student_uploader/
+Traceback (most recent call last):
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lemes/SELF/ZVP/student_uploader/views.py", line 19, in render_student_uploader
+    response_message = StudentUploader.register_method(file)
+  File "/home/lemes/SELF/ZVP/student_uploader/students_uploader.py", line 56, in register_method
+    if student[4] is None:
+IndexError: list index out of range
+"POST /student_uploader/ HTTP/1.1" 500 85382
+Internal Server Error: /student_uploader/
+Traceback (most recent call last):
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lemes/SELF/ZVP/student_uploader/views.py", line 19, in render_student_uploader
+    response_message = StudentUploader.register_method(file)
+  File "/home/lemes/SELF/ZVP/student_uploader/students_uploader.py", line 56, in register_method
+    if student[4] is None:
+IndexError: list index out of range
+"POST /student_uploader/ HTTP/1.1" 500 85382
+Internal Server Error: /student_uploader/
+Traceback (most recent call last):
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lemes/SELF/ZVP/student_uploader/views.py", line 19, in render_student_uploader
+    response_message = StudentUploader.register_method(file)
+  File "/home/lemes/SELF/ZVP/student_uploader/students_uploader.py", line 56, in register_method
+    if not student[4]:
+IndexError: list index out of range
+"POST /student_uploader/ HTTP/1.1" 500 85370
+Internal Server Error: /student_uploader/
+Traceback (most recent call last):
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lemes/SELF/ZVP/student_uploader/views.py", line 19, in render_student_uploader
+    response_message = StudentUploader.register_method(file)
+  File "/home/lemes/SELF/ZVP/student_uploader/students_uploader.py", line 57, in register_method
+    if not student[4]:
+IndexError: list index out of range
+"POST /student_uploader/ HTTP/1.1" 500 85396
+Internal Server Error: /student_uploader/
+Traceback (most recent call last):
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lemes/SELF/ZVP/student_uploader/views.py", line 19, in render_student_uploader
+    response_message = StudentUploader.register_method(file)
+  File "/home/lemes/SELF/ZVP/student_uploader/students_uploader.py", line 57, in register_method
+    if not student[4]:
+IndexError: list index out of range
+"POST /student_uploader/ HTTP/1.1" 500 85399
+Internal Server Error: /student_uploader/
+Traceback (most recent call last):
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lemes/SELF/ZVP/student_uploader/views.py", line 19, in render_student_uploader
+    response_message = StudentUploader.register_method(file)
+  File "/home/lemes/SELF/ZVP/student_uploader/students_uploader.py", line 57, in register_method
+    if not student[4]:
+IndexError: list index out of range
+"POST /student_uploader/ HTTP/1.1" 500 85399
+Internal Server Error: /student_uploader/
+Traceback (most recent call last):
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lemes/SELF/ZVP/student_uploader/views.py", line 19, in render_student_uploader
+    response_message = StudentUploader.register_method(file)
+  File "/home/lemes/SELF/ZVP/student_uploader/students_uploader.py", line 57, in register_method
+    if not student[4]:
+IndexError: list index out of range
+"POST /student_uploader/ HTTP/1.1" 500 85399
+Internal Server Error: /student_uploader/
+Traceback (most recent call last):
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lemes/SELF/ZVP/student_uploader/views.py", line 19, in render_student_uploader
+    response_message = StudentUploader.register_method(file)
+  File "/home/lemes/SELF/ZVP/student_uploader/students_uploader.py", line 57, in register_method
+    if not student[4]:
+IndexError: list index out of range
+"POST /student_uploader/ HTTP/1.1" 500 85399
+Internal Server Error: /student_uploader/
+Traceback (most recent call last):
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lemes/SELF/ZVP/student_uploader/views.py", line 19, in render_student_uploader
+    response_message = StudentUploader.register_method(file)
+  File "/home/lemes/SELF/ZVP/student_uploader/students_uploader.py", line 56, in register_method
+    print(student[4])
+IndexError: list index out of range
+"POST /student_uploader/ HTTP/1.1" 500 85346
+Internal Server Error: /student_uploader/
+Traceback (most recent call last):
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lemes/SELF/ZVP/student_uploader/views.py", line 19, in render_student_uploader
+    response_message = StudentUploader.register_method(file)
+  File "/home/lemes/SELF/ZVP/student_uploader/students_uploader.py", line 57, in register_method
+    student[4] = ''
+IndexError: list assignment index out of range
+"POST /student_uploader/ HTTP/1.1" 500 85481
+"POST /student_uploader/ HTTP/1.1" 200 2016
+"GET /admin/ HTTP/1.1" 200 11472
+"GET /admin/control_panel/student/ HTTP/1.1" 200 8321
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /admin/ HTTP/1.1" 200 11472
+"GET /student_uploader/ HTTP/1.1" 200 1962
+"GET /download?&filename=463.xlsxpasswords.xls HTTP/1.1" 200 5632
+"GET /admin/ HTTP/1.1" 200 11472
+"GET /admin/quiz_app/access/ HTTP/1.1" 200 3465
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /admin/quiz_app/access/add/ HTTP/1.1" 200 7067
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"POST /admin/quiz_app/access/add/ HTTP/1.1" 302 0
+"GET /admin/quiz_app/access/ HTTP/1.1" 200 5525
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /admin/ HTTP/1.1" 200 11874
+"GET / HTTP/1.1" 200 2842
+"POST /login_user HTTP/1.1" 302 0
+"GET /tests HTTP/1.1" 301 0
+Internal Server Error: /tests/
+Traceback (most recent call last):
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lemes/SELF/ZVP/quiz_app/views.py", line 28, in render_tests_page
+    student=student
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/query.py", line 399, in get
+    self.model._meta.object_name
+quiz_app.models.Result.DoesNotExist: Result matching query does not exist.
+"GET /tests/ HTTP/1.1" 500 87325
+Not Found: /tests/
+"GET /tests/ HTTP/1.1" 404 1735
+"GET /tests/ HTTP/1.1" 200 2575
+Internal Server Error: /start-test/1
+Traceback (most recent call last):
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lemes/SELF/ZVP/quiz_app/views.py", line 41, in start_test
+    questions = Question.objects.all().filter(question_quiz=quiz)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'question_quiz' into field. Choices are: answer, id, question_content, question_ticket, question_ticket_id
+"POST /start-test/1 HTTP/1.1" 500 114176
+Internal Server Error: /start-test/1
+Traceback (most recent call last):
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lemes/SELF/ZVP/quiz_app/views.py", line 42, in start_test
+    questions = Question.objects.all().filter(question_quiz=quiz)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'question_quiz' into field. Choices are: answer, id, question_content, question_ticket, question_ticket_id
+"POST /start-test/1 HTTP/1.1" 500 114387
+"POST /start-test/1 HTTP/1.1" 200 5212
+Internal Server Error: /stop/1
+Traceback (most recent call last):
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lemes/SELF/ZVP/quiz_app/views.py", line 57, in stop_test
+    questions = Question.objects.all().filter(question_quiz=quiz)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'question_quiz' into field. Choices are: answer, id, question_content, question_ticket, question_ticket_id
+"POST /stop/1 HTTP/1.1" 500 114598
+"POST /stop/1 HTTP/1.1" 200 1725
+"GET /results HTTP/1.1" 301 0
+"GET /results HTTP/1.1" 301 0
+"GET /results/ HTTP/1.1" 200 1998
+Internal Server Error: /results/1
+Traceback (most recent call last):
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lemes/SELF/ZVP/quiz_app/views.py", line 127, in render_result
+    questions = Question.objects.filter(question_quiz=result.test)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'question_quiz' into field. Choices are: answer, id, question_content, question_ticket, question_ticket_id
+"GET /results/1 HTTP/1.1" 500 118449
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 2195
+"GET /static/admin/css/login.css HTTP/1.1" 304 0
+"POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+"GET /admin/ HTTP/1.1" 200 11874
+"GET /admin/quiz_app/result/ HTTP/1.1" 200 5317
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /admin/quiz_app/result/1/change/ HTTP/1.1" 200 5613
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+"GET /admin/quiz_app/result/ HTTP/1.1" 200 5317
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"POST /admin/quiz_app/result/ HTTP/1.1" 200 3853
+"GET /static/admin/js/cancel.js HTTP/1.1" 200 410
+"POST /admin/quiz_app/result/ HTTP/1.1" 302 0
+"GET /admin/quiz_app/result/ HTTP/1.1" 200 3511
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /admin/quiz_app/ HTTP/1.1" 200 5057
+"GET /admin/ HTTP/1.1" 200 12222
+"GET /admin/control_panel/mark/ HTTP/1.1" 200 5532
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"POST /admin/control_panel/mark/ HTTP/1.1" 200 3783
+"POST /admin/control_panel/mark/ HTTP/1.1" 302 0
+"GET /admin/control_panel/mark/ HTTP/1.1" 200 3613
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET / HTTP/1.1" 200 2842
+"POST /login_user HTTP/1.1" 302 0
+"GET /tests HTTP/1.1" 301 0
+"GET /tests/ HTTP/1.1" 200 2575
+"POST /start-test/1 HTTP/1.1" 200 5212
+"POST /stop/1 HTTP/1.1" 200 1725
+"GET /results/ HTTP/1.1" 200 1998
+Internal Server Error: /results/2
+Traceback (most recent call last):
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lemes/SELF/ZVP/venv/lib/python3.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lemes/SELF/ZVP/quiz_app/views.py", line 136, in render_result
+    raise NameError
+NameError
+"GET /results/2 HTTP/1.1" 500 78925
+"GET /results/2 HTTP/1.1" 200 2191

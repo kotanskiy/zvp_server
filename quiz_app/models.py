@@ -198,6 +198,14 @@ class Result(models.Model):
         verbose_name='Дата та час складання тесту'
     )
 
+    ticket = models.ForeignKey(
+        'quiz_app.Ticket',
+        on_delete=models.SET_NULL,
+        verbose_name='Білет за яким був складений тест',
+        null=True,
+        editable=False
+    )
+
     def __str__(self):
         return str(self.test) + ' ' + str(self.student) + ' ' + str(self.date_time_stamp)
 

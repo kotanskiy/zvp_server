@@ -76,7 +76,8 @@ def stop_test(request, quiz_id):
         Result.objects.create(
             student=student,
             test=quiz,
-            results=answer_list
+            results=answer_list,
+            ticket=ticket
         )
 
         try:
@@ -113,7 +114,7 @@ def stop_test(request, quiz_id):
 @login_required
 def render_results(request):
     student = Student.objects.get(user=request.user)
-    results = Result.objects.all().filter(student=student)
+    results = Result.objects.filter(student=student)
 
     return render(request, 'quiz_app/all_results.html', {'results': results})
 
@@ -124,21 +125,13 @@ def render_result(request, result_id):
     quiz_results = ast.literal_eval(result.results)
 
     true_answers = {}
-    questions = Question.objects.filter(question_quiz=result.test)
+    ticket = Ticket.objects.filter(quiz=result.test).order_by('?').first()
+    questions = ticket.get_questions()
 
     for question in questions:
-        if question.question_first_answer_state:
-            true_answers[question.question_content] = question.question_first_answer_content
-        elif question.question_second_answer_state:
-            true_answers[question.question_content] = question.question_second_answer_content
-        elif question.question_third_answer_state:
-            true_answers[question.question_content] = question.question_third_answer_content
-        elif question.question_fourth_answer_state:
-            true_answers[question.question_content] = question.question_fourth_answer_content
-        elif question.question_fifth_answer_state:
-            true_answers[question.question_content] = question.question_fifth_answer_content
-        else:
-            raise NameError
+        for answer in question.get_answers():
+            if answer.is_true:
+                true_answers[question.question_content] = answer.title
 
     context = {
         'result': result,
