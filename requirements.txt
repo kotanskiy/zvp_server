@@ -2,3 +2,4 @@ django
 awesome-slugify
 xlwt
 transliterate
+xlrd

@@ -1,13 +1,12 @@
 {% extends 'quiz_app/questions_base.html' %}
 
 {% block content %}
-    <div style="z-index: 1; position: fixed; margin-right: 3vw; margin-left: 2vw;"><h3>Залишилось часу:</h3> <h2><span id="timer"></span></h2></div>
 <form action="{% url 'stop_test' quiz.id%}" name="quiz" method="post" enctype="multipart/form-data" style="box-shadow: none; border: none; padding: 0; width: 100%; max-width: 80em; margin-top: 5vw;">
 {% csrf_token %}
 <div class="row" style="width: auto;">
 {% for q in questions %}
         <div class="col-12 border" style="margin: 12px; padding: 15px; width: auto; margin: 15px; box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-            <h3>{{ q.question_content }}</h3>
+            <h3>{{forloop.counter}}. {{ q.question_content }}</h3>
             <ol style=" text-align: left; font-size: 22px;">
                 {% if q.question_first_answer_content %}
                 <li>
@@ -48,7 +47,6 @@
 </div>
 <input type="submit" class="btn btn-primary">
 </form>
-
     <script>
     var time = "{{ quiz.quiz_time }}".split(":");
 document.getElementById('timer').innerHTML =

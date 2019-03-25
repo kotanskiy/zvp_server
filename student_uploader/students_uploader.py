@@ -2,10 +2,13 @@ import xlrd
 import xlwt
 import os
 from transliterate import slugify
-from control_panel.models import Student
+from control_panel.models import Student, Troop, Mark, Department
+from quiz_app.models import Quiz
 from django.contrib.auth.models import User
 import string
 import random
+import datetime
+import pytz
 
 
 class StudentUploader(object):
@@ -20,7 +23,7 @@ class StudentUploader(object):
         return password
 
     @classmethod
-    def register_method(cls, file):
+    def register_method(cls, file, troop):
         students = cls.parse_file(file)
         new_users = []
         if students is None:
@@ -57,7 +60,9 @@ class StudentUploader(object):
                 student[4] = ''
             if student[5] is None:
                 student[5] = ''
+            troop_obj = Troop.objects.filter(pk=troop).first()
             response = cls.register_user(username,
+                                         troop_obj,
                                          student[0],
                                          student[1],
                                          student[2],
@@ -114,13 +119,15 @@ class StudentUploader(object):
 
     @staticmethod
     def register_user(username,
+                      troop,
                       student_full_name,
                       student_university_group,
                       student_faculty,
                       student_grade,
                       student_state='',
                       student_notes='',
-                      password=''):
+                      password='',
+                      ):
         return Student.objects.create_student(username,
                                               student_full_name,
                                               student_university_group,
@@ -128,7 +135,8 @@ class StudentUploader(object):
                                               student_grade,
                                               student_state,
                                               student_notes,
-                                              password)
+                                              password,
+                                              troop)
 
     @classmethod
     def rewrite_file_with_passwords(cls, file_name: str, student_data: list):
@@ -142,6 +150,78 @@ class StudentUploader(object):
                     ws.write(i + 1, j, student_data[i][j])
             wb.save(file_name + 'passwords' + '.xls')
             os.remove(file_name)
+            return True
+        except Exception as e:
+            print('[ERROR] {}'.format(e))
+            return False
+
+    @classmethod
+    def write_file_results(cls, troop_pk=None, department_pk=None, quiz_pk=None):
+        try:
+            # kiev_tz = pytz.timezone("Europe/Kiev")
+            quiz = Quiz.objects.filter(pk=quiz_pk).select_related().first()
+            if troop_pk:
+                troop = Troop.objects.filter(pk=troop_pk).select_related().first()
+                students = Student.objects.filter(student_troop=troop).select_related()
+                wb = xlwt.Workbook()
+                ws = wb.add_sheet('Результати за взводом', cell_overwrite_ok=True)
+                file_name = 'ResultZvod-{}-{}-{}'.format(quiz.quiz_title,troop.troop_id, datetime.datetime.now())
+                cls.write_all_rows(ws=ws, wb=wb ,students=students, file_name=file_name, quiz=quiz)
+            elif department_pk:
+                department = Department.objects.filter(pk=department_pk).select_related().first()
+                students = []
+                troops = Troop.objects.filter(troop_department=department).select_related()
+                for troop in troops:
+                    for stud in Student.objects.filter(student_troop=troop).select_related():
+                        students.append(stud)
+                wb = xlwt.Workbook()
+                ws = wb.add_sheet('Результати за ПМК', cell_overwrite_ok=True)
+                file_name = 'ResultPMK-{}-{}-{}'.format(quiz.quiz_title, department.department_name, datetime.datetime.now())
+                cls.write_all_rows(ws=ws, wb=wb ,students=students, file_name=file_name, quiz=quiz)
+
+            return True
+        except Exception as e:
+            print('[ERROR] {}'.format(e))
+            return False
+
+    @classmethod
+    def write_all_rows(cls, ws, wb ,students, quiz ,file_name):
+        try:
+            ws.write(0, 0, 'ПІБ')
+            ws.write(0, 1, 'Взвод')
+            ws.write(0, 2, 'Группа')
+            ws.write(0, 3, 'Факультет або ВНЗ')
+            ws.write(0, 4, 'Курс')
+            ws.write(0, 5, 'Статус')
+            ws.write(0, 6, 'Примітки')
+            ws.write(0, 7, 'Предмет')
+            ws.write(0, 8, 'Назва тесту')
+            ws.write(0, 9, 'Оцінка за першу спробу')
+            ws.write(0, 10, 'Оцінка за другу спробу')
+            ws.write(0, 11, 'Оцінка за третю спробу')
+
+            for i, student in enumerate(students):
+                mark_test = Mark.objects.filter(student=student, quiz=quiz).select_related().first()
+                ws.write(i + 1, 0, student.student_full_name)
+                ws.write(i + 1, 1, student.student_troop.troop_id)
+                ws.write(i + 1, 2, student.student_university_group)
+                ws.write(i + 1, 3, student.student_faculty)
+                ws.write(i + 1, 4, student.student_grade)
+                ws.write(i + 1, 5, student.student_state)
+                ws.write(i + 1, 6, student.student_notes)
+                ws.write(i + 1, 7, quiz.quiz_discipline.discipline_name)
+                ws.write(i + 1, 8, quiz.quiz_title)
+                if mark_test:
+                    ws.write(i + 1, 9, mark_test.first_attempt_mark)
+                    ws.write(i + 1, 10, mark_test.second_attempt_mark)
+                    ws.write(i + 1, 11, mark_test.third_attempt_mark)
+                else:
+                    for j in range(4):
+                        style_fail = xlwt.easyxf('pattern: pattern solid, fore_colour red;')
+                        ws.write(i + 1, 9+j, '', style_fail)
+
+
+            wb.save(cls.PATH_FOR_SAVING + file_name + '.xls')
             return True
         except Exception as e:
             print('[ERROR] {}'.format(e))

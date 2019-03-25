@@ -3,28 +3,40 @@
 {% load static %}
 
 {% block content %}
-    <div class="module">
+<div class="module">
     <form enctype="multipart/form-data" method="POST">
         {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Завантажити" />
+        {{ form_upload }}
+        <a class="related-widget-wrapper-link add-related" id="add_id_student_troop" href="/admin/control_panel/troop/add/" target="_blank" title="Додати ще одну Взвод"><img src="/static/admin/img/icon-addlink.svg" alt="Додати"></a>
+        <br>
+        <br>
+        <input type="submit"  name="form_upload_submit" value="Завантажити" />
     </form>
     <div>
         {{ message }}
     </div>
-    </div>
+    <br>
+    <br>
+    <h2>Зберегти результати:</h2>
+    <form enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        {{ form_download.as_p }}
+        <input type="submit" name="form_download_submit" value="Зберегти" />
+    </form>
+</div>
 {% endblock %}
 
+
 {% block sidebar %}
-    <div class="module">
+<div class="module">
     <table>
         <h2>Файли:</h2>
 
-      {% for file in directory %}
-          <ul class="actionlist"><a target="_blank" href="/download?&filename={{ file }}">{{ file }}</a></ul>
-      {% endfor %}
+        {% for file in directory %}
+        <ul class="actionlist"><a target="_blank" href="/download?&filename={{ file }}">{{ file }}</a></ul>
+        {% endfor %}
 
     </table>
-    </div>
+</div>
 {% endblock %}
 

@@ -4,7 +4,6 @@ from django.contrib.auth.models import Group
 
 
 class TeacherRank(models.Model):
-
     link = 'Редагувати'
 
     class Meta:
@@ -35,8 +34,10 @@ class Teacher(models.Model):
         verbose_name_plural = 'Викладачі'
 
     teacher_full_name = models.CharField(max_length=200, default=None, verbose_name="ПІБ")
-    teacher_rank = models.ForeignKey(TeacherRank, on_delete=models.CASCADE, related_name='+', blank =True, null=True,verbose_name="Звання")
-    teacher_department = models.ForeignKey('control_panel.Department', on_delete=models.CASCADE, related_name='+', blank=True, null=True, verbose_name="Кафедра")
+    teacher_rank = models.ForeignKey(TeacherRank, on_delete=models.CASCADE, related_name='+', blank=True, null=True,
+                                     verbose_name="Звання")
+    teacher_department = models.ForeignKey('control_panel.Department', on_delete=models.CASCADE, related_name='+',
+                                           blank=True, null=True, verbose_name="Кафедра")
     teacher_check_tests = models.BooleanField(default=False, verbose_name="Приймає контрольні")
 
     def __str__(self):
@@ -44,7 +45,6 @@ class Teacher(models.Model):
 
 
 class Department(models.Model):
-
     link = 'Редагувати'
 
     class Meta:
@@ -53,15 +53,16 @@ class Department(models.Model):
         verbose_name_plural = 'ПМК'
 
     department_name = models.CharField(max_length=100, default=None, verbose_name="Назва")
-    department_head = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='+', blank=True, null=True, verbose_name="Голова")
-    department_head_rank = models.ForeignKey(TeacherRank, on_delete=models.CASCADE, related_name='+', blank=True, null=True, verbose_name="Звання голови")
+    department_head = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='+', blank=True, null=True,
+                                        verbose_name="Голова")
+    department_head_rank = models.ForeignKey(TeacherRank, on_delete=models.CASCADE, related_name='+', blank=True,
+                                             null=True, verbose_name="Звання голови")
 
     def __str__(self):
         return self.department_name
 
 
 class Mark(models.Model):
-
     link = 'Редагувати'
 
     class Meta:
@@ -145,7 +146,7 @@ class Mark(models.Model):
 
 class StudentManager(models.Manager):
 
-    def create_student(self, username, full_name, uni_group, faculty, grade, state, notes, password):
+    def create_student(self, username, full_name, uni_group, faculty, grade, state, notes, password, troop):
         if type(full_name) is not str or full_name == '':
             return "Incorrect name {0}".format(full_name)
 
@@ -165,6 +166,7 @@ class StudentManager(models.Manager):
                 student_grade=int(grade),
                 student_state=state,
                 student_notes=notes,
+                student_troop=troop,
                 user=User.objects.create_user(username=username, email=None, password=password)
             )
         except Exception as e:
@@ -249,7 +251,6 @@ class Student(models.Model):
 
 
 class Discipline(models.Model):
-
     link = 'Редагувати'
 
     class Meta:
@@ -258,14 +259,14 @@ class Discipline(models.Model):
         verbose_name_plural = 'Предмети'
 
     discipline_name = models.CharField(max_length=100, verbose_name="Назва")
-    discipline_department_name = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='+',blank=True, null=True, verbose_name="Кафедра")
+    discipline_department_name = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='+', blank=True,
+                                                   null=True, verbose_name="Кафедра")
 
     def __str__(self):
         return self.discipline_name
 
 
 class Troop(models.Model):
-
     link = 'Редагувати'
 
     class Meta:
@@ -274,10 +275,13 @@ class Troop(models.Model):
         verbose_name_plural = 'Взводи'
 
     troop_id = models.IntegerField(default=None, verbose_name="Номер взводу")
-    troop_head = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='+', blank=True, null=True, verbose_name="Куратор")
+    troop_head = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='+', blank=True, null=True,
+                                   verbose_name="Куратор")
 
-    troop_head_rank = models.ForeignKey(TeacherRank, on_delete=models.CASCADE, related_name='+', blank=True, null=True, verbose_name="Звання Куратора")
-    troop_department = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='+', blank=True, null=True, verbose_name="Кафедра")
+    troop_head_rank = models.ForeignKey(TeacherRank, on_delete=models.CASCADE, related_name='+', blank=True, null=True,
+                                        verbose_name="Звання Куратора")
+    troop_department = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='+', blank=True, null=True,
+                                         verbose_name="Кафедра")
 
     def __str__(self):
         return str(self.troop_id)
