@@ -2,9 +2,9 @@
 
 {% block content %}
 <form action="{% url 'stop_test' quiz.id%}" name="quiz" method="post" enctype="multipart/form-data" style="box-shadow: none; border: none; padding: 0; width: 100%; max-width: 80em; margin-top: 5vw;">
-{% csrf_token %}
-<div class="row" style="width: auto;">
-{% for q in questions %}
+    {% csrf_token %}
+    <div class="row" style="width: auto;">
+        {% for q in questions %}
         <div class="col-12 border" style="margin: 12px; padding: 15px; width: auto; margin: 15px; box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
             <h3>{{forloop.counter}}. {{ q.question_content }}</h3>
             <ol style=" text-align: left; font-size: 22px;">
@@ -30,55 +30,63 @@
                 {% if q.question_fourth_answer_content %}
                 <li>
                     <input type="radio"
-                            name="{{ q.question_content }}" value="{{ q.question_fourth_answer_content }}"/>
+                           name="{{ q.question_content }}" value="{{ q.question_fourth_answer_content }}"/>
                     <label style="font-size: 20px;">{{ q.question_fourth_answer_content }}</label>
                 </li>
                 {% endif %}
                 {% if q.question_fifth_answer_content %}
                 <li>
                     <input type="radio"
-                            name="{{ q.question_content }}" value="{{ q.question_fifth_answer_content }}"/>
+                           name="{{ q.question_content }}" value="{{ q.question_fifth_answer_content }}"/>
                     <label style="font-size: 20px;">{{ q.question_fifth_answer_content }}</label>
                 </li>
                 {% endif %}
             </ol>
         </div>
-{% endfor %}
-</div>
-<input type="submit" class="btn btn-primary">
+        {% endfor %}
+    </div>
+    <input type="submit" class="btn btn-primary">
 </form>
-    <script>
-    var time = "{{ quiz.quiz_time }}".split(":");
-document.getElementById('timer').innerHTML =
-  time[0] + ":" + time[1];
-startTimer();
+<script>
+    var minutes = 0;
+    var seconds = 0;
 
-function startTimer() {
-  var presentTime = document.getElementById('timer').innerHTML;
-  var timeArray = presentTime.split(/[:]+/);
-  var m = timeArray[0];
-  var s = checkSecond((timeArray[1] - 1));
-  if(s==59){m=m-1}
-  if(m <= 1){document.getElementById("timer").style.color = "#ff3e3e"}
-  if(m<0){
-      var formData = new FormData(document.forms.quiz);
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", "{% url 'stop_test' quiz.id%}");
+    var time = "{{ starting_quiz.endTestTime }}".split(",")[0];
+    console.log(time);
+    var timeNow = Math.round(Date.now()/1000);
+    var timeDelta = time - timeNow;
+    minutes = Math.floor(timeDelta / 60);
+    seconds = timeDelta - minutes * 60;
+    document.getElementById('timer').innerHTML =
+        minutes + ":" + seconds;
+    startTimer();
 
-      alert("DONE")
-      xhr.send(formData);
-      window.location.replace("{% url 'results'%}");
-  }
+    function startTimer() {
+        var presentTime = document.getElementById('timer').innerHTML;
+        var timeArray = presentTime.split(/[:]+/);
+        var m = timeArray[0];
+        var s = checkSecond((timeArray[1] - 1));
+        if(s==59){m=m-1}
+        if(m <= 1){document.getElementById("timer").style.color = "#ff3e3e"}
+        if(m<0){
+            var formData = new FormData(document.forms.quiz);
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "{% url 'stop_test' quiz.id%}");
 
-  document.getElementById('timer').innerHTML =
-    m + ":" + s;
-  setTimeout(startTimer, 1000);
-}
+            alert("DONE")
+            xhr.send(formData);
+            window.location.replace("{% url 'results'%}");
+        }
 
-function checkSecond(sec) {
-  if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
-  if (sec < 0) {sec = "59"};
-  return sec;
-}
-    </script>
+        document.getElementById('timer').innerHTML =
+            m + ":" + s;
+        setTimeout(startTimer, 1000);
+    }
+
+    function checkSecond(sec) {
+        if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+        if (sec < 0) {sec = "59"};
+        return sec;
+    }
+</script>
 {% endblock %}

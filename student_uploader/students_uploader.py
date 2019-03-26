@@ -158,14 +158,15 @@ class StudentUploader(object):
     @classmethod
     def write_file_results(cls, troop_pk=None, department_pk=None, quiz_pk=None):
         try:
-            # kiev_tz = pytz.timezone("Europe/Kiev")
+            kiev_tz = pytz.timezone("Europe/Kiev")
             quiz = Quiz.objects.filter(pk=quiz_pk).select_related().first()
             if troop_pk:
                 troop = Troop.objects.filter(pk=troop_pk).select_related().first()
                 students = Student.objects.filter(student_troop=troop).select_related()
                 wb = xlwt.Workbook()
                 ws = wb.add_sheet('Результати за взводом', cell_overwrite_ok=True)
-                file_name = 'ResultZvod-{}-{}-{}'.format(quiz.quiz_title,troop.troop_id, datetime.datetime.now())
+                file_name = 'ResultZvod-{}-{}-{}'.format(quiz.quiz_title,troop.troop_id,
+                                                         str(datetime.datetime.now(kiev_tz)).split('.')[0])
                 cls.write_all_rows(ws=ws, wb=wb ,students=students, file_name=file_name, quiz=quiz)
             elif department_pk:
                 department = Department.objects.filter(pk=department_pk).select_related().first()
@@ -176,7 +177,9 @@ class StudentUploader(object):
                         students.append(stud)
                 wb = xlwt.Workbook()
                 ws = wb.add_sheet('Результати за ПМК', cell_overwrite_ok=True)
-                file_name = 'ResultPMK-{}-{}-{}'.format(quiz.quiz_title, department.department_name, datetime.datetime.now())
+                file_name = 'ResultPMK-{}-{}-{}'.format(quiz.quiz_title, department.department_name,
+                                                        str(datetime.datetime.now(kiev_tz)).split('.')[0])
+                print (str(datetime.datetime.now(kiev_tz)).split('.')[0])
                 cls.write_all_rows(ws=ws, wb=wb ,students=students, file_name=file_name, quiz=quiz)
 
             return True

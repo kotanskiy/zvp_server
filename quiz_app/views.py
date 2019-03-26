@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Quiz, Question, Result, Access
+from .models import Quiz, Question, Result, Access, StartingQuiz
 from control_panel.models import Student, Mark
 from django.contrib.auth.decorators import login_required
 from datetime import datetime, timedelta
@@ -8,6 +8,10 @@ import ast
 from django.db.models import Q
 
 import logging
+import datetime
+from datetime import timedelta
+import pytz
+
 log = logging.getLogger(__name__)
 
 
@@ -36,22 +40,37 @@ def render_tests_page(request):
 def start_test(request, quiz_id):
     quiz = get_object_or_404(Quiz, pk=quiz_id)
     questions = Question.objects.all().filter(question_quiz=quiz)
+    student = Student.objects.get(user=request.user)
+    starting_quiz = StartingQuiz.objects.filter(quiz=quiz, student=student).first()
+    if not starting_quiz:
+        kiev_tz = pytz.timezone("Europe/Kiev")
+        quiz_time = quiz.quiz_time.split(':')
+        end_time = datetime.datetime.now(kiev_tz) + timedelta(minutes=int(quiz_time[0])) \
+                   + timedelta(minutes=int(quiz_time[1]) / 60)
+        starting_quiz = StartingQuiz.objects.create(
+            quiz=quiz,
+            student=student,
+            endTestTime=end_time.timestamp()
+        )
+
     return render(
         request,
         'quiz_app/questions.html',
         {
             'quiz': quiz,
             'questions': questions,
+            'starting_quiz': starting_quiz,
+
         }
     )
 
 
 @login_required
 def stop_test(request, quiz_id):
-    print(request.POST)
     quiz = get_object_or_404(Quiz, pk=quiz_id)
     student = Student.objects.get(user=request.user)
     questions = Question.objects.all().filter(question_quiz=quiz)
+    StartingQuiz.objects.filter(quiz=quiz, student=student).first().delete()
 
     # TODO end with true answer list!
 
@@ -92,7 +111,7 @@ def stop_test(request, quiz_id):
                 student=student,
                 discipline=quiz.quiz_discipline,
                 quiz=quiz,
-           )
+            )
 
             if ex_mark.first_attempt_mark:
                 ex_mark.second_attempt_mark = mark

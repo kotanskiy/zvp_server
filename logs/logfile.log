@@ -2446,3 +2446,717 @@ django.db.utils.IntegrityError: NOT NULL constraint failed: Quizzes.quiz_start_t
 "GET /results/ HTTP/1.1" 200 2347
 "GET /tests/ HTTP/1.1" 200 1658
 "GET /results/ HTTP/1.1" 200 2347
+"GET /admin/ HTTP/1.1" 200 12505
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+"GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+"GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+"GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+"GET /student_uploader/ HTTP/1.1" 200 3934
+"POST /student_uploader/ HTTP/1.1" 200 3934
+"GET /admin/ HTTP/1.1" 200 12505
+"GET /student_uploader/ HTTP/1.1" 200 3934
+"POST /student_uploader/ HTTP/1.1" 200 4139
+"GET /download?&filename=ResultZvod-test-3-2019-03-26%2013:58:54.941362+02:00.xls HTTP/1.1" 200 2559
+"GET /admin/ HTTP/1.1" 200 12505
+"GET /student_uploader/ HTTP/1.1" 200 4139
+"POST /student_uploader/ HTTP/1.1" 200 4344
+"POST /student_uploader/ HTTP/1.1" 200 4549
+"POST /student_uploader/ HTTP/1.1" 200 4730
+"POST /student_uploader/ HTTP/1.1" 200 4911
+"POST /student_uploader/ HTTP/1.1" 200 5092
+"GET /download?&filename=ResultPMK-test-vvv-2019-03-26%2014:00:58.xls HTTP/1.1" 200 5632
+"POST /student_uploader/ HTTP/1.1" 200 5273
+"POST /student_uploader/ HTTP/1.1" 200 5454
+"POST /student_uploader/ HTTP/1.1" 200 5661
+"POST /student_uploader/ HTTP/1.1" 200 5868
+"POST /student_uploader/ HTTP/1.1" 200 4141
+"POST /student_uploader/ HTTP/1.1" 200 4322
+"POST /student_uploader/ HTTP/1.1" 200 4527
+"POST /student_uploader/ HTTP/1.1" 200 4706
+"POST /student_uploader/ HTTP/1.1" 200 4885
+"GET /download?&filename=ResultZvod-test-3-2019-03-26%2014:02:51.xls HTTP/1.1" 200 5632
+"POST /student_uploader/ HTTP/1.1" 200 4885
+"POST /student_uploader/ HTTP/1.1" 200 5066
+"GET /download?&filename=ResultZvod-test-44-2019-03-26%2014:03:22.xls HTTP/1.1" 200 5632
+"GET /admin/ HTTP/1.1" 200 12505
+"GET /student_uploader/ HTTP/1.1" 200 5096
+"POST /student_uploader/ HTTP/1.1" 200 5096
+"POST /student_uploader/ HTTP/1.1" 200 5277
+"POST /student_uploader/ HTTP/1.1" 200 5424
+"POST /student_uploader/ HTTP/1.1" 200 5471
+"GET /admin/ HTTP/1.1" 200 12505
+"GET /student_uploader/ HTTP/1.1" 200 5392
+"POST /student_uploader/ HTTP/1.1" 200 5641
+"POST /student_uploader/ HTTP/1.1" 200 5822
+"GET /admin/ HTTP/1.1" 200 12505
+"GET /student_uploader/ HTTP/1.1" 200 5754
+"POST /student_uploader/ HTTP/1.1" 200 6003
+"GET /admin/ HTTP/1.1" 200 12505
+"GET /student_uploader/ HTTP/1.1" 200 5935
+"POST /student_uploader/ HTTP/1.1" 200 6003
+"GET /admin/ HTTP/1.1" 200 12505
+"GET /student_uploader/ HTTP/1.1" 200 5935
+"POST /student_uploader/ HTTP/1.1" 200 6184
+"POST /student_uploader/ HTTP/1.1" 200 6365
+"GET /admin/ HTTP/1.1" 200 12505
+"GET /student_uploader/ HTTP/1.1" 200 6297
+"POST /student_uploader/ HTTP/1.1" 200 6361
+"POST /student_uploader/ HTTP/1.1" 200 6362
+"POST /student_uploader/ HTTP/1.1" 200 6337
+"POST /student_uploader/ HTTP/1.1" 200 6362
+"POST /student_uploader/ HTTP/1.1" 200 6572
+"POST /student_uploader/ HTTP/1.1" 200 6753
+"GET /download?&filename=ResultPMK-test-vvv-2019-03-26%2014:22:14.xls HTTP/1.1" 200 5632
+"POST /student_uploader/ HTTP/1.1" 200 6857
+"GET /download?&filename=g34g34.xlsx HTTP/1.1" 200 4943
+"GET /admin/ HTTP/1.1" 200 12505
+"GET /student_uploader/ HTTP/1.1" 200 3964
+"GET /results/ HTTP/1.1" 200 2347
+"GET /static/style.css HTTP/1.1" 304 0
+"GET /static/bootstrap/css/bootstrap.css HTTP/1.1" 304 0
+"GET /tests/ HTTP/1.1" 200 3460
+Internal Server Error: /start-test/2
+Traceback (most recent call last):
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/quiz_app/views.py", line 43, in start_test
+    end_time = datetime.datetime.now(kiev_tz) + (quiz_time[0] * 60) + quiz_time[1]
+TypeError: unsupported operand type(s) for +: 'datetime.datetime' and 'str'
+"POST /start-test/2 HTTP/1.1" 500 77495
+Internal Server Error: /start-test/2
+Traceback (most recent call last):
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/quiz_app/views.py", line 43, in start_test
+    end_time = datetime.datetime.now(kiev_tz) + int(quiz_time[0] * 60) + (intquiz_time[1])
+TypeError: unsupported operand type(s) for +: 'datetime.datetime' and 'int'
+"POST /start-test/2 HTTP/1.1" 500 77511
+Internal Server Error: /start-test/2
+Traceback (most recent call last):
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/quiz_app/views.py", line 43, in start_test
+    end_time = int(datetime.datetime.now(kiev_tz)) + int(quiz_time[0] * 60) + (intquiz_time[1])
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'datetime.datetime'
+"POST /start-test/2 HTTP/1.1" 500 77589
+Internal Server Error: /start-test/2
+Traceback (most recent call last):
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/quiz_app/views.py", line 44, in start_test
+    end_time = datetime.datetime.now(kiev_tz) + timedelta(minute=quiz_time[0]) + timedelta(second=quiz_time[1])
+AttributeError: type object 'datetime.datetime' has no attribute 'datetime'
+"POST /start-test/2 HTTP/1.1" 500 77660
+Internal Server Error: /start-test/2
+Traceback (most recent call last):
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/quiz_app/views.py", line 45, in start_test
+    end_time = datetime.datetime.now(kiev_tz) + timedelta(minute=quiz_time[0]) + timedelta(second=quiz_time[1])
+TypeError: 'minute' is an invalid keyword argument for this function
+"POST /start-test/2 HTTP/1.1" 500 77590
+Internal Server Error: /start-test/2
+Traceback (most recent call last):
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/quiz_app/views.py", line 45, in start_test
+    end_time = datetime.datetime.now(kiev_tz) + timedelta(minutes=quiz_time[0]) + timedelta(seconds=quiz_time[1])
+TypeError: unsupported type for timedelta minutes component: str
+"POST /start-test/2 HTTP/1.1" 500 77544
+Internal Server Error: /start-test/2
+Traceback (most recent call last):
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/quiz_app/views.py", line 45, in start_test
+    end_time = datetime.datetime.now(kiev_tz) + timedelta(minutes=int(quiz_time[0])) + timedelta(int(seconds=quiz_time[1]))
+TypeError: 'seconds' is an invalid keyword argument for this function
+"POST /start-test/2 HTTP/1.1" 500 77618
+Internal Server Error: /start-test/2
+Traceback (most recent call last):
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/quiz_app/views.py", line 45, in start_test
+    end_time = datetime.datetime.now(kiev_tz) + timedelta(minutes=int(quiz_time[0])) + timedelta(int(second=quiz_time[1]))
+TypeError: 'second' is an invalid keyword argument for this function
+"POST /start-test/2 HTTP/1.1" 500 77612
+Internal Server Error: /start-test/2
+Traceback (most recent call last):
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/quiz_app/views.py", line 46, in start_test
+    + timedelta(int(minutes=int(quiz_time[1]))/60)
+TypeError: 'minutes' is an invalid keyword argument for this function
+"POST /start-test/2 HTTP/1.1" 500 77579
+Internal Server Error: /start-test/2
+Traceback (most recent call last):
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/quiz_app/views.py", line 55, in start_test
+    endTestTime=end_time
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/query.py", line 413, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1288, in execute_sql
+    for sql, params in self.as_sql():
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1241, in as_sql
+    for obj in self.query.objs
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1241, in <listcomp>
+    for obj in self.query.objs
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1240, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1182, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 790, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 785, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 1807, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'datetime.datetime'
+"POST /start-test/2 HTTP/1.1" 500 154305
+"POST /start-test/2 HTTP/1.1" 200 4510
+"POST /start-test/2 HTTP/1.1" 200 4510
+Internal Server Error: /stop/2
+Traceback (most recent call last):
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 298, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: Results.test_id, Results.student_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/quiz_app/views.py", line 108, in stop_test
+    results=answer_list
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/query.py", line 413, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 298, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: Results.test_id, Results.student_id
+"POST /stop/2 HTTP/1.1" 500 168492
+"GET / HTTP/1.1" 200 2842
+"GET /static/img/logo.png HTTP/1.1" 304 0
+"GET /static/img/building_back.png HTTP/1.1" 200 1103032
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 2193
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/login.css HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 2193
+"GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+"GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+"GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+"GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+"GET /tests/ HTTP/1.1" 200 3460
+"GET /results/ HTTP/1.1" 200 2347
+"GET /tests/ HTTP/1.1" 200 3460
+"GET /admin/ HTTP/1.1" 200 12505
+"GET /admin/quiz_app/result/ HTTP/1.1" 200 5722
+"GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"POST /admin/quiz_app/result/ HTTP/1.1" 200 3838
+"GET /static/admin/js/cancel.js HTTP/1.1" 304 0
+"POST /admin/quiz_app/result/ HTTP/1.1" 302 0
+"GET /admin/quiz_app/result/ HTTP/1.1" 200 5446
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+"POST /start-test/2 HTTP/1.1" 200 4510
+"POST /stop/2 HTTP/1.1" 200 1710
+"GET /tests/ HTTP/1.1" 200 3460
+"GET /admin/quiz_app/result/ HTTP/1.1" 200 5722
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"POST /admin/quiz_app/result/ HTTP/1.1" 200 3838
+"POST /admin/quiz_app/result/ HTTP/1.1" 302 0
+"GET /admin/quiz_app/result/ HTTP/1.1" 200 5446
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"POST /start-test/2 HTTP/1.1" 200 4510
+"POST /stop/2 HTTP/1.1" 200 1710
+"GET /tests/ HTTP/1.1" 200 3460
+"POST /start-test/2 HTTP/1.1" 200 4536
+"GET /static/bootstrap/css/bootstrap.css.map HTTP/1.1" 200 411645
+"GET / HTTP/1.1" 200 2842
+"POST /start-test/2 HTTP/1.1" 200 4541
+"POST /start-test/2 HTTP/1.1" 200 4541
+"POST /start-test/2 HTTP/1.1" 200 4541
+"POST /start-test/2 HTTP/1.1" 200 4541
+"POST /start-test/2 HTTP/1.1" 200 4554
+"POST /start-test/2 HTTP/1.1" 200 4553
+"POST /start-test/2 HTTP/1.1" 200 4659
+"POST /start-test/2 HTTP/1.1" 200 4659
+"POST /start-test/2 HTTP/1.1" 200 4659
+"POST /start-test/2 HTTP/1.1" 200 4659
+"POST /start-test/2 HTTP/1.1" 200 4659
+"POST /start-test/2 HTTP/1.1" 200 4659
+"POST /start-test/2 HTTP/1.1" 200 4659
+"POST /start-test/2 HTTP/1.1" 200 4659
+"POST /start-test/2 HTTP/1.1" 200 4659
+"POST /start-test/2 HTTP/1.1" 200 4659
+"POST /start-test/2 HTTP/1.1" 200 4659
+"POST /start-test/2 HTTP/1.1" 200 4659
+"POST /start-test/2 HTTP/1.1" 200 4659
+"POST /start-test/2 HTTP/1.1" 200 4659
+"POST /start-test/2 HTTP/1.1" 200 4659
+"POST /start-test/2 HTTP/1.1" 200 4616
+"POST /start-test/2 HTTP/1.1" 200 4616
+"POST /start-test/2 HTTP/1.1" 200 4616
+"POST /start-test/2 HTTP/1.1" 200 4616
+"POST /start-test/2 HTTP/1.1" 200 4616
+"POST /start-test/2 HTTP/1.1" 200 4616
+"POST /start-test/2 HTTP/1.1" 200 4616
+"POST /start-test/2 HTTP/1.1" 200 4616
+"POST /start-test/2 HTTP/1.1" 200 4665
+"POST /start-test/2 HTTP/1.1" 200 4665
+"POST /start-test/2 HTTP/1.1" 200 4665
+"POST /start-test/2 HTTP/1.1" 200 4665
+"POST /start-test/2 HTTP/1.1" 200 4665
+"POST /start-test/2 HTTP/1.1" 200 4665
+"POST /start-test/2 HTTP/1.1" 200 4665
+"POST /start-test/2 HTTP/1.1" 200 4665
+"POST /start-test/2 HTTP/1.1" 200 4665
+"POST /start-test/2 HTTP/1.1" 200 4665
+"POST /start-test/2 HTTP/1.1" 200 4665
+"POST /start-test/2 HTTP/1.1" 200 4665
+"POST /start-test/2 HTTP/1.1" 200 4665
+"POST /start-test/2 HTTP/1.1" 200 4665
+"POST /start-test/2 HTTP/1.1" 200 4665
+"POST /start-test/2 HTTP/1.1" 200 4665
+"POST /start-test/2 HTTP/1.1" 200 4802
+Internal Server Error: /stop/2
+Traceback (most recent call last):
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 298, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: Results.test_id, Results.student_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/quiz_app/views.py", line 108, in stop_test
+    results=answer_list
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/query.py", line 413, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 298, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: Results.test_id, Results.student_id
+"POST /stop/2 HTTP/1.1" 500 168135
+Internal Server Error: /stop/2
+Traceback (most recent call last):
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/quiz_app/views.py", line 75, in stop_test
+    StartingQuiz.objects.filter(quiz=quiz, student=student).first().delete()
+AttributeError: 'NoneType' object has no attribute 'delete'
+"POST /stop/2 HTTP/1.1" 500 76960
+"GET /results/ HTTP/1.1" 200 2347
+"GET /tests/ HTTP/1.1" 200 3460
+"GET /results/ HTTP/1.1" 200 2347
+"GET /admin/quiz_app/result/ HTTP/1.1" 200 5722
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"POST /admin/quiz_app/result/ HTTP/1.1" 200 3838
+"POST /admin/quiz_app/result/ HTTP/1.1" 302 0
+"GET /admin/quiz_app/result/ HTTP/1.1" 200 5446
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /tests/ HTTP/1.1" 200 3460
+"POST /start-test/2 HTTP/1.1" 200 4809
+"POST /start-test/2 HTTP/1.1" 200 4802
+"POST /start-test/2 HTTP/1.1" 200 4802
+"POST /start-test/2 HTTP/1.1" 200 4802
+"POST /start-test/2 HTTP/1.1" 200 4802
+"POST /start-test/2 HTTP/1.1" 200 4807
+"POST /start-test/2 HTTP/1.1" 200 4807
+"POST /start-test/2 HTTP/1.1" 200 4807
+"POST /start-test/2 HTTP/1.1" 200 4807
+"POST /start-test/2 HTTP/1.1" 200 4807
+"POST /start-test/2 HTTP/1.1" 200 4807
+"POST /start-test/2 HTTP/1.1" 200 4807
+"POST /start-test/2 HTTP/1.1" 200 4807
+"POST /start-test/2 HTTP/1.1" 200 4807
+"POST /start-test/2 HTTP/1.1" 200 4807
+"POST /start-test/2 HTTP/1.1" 200 4807
+"POST /start-test/2 HTTP/1.1" 200 4807
+"POST /start-test/2 HTTP/1.1" 200 4807
+"POST /stop/2 HTTP/1.1" 200 1710
+"GET /tests/ HTTP/1.1" 200 3460
+"GET /admin/ HTTP/1.1" 200 12524
+"GET /admin/quiz_app/quiz/ HTTP/1.1" 200 9096
+"GET /static/admin/css/forms.css HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+"GET /admin/quiz_app/quiz/2/change/ HTTP/1.1" 200 7931
+"GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"POST /admin/quiz_app/quiz/2/change/ HTTP/1.1" 302 0
+"GET /admin/quiz_app/quiz/ HTTP/1.1" 200 9289
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /admin/ HTTP/1.1" 200 12519
+"GET /admin/quiz_app/result/ HTTP/1.1" 200 5722
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"POST /admin/quiz_app/result/ HTTP/1.1" 200 3838
+"POST /admin/quiz_app/result/ HTTP/1.1" 302 0
+"GET /admin/quiz_app/result/ HTTP/1.1" 200 5446
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /tests/ HTTP/1.1" 200 3460
+"POST /start-test/2 HTTP/1.1" 200 4814
+"POST /start-test/2 HTTP/1.1" 200 4807
+"POST /start-test/2 HTTP/1.1" 200 4807
+"GET /results/ HTTP/1.1" 200 1982
+"GET /tests/ HTTP/1.1" 200 3460
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"POST /start-test/2 HTTP/1.1" 200 4677
+"GET /results/ HTTP/1.1" 200 1982
+"POST /stop/2 HTTP/1.1" 200 1710
+"GET /results/ HTTP/1.1" 200 2347
+"GET /tests/ HTTP/1.1" 200 3460
+"POST /start-test/2 HTTP/1.1" 200 4684
+"POST /start-test/2 HTTP/1.1" 200 4677
+Internal Server Error: /stop/2
+Traceback (most recent call last):
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 298, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: Results.test_id, Results.student_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/quiz_app/views.py", line 108, in stop_test
+    results=answer_list
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/query.py", line 413, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/alexandr/Work/Projects/zvp_server/venv/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 298, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: Results.test_id, Results.student_id
+"POST /stop/2 HTTP/1.1" 500 168492
+"GET /admin/quiz_app/result/ HTTP/1.1" 200 5722
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"POST /admin/quiz_app/result/ HTTP/1.1" 200 3838
+"POST /admin/quiz_app/result/ HTTP/1.1" 302 0
+"GET /admin/quiz_app/result/ HTTP/1.1" 200 5446
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET / HTTP/1.1" 200 2842
+"GET /tests/ HTTP/1.1" 200 3460
+"POST /start-test/2 HTTP/1.1" 200 4974
+"POST /start-test/2 HTTP/1.1" 200 4967
+"POST /stop/2 HTTP/1.1" 200 1710
+"GET /results/ HTTP/1.1" 200 2347
+"GET /tests/ HTTP/1.1" 200 3460
+"GET /admin/quiz_app/result/ HTTP/1.1" 200 5722
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /admin/quiz_app/result/?o=1 HTTP/1.1" 200 6070
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+"POST /admin/quiz_app/result/?o=1 HTTP/1.1" 200 3838
+"POST /admin/quiz_app/result/?o=1 HTTP/1.1" 302 0
+"GET /admin/quiz_app/result/?o=1 HTTP/1.1" 200 5768
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"POST /start-test/2 HTTP/1.1" 200 4977
+"POST /start-test/2 HTTP/1.1" 200 5187
+"POST /stop/2 HTTP/1.1" 200 1710
+"GET /admin/quiz_app/result/?o=1 HTTP/1.1" 200 6070
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"POST /admin/quiz_app/result/?o=1 HTTP/1.1" 200 3838
+"POST /admin/quiz_app/result/?o=1 HTTP/1.1" 302 0
+"GET /admin/quiz_app/result/?o=1 HTTP/1.1" 200 5768
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /tests/ HTTP/1.1" 200 3460
+"POST /start-test/2 HTTP/1.1" 200 5194
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /stop/2 HTTP/1.1" 200 1710
+"GET /admin/quiz_app/result/?o=1 HTTP/1.1" 200 6070
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"POST /admin/quiz_app/result/?o=1 HTTP/1.1" 200 3838
+"POST /admin/quiz_app/result/?o=1 HTTP/1.1" 302 0
+"GET /admin/quiz_app/result/?o=1 HTTP/1.1" 200 5768
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /tests/ HTTP/1.1" 200 3460
+"POST /start-test/2 HTTP/1.1" 200 4965
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /start-test/2 HTTP/1.1" 200 4958
+"POST /stop/2 HTTP/1.1" 200 1710
+"GET /admin/quiz_app/result/?o=1 HTTP/1.1" 200 6072
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"POST /admin/quiz_app/result/?o=1 HTTP/1.1" 200 3840
+"POST /admin/quiz_app/result/?o=1 HTTP/1.1" 302 0
+"GET /admin/quiz_app/result/?o=1 HTTP/1.1" 200 5768
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /tests/ HTTP/1.1" 200 3460
+"POST /start-test/2 HTTP/1.1" 200 4934
+"GET /admin/quiz_app/result/?o=1 HTTP/1.1" 200 5623
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"POST /stop/2 HTTP/1.1" 200 1710
+"GET /admin/quiz_app/result/?o=1 HTTP/1.1" 200 6072
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"POST /admin/quiz_app/result/?o=1 HTTP/1.1" 200 3840
+"POST /admin/quiz_app/result/?o=1 HTTP/1.1" 302 0
+"GET /admin/quiz_app/result/?o=1 HTTP/1.1" 200 5768
+"GET /admin/jsi18n/ HTTP/1.1" 200 12136
+"GET /tests/ HTTP/1.1" 200 3460
+"POST /start-test/2 HTTP/1.1" 200 4933
+"POST /start-test/2 HTTP/1.1" 200 4926
+"POST /start-test/2 HTTP/1.1" 200 4926
+"POST /start-test/2 HTTP/1.1" 200 4926
+"POST /start-test/2 HTTP/1.1" 200 4926
+"POST /start-test/2 HTTP/1.1" 200 4926
+"POST /start-test/2 HTTP/1.1" 200 4926
+"GET / HTTP/1.1" 200 2842

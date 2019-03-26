@@ -262,3 +262,20 @@ class Access(models.Model):
         db_table = 'accesses'
         verbose_name_plural = 'Допуски'
         verbose_name = 'Допуск'
+
+
+class StartingQuiz(models.Model):
+    quiz = models.ForeignKey(
+        'quiz_app.Quiz',
+        on_delete=models.CASCADE,
+        verbose_name='Тест'
+    )
+    student = models.ForeignKey(
+        'control_panel.Student',
+        on_delete=models.CASCADE,
+        verbose_name='Студент'
+    )
+    endTestTime = models.IntegerField(verbose_name='Время конца теста',)
+
+    def __str__(self):
+        return str(self.pk)

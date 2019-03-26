@@ -27,7 +27,23 @@ def render_student_uploader(request):
     elif request.method == 'POST' and 'form_download_submit' in request.POST:
         form_upload = UploadFileForm()
         form_download = DownloadFileForm()
-        if request.POST['troop']:
+        if request.POST['troop'] and request.POST['department']:
+            return render(request, 'student_uploader/index.html', {'form_upload': form_upload,
+                                                                   'form_download': form_download,
+                                                                   'message': '',
+                                                                   'message_download': 'Оберіть тільки взвод або '
+                                                                                       'тільки ПМК',
+                                                                   'directory': os.listdir(
+                                                                       StudentUploader.PATH_FOR_SAVING)})
+        elif not request.POST['troop'] and not request.POST['department']:
+            return render(request, 'student_uploader/index.html', {'form_upload': form_upload,
+                                                                   'form_download': form_download,
+                                                                   'message': '',
+                                                                   'message_download': 'Оберіть взвод або ПМК ',
+                                                                   'directory': os.listdir(
+                                                                       StudentUploader.PATH_FOR_SAVING)})
+
+        elif request.POST['troop']:
             StudentUploader.write_file_results(troop_pk=request.POST['troop'], quiz_pk=request.POST['quiz'])
         elif request.POST['department']:
             StudentUploader.write_file_results(department_pk=request.POST['department'], quiz_pk=request.POST['quiz'])
@@ -35,15 +51,17 @@ def render_student_uploader(request):
         return render(request, 'student_uploader/index.html', {'form_upload': form_upload,
                                                                'form_download': form_download,
                                                                'message': '',
+                                                               'message_download': 'Файл створено. Ви можете '
+                                                                                   'скачати його з списку нижче ',
                                                                'directory': os.listdir(
                                                                    StudentUploader.PATH_FOR_SAVING)})
     else:
         form_upload = UploadFileForm()
         form_download = DownloadFileForm()
-    return render(request, 'student_uploader/index.html', {'form_upload': form_upload,
-                                                           'form_download': form_download,
-                                                           'message': '',
-                                                           'directory': os.listdir(StudentUploader.PATH_FOR_SAVING)})
+        return render(request, 'student_uploader/index.html', {'form_upload': form_upload,
+                                                               'form_download': form_download,
+                                                               'message': '',
+                                                               'directory': os.listdir(StudentUploader.PATH_FOR_SAVING)})
 
 
 @staff_member_required

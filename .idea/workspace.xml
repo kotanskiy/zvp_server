@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="0d556fc3-87c7-4f11-a42a-37e7ecf5446f" name="Default" comment="Add questions base">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control_panel/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/control_panel/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fffftest.xls" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/logfile.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_uploader/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_uploader/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_app/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student_uploader/students_uploader.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_uploader/students_uploader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student_uploader/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_uploader/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/quiz_app/questions.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/quiz_app/questions.html" afterDir="false" />
@@ -58,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/student_uploader/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="32" column="47" lean-forward="true" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
+            <state relative-caret-position="240">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="e#0#71#0" expanded="true" />
               </folding>
@@ -67,32 +66,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/quiz_app/questions.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="53" column="13" lean-forward="true" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+            <state relative-caret-position="435">
+              <caret line="68" column="24" lean-forward="true" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control_panel/models.py">
+        <entry file="file://$PROJECT_DIR$/templates/student_uploader/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1175">
-              <caret line="161" column="16" lean-forward="true" selection-start-line="161" selection-start-column="16" selection-end-line="161" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="104">
+              <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/student_uploader/index.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/student_uploader/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -100,20 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/quiz_app/questions_base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="69" column="4" lean-forward="true" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control_panel/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="315">
+              <caret line="74" column="64" lean-forward="true" selection-start-line="74" selection-start-column="64" selection-end-line="74" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -121,8 +105,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/quiz_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="30" column="46" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="30" selection-end-column="46" />
+            <state relative-caret-position="195">
+              <caret line="53" column="23" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="23" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -131,10 +115,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="das://1eee2c5e-ee63-49ff-bd35-9e39b2e2eefb/schema/main/table/quiz_app_startingquiz">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/quiz_app/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="263" column="6" selection-start-line="263" selection-start-column="6" selection-end-line="263" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/student_uploader/forms.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -145,20 +147,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/student_uploader/students_uploader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="160" column="51" selection-start-line="160" selection-end-line="161" />
+            <state relative-caret-position="180">
+              <caret line="180" column="105" lean-forward="true" selection-start-line="180" selection-start-column="60" selection-end-line="180" selection-end-column="105" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logs/logfile.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7460">
-              <caret line="1643" column="52" selection-start-line="1643" selection-start-column="52" selection-end-line="1643" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -221,17 +214,17 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/control_panel/views.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/quiz_app/models.py" />
         <option value="$PROJECT_DIR$/templates/quiz_app/tests.html" />
         <option value="$PROJECT_DIR$/quiz_app/urls.py" />
-        <option value="$PROJECT_DIR$/templates/quiz_app/questions_base.html" />
         <option value="$PROJECT_DIR$/control_panel/models.py" />
         <option value="$PROJECT_DIR$/student_uploader/urls.py" />
-        <option value="$PROJECT_DIR$/templates/student_uploader/index.html" />
         <option value="$PROJECT_DIR$/student_uploader/forms.py" />
-        <option value="$PROJECT_DIR$/student_uploader/views.py" />
         <option value="$PROJECT_DIR$/student_uploader/students_uploader.py" />
+        <option value="$PROJECT_DIR$/templates/student_uploader/index.html" />
+        <option value="$PROJECT_DIR$/quiz_app/models.py" />
+        <option value="$PROJECT_DIR$/student_uploader/views.py" />
         <option value="$PROJECT_DIR$/quiz_app/views.py" />
+        <option value="$PROJECT_DIR$/templates/quiz_app/questions_base.html" />
         <option value="$PROJECT_DIR$/templates/quiz_app/questions.html" />
       </list>
     </option>
@@ -398,7 +391,7 @@
       <option name="presentableId" value="Default" />
       <updated>1520932622558</updated>
       <workItem from="1553506429434" duration="528000" />
-      <workItem from="1553506977390" duration="23913000" />
+      <workItem from="1553506977390" duration="29177000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of github.com:KVP-DEVELOPMENT/zvp_server&#10;&#10;# Conflicts:&#10;#&#9;db.sqlite3">
       <created>1526980710699</created>
@@ -418,7 +411,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24443000" />
+    <option name="totallyTimeSpent" value="29707000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -431,9 +424,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7797357" visible="true" weight="0.12672938" />
-      <window_info id="Structure" order="1" sideWeight="0.22026432" side_tool="true" visible="true" weight="0.12672938" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77859235" visible="true" weight="0.12672938" />
+      <window_info id="Structure" order="1" sideWeight="0.22140762" side_tool="true" visible="true" weight="0.12672938" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Console" order="0" sideWeight="0.4986165" weight="0.32937366" />
       <window_info anchor="bottom" id="Message" order="1" />
@@ -446,14 +440,14 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49924242" weight="0.32786885" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.8063088" visible="true" weight="0.26457882" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.8057554" visible="true" weight="0.26349893" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.1936912" side_tool="true" visible="true" weight="0.26457882" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.19424461" side_tool="true" visible="true" weight="0.26349893" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32954547" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.17100166" />
+      <window_info anchor="right" id="Database" order="4" weight="0.17100166" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,7 +459,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Add questions base" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/lib/python3.5/dist-packages/xlrd/xlsx.py" />
     <entry file="file://$PROJECT_DIR$/reqirements.txt" />
     <entry file="file:///usr/local/lib/python3.6/dist-packages/django/contrib/auth/models.py" />
     <entry file="file://$PROJECT_DIR$/quiz_app/admin.py">
@@ -607,13 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/student_uploader/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/quiz_app/results.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -683,29 +669,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quiz_app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="27" column="19" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/control_panel/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1175">
-          <caret line="161" column="16" lean-forward="true" selection-start-line="161" selection-start-column="16" selection-end-line="161" selection-end-column="16" />
+          <caret line="161" column="16" selection-start-line="161" selection-start-column="16" selection-end-line="161" selection-end-column="16" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quiz_app/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="30" column="46" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="30" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -713,51 +682,82 @@
     <entry file="file://$PROJECT_DIR$/student_uploader/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/student_uploader/students_uploader.py">
+    <entry file="file://$PROJECT_DIR$/templates/student_uploader/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student_uploader/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="160" column="51" selection-start-line="160" selection-end-line="161" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/student_uploader/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="32" column="47" lean-forward="true" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
+        <state relative-caret-position="240">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
           <folding>
             <element signature="e#0#71#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/quiz_app/questions.html">
+    <entry file="file://$PROJECT_DIR$/student_uploader/students_uploader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="53" column="13" lean-forward="true" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+          <caret line="180" column="105" lean-forward="true" selection-start-line="180" selection-start-column="60" selection-end-line="180" selection-end-column="105" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quiz_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="263" column="6" selection-start-line="263" selection-start-column="6" selection-end-line="263" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://1eee2c5e-ee63-49ff-bd35-9e39b2e2eefb/schema/main/table/quiz_app_startingquiz">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/quiz_app/questions_base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="69" column="4" lean-forward="true" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
+        <state relative-caret-position="315">
+          <caret line="74" column="64" lean-forward="true" selection-start-line="74" selection-start-column="64" selection-end-line="74" selection-end-column="64" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/student_uploader/index.html">
+    <entry file="file://$PROJECT_DIR$/quiz_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        <state relative-caret-position="195">
+          <caret line="53" column="23" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/quiz_app/questions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="68" column="24" lean-forward="true" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
         </state>
       </provider>
     </entry>
