@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Quiz, Question, Result, Access
+from .models import Quiz, Question, Result, Access, Ticket, Answer
+import nested_admin
 
 admin.site.site_title = 'Кафедра Військової Підготовки. Адміністрування'
 admin.site.site_header = 'Кафедра Військової Підготовки. Адміністрування'
@@ -9,7 +10,6 @@ admin.site.site_header = 'Кафедра Військової Підготовк
 class QuestionLayout(admin.ModelAdmin):
 
     list_display = (
-        'question_discipline',
         'question_content',
         'get_quizzes',
         'get_answers',
@@ -28,16 +28,6 @@ class QuizLayout(admin.ModelAdmin):
         'quiz_description',
         'quiz_discipline',
         'quiz_single_attempt',
-        'link'
-    )
-
-    list_display_links = ('link', )
-
-    list_editable = (
-        'quiz_title',
-        'quiz_description',
-        'quiz_discipline',
-        'quiz_single_attempt',
     )
 
 
@@ -50,6 +40,7 @@ class ResultLayout(admin.ModelAdmin):
     list_display = (
         'test',
         'student',
+        'results',
         'date_time_stamp',
         'get_mark'
     )
@@ -63,3 +54,33 @@ class AccessModelAdmin(admin.ModelAdmin):
         'quiz',
         'access_granted'
     )
+
+
+@admin.register(Answer)
+class AnswerModelAdmin(admin.ModelAdmin):
+    list_display = (
+        'title',
+        'question',
+        'is_true'
+    )
+
+
+class AnswerInline(nested_admin.NestedStackedInline):
+    model = Answer
+    extra = 1
+
+
+class QuestionTable(nested_admin.NestedStackedInline):
+    model = Question
+    extra = 0
+    inlines = [AnswerInline]
+
+
+@admin.register(Ticket)
+class TicketModelAdmin(nested_admin.NestedModelAdmin):
+    list_display = (
+        'title',
+        'quiz',
+    )
+
+    inlines = [QuestionTable]

@@ -24,5 +24,6 @@ urlpatterns = [
     path('', control_panel.views.index_render, name='index'),
     url(r'', include('student_uploader.urls')),
     url(r'', include('control_panel.urls')),
-    path('', include('quiz_app.urls'))
+    path('', include('quiz_app.urls')),
+    path('nested_admin/', include('nested_admin.urls'))
 ]

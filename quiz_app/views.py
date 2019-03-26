@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Quiz, Question, Result, Access, StartingQuiz
+from .models import Quiz, Question, Result, Access, Ticket, StartingQuiz
 from control_panel.models import Student, Mark
 from django.contrib.auth.decorators import login_required
 from datetime import datetime, timedelta
@@ -27,10 +27,13 @@ def render_tests_page(request):
     accesses = Access.objects.filter(student=student)
     filtered_tests = []
     for access in accesses:
-        result = Result.objects.get(
-            test=access.quiz,
-            student=student
-        )
+        try:
+            result = Result.objects.get(
+                test=access.quiz,
+                student=student
+            )
+        except Result.DoesNotExist:
+            result = None
         if access.access_granted and not result:
             filtered_tests.append(access.quiz)
     return render(request, 'quiz_app/tests.html', {'tests': filtered_tests})
@@ -39,6 +42,8 @@ def render_tests_page(request):
 @login_required
 def start_test(request, quiz_id):
     quiz = get_object_or_404(Quiz, pk=quiz_id)
+    ticket = Ticket.objects.filter(quiz=quiz).order_by('?').first()
+    questions = ticket.get_questions()
     questions = Question.objects.all().filter(question_quiz=quiz)
     student = Student.objects.get(user=request.user)
     starting_quiz = StartingQuiz.objects.filter(quiz=quiz, student=student).first()
@@ -69,7 +74,8 @@ def start_test(request, quiz_id):
 def stop_test(request, quiz_id):
     quiz = get_object_or_404(Quiz, pk=quiz_id)
     student = Student.objects.get(user=request.user)
-    questions = Question.objects.all().filter(question_quiz=quiz)
+    ticket = Ticket.objects.filter(quiz=quiz).order_by('?').first()
+    questions = ticket.get_questions()
     StartingQuiz.objects.filter(quiz=quiz, student=student).first().delete()
 
     # TODO end with true answer list!
@@ -77,18 +83,9 @@ def stop_test(request, quiz_id):
     true_answers = {}
 
     for question in questions:
-        if question.question_first_answer_state:
-            true_answers[question.question_content] = question.question_first_answer_content
-        elif question.question_second_answer_state:
-            true_answers[question.question_content] = question.question_second_answer_content
-        elif question.question_third_answer_state:
-            true_answers[question.question_content] = question.question_third_answer_content
-        elif question.question_fourth_answer_state:
-            true_answers[question.question_content] = question.question_fourth_answer_content
-        elif question.question_fifth_answer_state:
-            true_answers[question.question_content] = question.question_fifth_answer_content
-        else:
-            raise NameError
+        for answer in question.get_answers():
+            if answer.is_true:
+                true_answers[question.question_content] = answer.title
 
     if request.POST:
         data = request.POST.copy()
@@ -103,7 +100,8 @@ def stop_test(request, quiz_id):
         Result.objects.create(
             student=student,
             test=quiz,
-            results=answer_list
+            results=answer_list,
+            ticket=ticket
         )
 
         try:
@@ -140,7 +138,7 @@ def stop_test(request, quiz_id):
 @login_required
 def render_results(request):
     student = Student.objects.get(user=request.user)
-    results = Result.objects.all().filter(student=student)
+    results = Result.objects.filter(student=student)
 
     return render(request, 'quiz_app/all_results.html', {'results': results})
 
@@ -151,21 +149,13 @@ def render_result(request, result_id):
     quiz_results = ast.literal_eval(result.results)
 
     true_answers = {}
-    questions = Question.objects.filter(question_quiz=result.test)
+    ticket = Ticket.objects.filter(quiz=result.test).order_by('?').first()
+    questions = ticket.get_questions()
 
     for question in questions:
-        if question.question_first_answer_state:
-            true_answers[question.question_content] = question.question_first_answer_content
-        elif question.question_second_answer_state:
-            true_answers[question.question_content] = question.question_second_answer_content
-        elif question.question_third_answer_state:
-            true_answers[question.question_content] = question.question_third_answer_content
-        elif question.question_fourth_answer_state:
-            true_answers[question.question_content] = question.question_fourth_answer_content
-        elif question.question_fifth_answer_state:
-            true_answers[question.question_content] = question.question_fifth_answer_content
-        else:
-            raise NameError
+        for answer in question.get_answers():
+            if answer.is_true:
+                true_answers[question.question_content] = answer.title
 
     context = {
         'result': result,
