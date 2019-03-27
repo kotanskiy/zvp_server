@@ -46,16 +46,6 @@ class ResultLayout(admin.ModelAdmin):
     )
 
 
-@admin.register(Access)
-class AccessModelAdmin(admin.ModelAdmin):
-
-    list_display = (
-        'student',
-        'quiz',
-        'access_granted'
-    )
-
-
 @admin.register(Answer)
 class AnswerModelAdmin(admin.ModelAdmin):
     list_display = (

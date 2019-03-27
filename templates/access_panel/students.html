@@ -1,0 +1,18 @@
+<form action="#">
+    <table style="width: 100%;">
+        <caption>Допуски для взводу <b>{{ current_troop.troop_id }}</b> і тесту <b>{{ current_test.quiz_title }}</b></caption>
+        <tr>
+                <th>ПІБ</th>
+                <th>Поточна оцінка</th>
+                <th>Допуск</th>
+            </tr>
+        {% for student in students %}
+            <tr>
+                <td>{{ student.student_full_name }}</td>
+                <td>kek</td>
+                <td></td>
+            </tr>
+        {% endfor %}
+    </table>
+    <input type="submit" value="Оновити">
+</form>

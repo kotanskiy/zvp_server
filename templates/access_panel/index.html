@@ -1,0 +1,60 @@
+{% extends 'admin/base_site.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="module">
+    <form id="access_form" onsubmit="getAccesses()" enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        <select id="id_troop">
+            <option value="-">-------</option>
+            {% for troop in troops %}
+                <option value="{{ troop.id }}">{{ troop.troop_id }}</option>
+            {% endfor %}
+        </select>
+        <select id="id_test">
+            <option value="-">-------</option>
+            {% for test in tests %}
+                <option value="{{ test.id }}">{{ test.quiz_title }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" placeholder="Відобразити">
+    </form>
+
+    <div id="table">
+
+    </div>
+</div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+
+    $(document).ready(function() {
+      $(document).on('submit', '#access_form', function() {
+        // do your things
+        return false;
+       });
+    });
+    function getAccesses () {
+        let troop_select = document.getElementById('id_troop');
+        let test_select = document.getElementById('id_test');
+
+        let troop_id = troop_select.options[troop_select.selectedIndex].value;
+        let test_id = test_select.options[test_select.selectedIndex].value;
+
+        console.log(troop_id, test_id);
+
+        $.ajax({
+            url: {% url 'load_accesses' %},
+            data: {
+                'troop': troop_id,
+                'test': test_id
+            },
+            success: function (data) {
+                $('#table').html(data);
+            }
+        })
+    }
+  </script>
+{% endblock %}
+
