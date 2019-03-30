@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import Group
-from quiz_app.models import Access
 
 
 class TeacherRank(models.Model):
@@ -249,9 +248,6 @@ class Student(models.Model):
     def show_marks(self):
         marks = [str(obj) for obj in Mark.objects.filter(student=self)]
         return ''.join(marks)
-
-    def get_access(self, test_id):
-        return Access.objects.filter(student=self, quiz__id=test_id)
 
 
 class Discipline(models.Model):

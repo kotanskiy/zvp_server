@@ -44,7 +44,6 @@ def start_test(request, quiz_id):
     quiz = get_object_or_404(Quiz, pk=quiz_id)
     ticket = Ticket.objects.filter(quiz=quiz).order_by('?').first()
     questions = ticket.get_questions()
-    questions = Question.objects.all().filter(question_quiz=quiz)
     student = Student.objects.get(user=request.user)
     starting_quiz = StartingQuiz.objects.filter(quiz=quiz, student=student).first()
     if not starting_quiz:
@@ -111,12 +110,18 @@ def stop_test(request, quiz_id):
                 quiz=quiz,
             )
 
-            if ex_mark.first_attempt_mark:
-                ex_mark.second_attempt_mark = mark
-            elif ex_mark.second_attempt_mark:
-                ex_mark.third_attempt_mark = mark
+            print('mark exist', ex_mark.first_attempt_mark)
 
-        except ObjectDoesNotExist:
+            if ex_mark.first_attempt_mark is not None:
+                ex_mark.second_attempt_mark = mark
+                ex_mark.save()
+            if ex_mark.second_attempt_mark is not None:
+                ex_mark.third_attempt_mark = mark
+                ex_mark.save()
+            if ex_mark.third_attempt_mark:
+                raise Mark.DoesNotExist
+
+        except Mark.DoesNotExist:
 
             Mark.objects.create(
                 student=student,

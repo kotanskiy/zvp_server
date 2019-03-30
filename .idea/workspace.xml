@@ -1,17 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d556fc3-87c7-4f11-a42a-37e7ecf5446f" name="Default" comment="Add questions base">
+    <list default="true" id="0d556fc3-87c7-4f11-a42a-37e7ecf5446f" name="Default" comment="Added access panel">
+      <change afterPath="$PROJECT_DIR$/static/img/check.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fffftest.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/control_panel/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/control_panel/migrations/0002_auto_20180903_1120.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/control_panel/migrations/0003_remove_mark_attempts.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/control_panel/migrations/0004_auto_20190311_1517.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/control_panel/migrations/0004_auto_20190325_0930.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/control_panel/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/control_panel/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/control_panel/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/control_panel/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/control_panel/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/control_panel/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/control_panel/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/logfile.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_app/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/migrations/0002_result.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/migrations/0003_auto_20180925_2042.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/migrations/0004_auto_20181203_0811.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/migrations/0005_auto_20190219_2043.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/migrations/0006_auto_20190219_2048.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/migrations/0007_access.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/migrations/0007_access_ticket.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/migrations/0008_auto_20190311_1539.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/migrations/0008_quiz_quiz_start_time.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/migrations/0009_auto_20190311_1545.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/migrations/0009_remove_quiz_quiz_start_time.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/migrations/0010_remove_question_question_discipline.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/migrations/0010_startingquiz.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/migrations/0011_answer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/migrations/0012_answer_question.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/migrations/0013_auto_20190311_1626.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/migrations/0014_auto_20190311_1640.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/migrations/0015_auto_20190311_1641.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/migrations/0016_auto_20190311_1657.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_app/migrations/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_uploader/students_uploader.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_uploader/students_uploader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_uploader/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_uploader/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/access_panel/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/access_panel/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/access_panel/students.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/access_panel/students.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/quiz_app/questions.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/quiz_app/questions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/quiz_app/questions_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/quiz_app/questions_base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/student_uploader/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student_uploader/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,83 +62,22 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db.sqlite3" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db.sqlite3" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db.sqlite3" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="ZVP" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/student_uploader/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
-              <folding>
-                <element signature="e#0#71#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/quiz_app/questions.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="68" column="24" lean-forward="true" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/student_uploader/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/student_uploader/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/quiz_app/questions_base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="74" column="64" lean-forward="true" selection-start-line="74" selection-start-column="64" selection-end-line="74" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/quiz_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="53" column="23" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="23" />
+            <state relative-caret-position="359">
+              <caret line="38" column="76" selection-start-line="38" selection-start-column="76" selection-end-line="38" selection-end-column="76" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -115,10 +86,70 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="das://1eee2c5e-ee63-49ff-bd35-9e39b2e2eefb/schema/main/table/quiz_app_startingquiz">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
+        <entry file="file://$PROJECT_DIR$/templates/quiz_app/questions.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="99" selection-start-line="3" selection-start-column="71" selection-end-line="3" selection-end-column="99" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/access_panel/students.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/control_panel/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="905">
+              <caret line="85" column="17" lean-forward="true" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#4#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/control_panel/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="8" column="71" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/access_panel/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/student_uploader/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="62">
+              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/control_panel/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="67">
+              <caret line="125" column="17" selection-start-line="125" selection-start-column="8" selection-end-line="125" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,31 +157,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/quiz_app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="263" column="6" selection-start-line="263" selection-start-column="6" selection-end-line="263" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/student_uploader/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="-5">
+              <caret line="217" column="6" selection-start-line="217" selection-start-column="6" selection-end-line="217" selection-end-column="6" />
               <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/student_uploader/students_uploader.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="180" column="105" lean-forward="true" selection-start-line="180" selection-start-column="60" selection-end-line="180" selection-end-column="105" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -162,6 +172,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -179,6 +190,11 @@
       <find>quiz</find>
       <find>print</find>
       <find>Depar</find>
+      <find>Acc</find>
+      <find>Access</find>
+      <find>Res</find>
+      <find>Stude</find>
+      <find>An</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/templates</dir>
@@ -191,10 +207,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/quiz_app/admin.py" />
         <option value="$PROJECT_DIR$/timer/time_engine/tasks_manager.py" />
         <option value="$PROJECT_DIR$/quiz_app/migrations/0011_question_question_answers.py" />
-        <option value="$PROJECT_DIR$/templates/admin/index.html" />
         <option value="$PROJECT_DIR$/student_uploader/models.py" />
         <option value="$PROJECT_DIR$/student_uploader/handle_uploaded_file.py" />
         <option value="$PROJECT_DIR$/reqirements.txt" />
@@ -208,36 +222,41 @@
         <option value="$PROJECT_DIR$/templates/quiz_app/quiz_base.html" />
         <option value="$PROJECT_DIR$/manage.py" />
         <option value="$PROJECT_DIR$/logfile" />
-        <option value="$PROJECT_DIR$/zvp_server/settings.py" />
-        <option value="$PROJECT_DIR$/control_panel/urls.py" />
         <option value="$PROJECT_DIR$/templates/control_panel/login_base.html" />
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/control_panel/views.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/templates/quiz_app/tests.html" />
         <option value="$PROJECT_DIR$/quiz_app/urls.py" />
-        <option value="$PROJECT_DIR$/control_panel/models.py" />
         <option value="$PROJECT_DIR$/student_uploader/urls.py" />
         <option value="$PROJECT_DIR$/student_uploader/forms.py" />
-        <option value="$PROJECT_DIR$/student_uploader/students_uploader.py" />
         <option value="$PROJECT_DIR$/templates/student_uploader/index.html" />
-        <option value="$PROJECT_DIR$/quiz_app/models.py" />
         <option value="$PROJECT_DIR$/student_uploader/views.py" />
-        <option value="$PROJECT_DIR$/quiz_app/views.py" />
         <option value="$PROJECT_DIR$/templates/quiz_app/questions_base.html" />
+        <option value="$PROJECT_DIR$/zvp_server/settings.py" />
+        <option value="$PROJECT_DIR$/templates/admin/index.html" />
+        <option value="$PROJECT_DIR$/student_uploader/students_uploader.py" />
+        <option value="$PROJECT_DIR$/quiz_app/admin.py" />
+        <option value="$PROJECT_DIR$/control_panel/urls.py" />
+        <option value="$PROJECT_DIR$/control_panel/template_tags.py" />
+        <option value="$PROJECT_DIR$/control_panel/templatetags/call_method.py" />
+        <option value="$PROJECT_DIR$/quiz_app/models.py" />
+        <option value="$PROJECT_DIR$/control_panel/models.py" />
         <option value="$PROJECT_DIR$/templates/quiz_app/questions.html" />
+        <option value="$PROJECT_DIR$/control_panel/views.py" />
+        <option value="$PROJECT_DIR$/templates/access_panel/index.html" />
+        <option value="$PROJECT_DIR$/templates/access_panel/students.html" />
+        <option value="$PROJECT_DIR$/quiz_app/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="993" />
     <option name="y" value="25" />
-    <option name="width" value="927" />
-    <option name="height" value="1055" />
+    <option name="width" value="1440" />
+    <option name="height" value="875" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -245,18 +264,51 @@
         <subPane>
           <expand>
             <path>
-              <item name="zvp_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zvp_server" type="462c0819:PsiDirectoryNode" />
+              <item name="ZVP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZVP" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="zvp_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zvp_server" type="462c0819:PsiDirectoryNode" />
+              <item name="ZVP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZVP" type="462c0819:PsiDirectoryNode" />
               <item name="control_panel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="zvp_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zvp_server" type="462c0819:PsiDirectoryNode" />
+              <item name="ZVP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZVP" type="462c0819:PsiDirectoryNode" />
+              <item name="quiz_app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ZVP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZVP" type="462c0819:PsiDirectoryNode" />
               <item name="student_uploader" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ZVP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZVP" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ZVP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZVP" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="access_panel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ZVP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZVP" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ZVP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZVP" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="student_uploader" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ZVP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZVP" type="462c0819:PsiDirectoryNode" />
+              <item name="zvp_server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -266,67 +318,8 @@
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
             <path>
-              <item name="zvp_server" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="zvp_server" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name=".idea" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="zvp_server" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="control_panel" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="zvp_server" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="logs" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="zvp_server" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="quiz_app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="zvp_server" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="student_uploader" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="zvp_server" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="zvp_server" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="admin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="zvp_server" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="control_panel" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="zvp_server" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="quiz_app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="zvp_server" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="student_uploader" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="zvp_server" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="zvp_server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="ZVP" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/ZVP" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
           </expand>
           <select />
@@ -337,10 +330,16 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../tg_bots/owi_bot" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/control_panel/templatetags" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -354,7 +353,30 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django server.ZVP">
+    <configuration name="ZVP" type="Python.DjangoServer" factoryName="Django server">
+      <module name="ZVP" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="zvp_server" type="Python.DjangoServer" factoryName="Django server">
       <module name="zvp_server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -392,6 +414,8 @@
       <updated>1520932622558</updated>
       <workItem from="1553506429434" duration="528000" />
       <workItem from="1553506977390" duration="29177000" />
+      <workItem from="1553695539334" duration="6023000" />
+      <workItem from="1553940352204" duration="7349000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of github.com:KVP-DEVELOPMENT/zvp_server&#10;&#10;# Conflicts:&#10;#&#9;db.sqlite3">
       <created>1526980710699</created>
@@ -407,13 +431,20 @@
       <option name="project" value="LOCAL" />
       <updated>1526980861092</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Quiz app refactored">
+      <created>1553695670810</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1553695670810</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29707000" />
+    <option name="totallyTimeSpent" value="49352000" />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -423,12 +454,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="0" y="25" width="1440" height="875" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77859235" visible="true" weight="0.12672938" />
-      <window_info id="Structure" order="1" sideWeight="0.22140762" side_tool="true" visible="true" weight="0.12672938" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.76" visible="true" weight="0.24677187" />
+      <window_info id="Favorites" order="1" sideWeight="0.24" side_tool="true" weight="0.24677187" />
+      <window_info id="Structure" order="2" sideWeight="0.24" side_tool="true" weight="0.24677187" />
       <window_info anchor="bottom" id="Database Console" order="0" sideWeight="0.4986165" weight="0.32937366" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
@@ -436,13 +467,13 @@
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.49924242" weight="0.3295082" />
+      <window_info active="true" anchor="bottom" id="TODO" order="7" sideWeight="0.49924242" visible="true" weight="0.32841823" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49924242" weight="0.32786885" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.8057554" visible="true" weight="0.26349893" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.80487806" weight="0.29624665" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.19424461" side_tool="true" visible="true" weight="0.26349893" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.19512194" side_tool="true" weight="0.35254693" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -456,20 +487,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge branch 'master' of github.com:KVP-DEVELOPMENT/zvp_server&#10;&#10;# Conflicts:&#10;#&#9;db.sqlite3" />
     <MESSAGE value="Add questions base" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add questions base" />
+    <MESSAGE value="Quiz app refactored" />
+    <MESSAGE value="Added access panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added access panel" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/reqirements.txt" />
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/django/contrib/auth/models.py" />
-    <entry file="file://$PROJECT_DIR$/quiz_app/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_panel/migrations/0002_auto_20180515_1219.py" />
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/phrase.rnc" />
     <entry file="file://$PROJECT_DIR$/control_panel/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2140">
@@ -536,9 +558,7 @@
     <entry file="file://$PROJECT_DIR$/student_uploader/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/08999410-5cb0-4ffb-9190-b36c1b39c62c/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/08999410-5cb0-4ffb-9190-b36c1b39c62c/console.sql" />
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -567,9 +587,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml" />
     <entry file="file://$PROJECT_DIR$/quiz_app/forms.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -593,13 +611,6 @@
     <entry file="file://$PROJECT_DIR$/templates/quiz_app/all_results.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/quiz_app/results.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -614,68 +625,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/control_panel/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zvp_server/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="27" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1eee2c5e-ee63-49ff-bd35-9e39b2e2eefb/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="das://1eee2c5e-ee63-49ff-bd35-9e39b2e2eefb/schema/main/table/Troops">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://1eee2c5e-ee63-49ff-bd35-9e39b2e2eefb/schema/main/table/Marks">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student_uploader/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_panel/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1eee2c5e-ee63-49ff-bd35-9e39b2e2eefb/console.sql" />
+    <entry file="das://1eee2c5e-ee63-49ff-bd35-9e39b2e2eefb/schema/main/table/Troops" />
+    <entry file="das://1eee2c5e-ee63-49ff-bd35-9e39b2e2eefb/schema/main/table/Marks" />
     <entry file="file://$PROJECT_DIR$/logs/logfile.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7460">
           <caret line="1643" column="52" selection-start-line="1643" selection-start-column="52" selection-end-line="1643" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_panel/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1175">
-          <caret line="161" column="16" selection-start-line="161" selection-start-column="16" selection-end-line="161" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -689,13 +645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/student_uploader/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/student_uploader/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -703,40 +652,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/student_uploader/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#0#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student_uploader/students_uploader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="180" column="105" lean-forward="true" selection-start-line="180" selection-start-column="60" selection-end-line="180" selection-end-column="105" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quiz_app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="263" column="6" selection-start-line="263" selection-start-column="6" selection-end-line="263" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://1eee2c5e-ee63-49ff-bd35-9e39b2e2eefb/schema/main/table/quiz_app_startingquiz">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://1eee2c5e-ee63-49ff-bd35-9e39b2e2eefb/schema/main/table/quiz_app_startingquiz" />
     <entry file="file://$PROJECT_DIR$/templates/quiz_app/questions_base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -744,20 +660,130 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quiz_app/views.py">
+    <entry file="file://$PROJECT_DIR$/student_uploader/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="53" column="23" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="23" />
+        <state relative-caret-position="78">
+          <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zvp_server/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student_uploader/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-650">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
           <folding>
-            <element signature="e#0#54#0" expanded="true" />
+            <element signature="e#0#71#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student_uploader/students_uploader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="58" column="33" lean-forward="true" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quiz_app/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="22" column="35" lean-forward="true" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_panel/templatetags/call_method.py" />
     <entry file="file://$PROJECT_DIR$/templates/quiz_app/questions.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="68" column="24" lean-forward="true" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
+        <state relative-caret-position="54">
+          <caret line="3" column="99" selection-start-line="3" selection-start-column="71" selection-end-line="3" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_panel/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="125" column="17" selection-start-line="125" selection-start-column="8" selection-end-line="125" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quiz_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5">
+          <caret line="217" column="6" selection-start-line="217" selection-start-column="6" selection-end-line="217" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/student_uploader/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/img/x.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_panel/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="8" column="71" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/access_panel/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_panel/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="905">
+          <caret line="85" column="17" lean-forward="true" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#4#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/access_panel/students.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quiz_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="38" column="76" selection-start-line="38" selection-start-column="76" selection-end-line="38" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

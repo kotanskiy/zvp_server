@@ -13,7 +13,6 @@ class QuestionLayout(admin.ModelAdmin):
         'question_content',
         'get_quizzes',
         'get_answers',
-        'get_true_answer',
         'link'
     )
 

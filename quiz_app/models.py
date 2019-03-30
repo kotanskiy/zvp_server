@@ -9,6 +9,14 @@ class Quiz(models.Model):
 
     link = 'Редагувати'
 
+    CONTROL_WORK = 'Контрольна робота'
+    EXAM = 'Залік/Екзамен'
+
+    QUIZ_TYPES = (
+        (EXAM, EXAM),
+        (CONTROL_WORK, CONTROL_WORK)
+    )
+
     class Meta:
         db_table = 'Quizzes'
         verbose_name = 'Тест'
@@ -18,6 +26,13 @@ class Quiz(models.Model):
         verbose_name='Назва тесту',
         max_length=200,
         blank=False
+    )
+
+    quiz_type = models.CharField(
+        max_length=200,
+        choices=QUIZ_TYPES,
+        verbose_name='Тип роботи',
+        default=CONTROL_WORK
     )
 
     quiz_description = models.TextField(
@@ -118,20 +133,6 @@ class Question(models.Model):
 
     get_quizzes.short_description = 'Тести'
 
-    def get_true_answer(self):
-        if self.question_first_answer_state:
-            return 'A' + ': ' + str(self.question_first_answer_content)
-        elif self.question_second_answer_state:
-            return 'Б' + ': ' + str(self.question_second_answer_content)
-        elif self.question_third_answer_state:
-            return 'В' + ': ' + str(self.question_third_answer_content)
-        elif self.question_fourth_answer_state:
-            return 'Г' + ': ' + str(self.question_fourth_answer_content)
-        elif self.question_fifth_answer_state:
-            return 'Д' + ': ' + str(self.question_fifth_answer_content)
-
-    get_true_answer.short_description = 'Правильна відповідь'
-
 
 class Ticket(models.Model):
     title = models.CharField(
@@ -163,10 +164,6 @@ class Result(models.Model):
         db_table = 'Results'
         verbose_name = 'Результат'
         verbose_name_plural = 'Результати'
-        unique_together = (
-            'test',
-            'student'
-        )
 
     test = models.ForeignKey(
         Quiz,
