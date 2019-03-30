@@ -55,6 +55,13 @@ class StudentLayout(admin.ModelAdmin):
         'link'
     )
 
+    list_filter = (
+        'student_troop',
+        'student_university_group',
+        'student_faculty',
+        'student_grade'
+    )
+
     list_display_links = ('link',)
 
 
