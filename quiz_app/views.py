@@ -34,7 +34,9 @@ def render_tests_page(request):
             )
         except Result.DoesNotExist:
             result = None
-        if access.access_granted and not result:
+        if access.quiz.quiz_type == Quiz.EXAM and access.access_granted and not result:
+            filtered_tests.append(access.quiz)
+        elif access.quiz.quiz_type == Quiz.CONTROL_WORK and not result:
             filtered_tests.append(access.quiz)
     return render(request, 'quiz_app/tests.html', {'tests': filtered_tests})
 
@@ -69,6 +71,36 @@ def start_test(request, quiz_id):
     )
 
 
+def control_work_calculate_mark(mark):
+    if mark >= 18:
+        return 8
+    elif mark >= 17:
+        return 7
+    elif mark >= 15:
+        return 6
+    elif mark >= 13:
+        return 5
+    elif mark >= 11:
+        return 4
+    elif mark >= 4:
+        return 0
+
+
+def exam_calculate_mark(fire_training_mark, statutes_mark):
+    if fire_training_mark >= 13 and statutes_mark >= 14:
+        return 12
+    elif fire_training_mark >= 12 and statutes_mark >= 13:
+        return 10
+    elif fire_training_mark >= 10 and statutes_mark >= 11:
+        return 8
+    elif fire_training_mark >= 8 and statutes_mark >= 9:
+        return 7
+    elif fire_training_mark >= 7 and statutes_mark >= 8:
+        return 6
+    elif fire_training_mark < 7 and statutes_mark < 8:
+        return 5
+
+
 @login_required
 def stop_test(request, quiz_id):
     quiz = get_object_or_404(Quiz, pk=quiz_id)
@@ -76,8 +108,6 @@ def stop_test(request, quiz_id):
     ticket = Ticket.objects.filter(quiz=quiz).order_by('?').first()
     questions = ticket.get_questions()
     StartingQuiz.objects.filter(quiz=quiz, student=student).first().delete()
-
-    # TODO end with true answer list!
 
     true_answers = {}
 
@@ -92,9 +122,25 @@ def stop_test(request, quiz_id):
         for item in questions:
             answer_list[item.question_content] = data.get(str(item.question_content), "")
         mark = 0
+        fire_training_mark = 0
+        statutes_mark = 0
+        fire_training_dict = {k: answer_list[k] for k in list(answer_list)[:14]}
+        statutes_dict = {k: answer_list[k] for k in list(answer_list)[14:]}
         for key in true_answers:
-            if true_answers[key] == answer_list[key]:
-                mark += 1
+            if quiz.quiz_type == Quiz.CONTROL_WORK:
+                if true_answers[key] == answer_list[key]:
+                    mark += 1
+        for key in fire_training_dict:
+            if true_answers[key] == fire_training_dict[key]:
+                fire_training_mark += 1
+        for key in statutes_dict:
+            if true_answers[key] == statutes_dict[key]:
+                statutes_mark += 1
+
+        if quiz.quiz_type == Quiz.CONTROL_WORK:
+            mark = control_work_calculate_mark(mark)
+        else:
+            mark = exam_calculate_mark(fire_training_mark, statutes_mark)
 
         Result.objects.create(
             student=student,
@@ -130,11 +176,13 @@ def stop_test(request, quiz_id):
                 first_attempt_mark=mark
             )
 
+        max_mark = 12 if quiz.quiz_type == Quiz.EXAM else 8
+
         context = {
             'quiz': quiz,
             'student': student,
             'mark': mark,
-            'question_count': len(answer_list)
+            'max_mark': max_mark
         }
 
     return render(request, 'quiz_app/results.html', context)
@@ -162,11 +210,12 @@ def render_result(request, result_id):
             if answer.is_true:
                 true_answers[question.question_content] = answer.title
 
+    max_mark = 12 if ticket.quiz.quiz_type == Quiz.EXAM else 8
     context = {
         'result': result,
         'quiz_results': quiz_results,
         'mark': result.get_mark(),
-        'max_mark': len(true_answers)
+        'max_mark': max_mark
     }
 
     return render(request, 'quiz_app/result.html', context)
