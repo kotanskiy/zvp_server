@@ -196,6 +196,11 @@ class Student(models.Model):
         null=True
     )
 
+    troop_commander = models.BooleanField(
+        verbose_name='Командир',
+        default=False
+    )
+
     student_troop = models.ForeignKey(
         'control_panel.Troop',
         on_delete=models.SET_NULL,
@@ -288,3 +293,24 @@ class Troop(models.Model):
 
     def get_students(self):
         return Student.objects.filter(student_troop=self)
+
+
+class Presence(models.Model):
+
+    quiz = models.ForeignKey(
+        'quiz_app.Quiz',
+        on_delete=models.SET_NULL,
+        verbose_name='Тест',
+        null=True
+    )
+
+    student = models.ForeignKey(
+        Student,
+        on_delete=models.CASCADE,
+        verbose_name='Студент'
+    )
+
+    date_time = models.DateTimeField(
+        auto_now_add=True,
+        editable=False
+    )

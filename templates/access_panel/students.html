@@ -7,7 +7,15 @@
                 <th>ПІБ</th>
                 <th>Поточна оцінка</th>
                 <th>Допуск</th>
-            <th>Надати або забрати допуск <br> <small>Виберіть перед натисканняк клавіші "Оновити"</small></th>
+                <th>
+                    Надати або забрати допуск <br>
+                    <small>Виберіть перед натисканняк клавіші "Оновити"</small>
+                </th>
+                <th>Присутній</th>
+                <th>Відмітити<br>
+                <small>Виберіть перед натисканняк клавіші "Оновити"</small>
+                </th>
+
             </tr>
         {% for student_access in student_accesses %}
             <tr>
@@ -21,8 +29,16 @@
                     {% endif %}
                 </td>
                 <td>
-                    <input type="checkbox" name="access_checkbox", value="{{ student_access.student.student_full_name }};{{ current_test }};{{ current_troop }}">
+                    <input type="checkbox" name="access_checkbox" value="{{ student_access.student.student_full_name }};{{ current_test }};{{ current_troop }}">
                 </td>
+                <td>
+                    {% if student_access.presence %}
+                        <img src="{% static 'img/check.png' %}" width="16px" height="16px" alt="Присутній">
+                    {% else %}
+                        <img src="{% static 'img/x.png' %}" width="16px" height="16px" alt="Відсутній">
+                    {% endif %}
+                </td>
+                <td><input type="checkbox" name="presence_checkbox" value="{{ student_access.student.student_full_name }};{{ current_test }};{{ current_troop }}"></td>
             </tr>
         {% endfor %}
     </table>

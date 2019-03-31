@@ -46,6 +46,7 @@ class StudentLayout(admin.ModelAdmin):
     list_display = (
         'student_full_name',
         'student_troop',
+        'troop_commander',
         'student_university_group',
         'student_faculty',
         'student_grade',
@@ -56,6 +57,7 @@ class StudentLayout(admin.ModelAdmin):
     )
 
     list_filter = (
+        'troop_commander',
         'student_troop',
         'student_university_group',
         'student_faculty',

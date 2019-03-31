@@ -36,6 +36,24 @@
         return false;
        });
     });
+
+    window.onload = function () {
+        if (getUrlParameter('troop') && getUrlParameter('test')) {
+            let troop_id = getUrlParameter('troop');
+            let test_id = getUrlParameter('test');
+            $.ajax({
+            url: {% url 'load_accesses' %},
+            data: {
+                'troop': troop_id,
+                'test': test_id
+            },
+            success: function (data) {
+                $('#table').html(data);
+            }
+        })
+        }
+    }
+
     function getAccesses () {
         let troop_select = document.getElementById('id_troop');
         let test_select = document.getElementById('id_test');
@@ -56,6 +74,21 @@
             }
         })
     }
+
+    var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+};
   </script>
 {% endblock %}
 

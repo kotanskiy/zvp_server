@@ -8,7 +8,8 @@ urlpatterns = [
 STATISTICS_URL = [
     path('access_panel/', views.render_access_panel, name='access_panel'),
     path('load_accesses/', views.load_accesses, name='load_accesses'),
-    path('submit_accesses/', views.submit_accesses, name='submit_accesses')
+    path('submit_accesses/', views.submit_accesses, name='submit_accesses'),
+    path('statistics/', views.render_statistics_page, name='statistics')
 ]
 
 urlpatterns += STATISTICS_URL
