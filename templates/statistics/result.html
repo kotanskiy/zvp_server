@@ -1,0 +1,20 @@
+{% load get_item %}
+<table style="width: 100%;">
+    <caption>Відповіді студента <b>{{ student.student_full_name }}</b> з тесту <b>{{ test.quiz_title }}</b></caption>
+    <tr>
+        <th>Питання</th>
+        <th>Відповідь студента</th>
+        <th>Вірна відповідь</th>
+    </tr>
+    {% for key, value in result.items %}
+        <tr {% if value == true_answers|get_item:key%}
+            style="background: #96ffc7"
+            {% else %}
+            style="background: #ff5479"
+            {% endif %}>
+        <th>{{ key }}</th>
+        <th>{{ value }}</th>
+        <th>{{ true_answers|get_item:key }}</th>
+        </tr>
+    {% endfor %}
+</table>

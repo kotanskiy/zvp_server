@@ -1,3 +1,4 @@
+import ast
 from collections import namedtuple
 from urllib.parse import urlencode
 from django.http import HttpResponse
@@ -6,7 +7,7 @@ from django.shortcuts import render, redirect
 from .forms import LoginForm
 from django.contrib.auth import authenticate, login
 from control_panel.models import Student, Troop, Mark, Presence
-from quiz_app.models import Quiz, Access
+from quiz_app.models import Quiz, Access, Result, Ticket
 
 import logging
 log = logging.getLogger(__name__)
@@ -138,6 +139,48 @@ def submit_accesses(request):
         return redirect(url)
 
 
-
 def render_statistics_page(request):
-    return render(request, 'statistics/index.html')
+    troops = Troop.objects.all()
+    tests = Quiz.objects.all()
+    context = {
+        'troops': troops,
+        'tests': tests
+    }
+    return render(request, 'statistics/index.html', context)
+
+
+def load_students(request):
+    troop = Troop.objects.filter(pk=request.GET.get('troop')).first()
+    students = Student.objects.filter(student_troop=troop)
+
+    context = {
+        'students': students
+    }
+    return render(request, 'statistics/students.html', context)
+
+
+def get_student_test_result(request):
+    student = Student.objects.filter(pk=request.GET.get('student')).first()
+    test = Quiz.objects.filter(pk=request.GET.get('test')).first()
+
+    result = Result.objects.filter(
+        student=student,
+        test=test
+    ).first()
+
+    true_answers = {}
+    ticket = Ticket.objects.filter(pk=result.ticket_id).first()
+    questions = ticket.get_questions()
+
+    for question in questions:
+        for answer in question.get_answers():
+            if answer.is_true:
+                true_answers[question.question_content] = answer.title
+
+    context = {
+        'result': ast.literal_eval(result.results),
+        'student': student,
+        'test': test,
+        'true_answers': true_answers
+    }
+    return render(request, 'statistics/result.html', context)

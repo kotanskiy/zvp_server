@@ -3,6 +3,80 @@
 {% load static %}
 
 {% block content %}
+<div class="module">
+    <form onsubmit="getResult()" method="get" id="results_form">
+    {% csrf_token %}
+        <label for="troops">Взвод</label>
+        <select name="troops" id="troops">
+            <option value="">-------</option>
+            {% for troop in troops %}
+                <option value="{{ troop.pk }}">{{ troop.troop_id }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <label for="students">Студент</label>
+        <select name="students" id="students">
+            <option value="">-------</option>
+        </select>
+        <br>
+        <br>
+        <label for="tests">Тест</label>
+        <select name="tests" id="tests">
+            <option value="">-------</option>
+            {% for test in tests %}
+                <option value="{{ test.pk }}">{{ test.quiz_title }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <input type="submit" onsubmit="getResult()" value="Відобразити">
+    </form>
+    <br>
+    <div id="table">
+    </div>
+</div>
 
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function() {
+      $(document).on('submit', '#results_form', function() {
+        return false;
+       });
+    });
+$("#troops").change(function () {
+  let url = {% url 'load_students' %};
+  let troopId = $(this).val();
+  $.ajax({
+    url: url,
+    data: {
+      'troop': troopId
+    },
+    success: function (data) {
+      $("#students").html(data);
+    }
+  });
+});
+
+function getResult() {
+    let student_select = document.getElementById('students');
+    let test_select = document.getElementById('tests');
+
+
+    let test_id = test_select.options[test_select.selectedIndex].value;
+    let student_id = student_select.options[student_select.selectedIndex].value;
+
+    $.ajax({
+        url: {% url 'load_results' %},
+        data: {
+            'student': student_id,
+            'test': test_id
+        },
+        success: function (data) {
+            $('#table').html(data)
+        }
+    })
+}
+</script>
 {% endblock %}
 

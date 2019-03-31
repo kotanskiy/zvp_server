@@ -11,7 +11,6 @@ class QuestionLayout(admin.ModelAdmin):
 
     list_display = (
         'question_content',
-        'get_quizzes',
         'get_answers',
         'link'
     )
