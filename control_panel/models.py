@@ -139,7 +139,7 @@ class Mark(models.Model):
         if len(mark_list) == 1:
             max_mark = mark_list[0]
 
-        max_mark = max(mark_list)
+        max_mark = max(mark_list) if mark_list else ''
 
         return max_mark
 
