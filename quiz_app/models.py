@@ -150,7 +150,7 @@ class Ticket(models.Model):
         return self.title
 
     def get_questions(self):
-        return Question.objects.filter(question_ticket=self)
+        return Question.objects.filter(question_ticket=self).order_by('question_content')
 
     class Meta:
         db_table = 'tickets'

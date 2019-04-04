@@ -24,7 +24,6 @@ class TeacherRank(models.Model):
 
 
 class Teacher(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     link = 'Редагувати'
 
@@ -210,7 +209,7 @@ class Student(models.Model):
     )
 
     student_university_group = models.CharField(
-        max_length=10,
+        max_length=100,
         default=None,
         verbose_name="Группа",
         blank=True,
@@ -218,7 +217,7 @@ class Student(models.Model):
     )
 
     student_faculty = models.CharField(
-        max_length=15,
+        max_length=150,
         default=None,
         verbose_name="Факультет або ВНЗ",
         blank=True,

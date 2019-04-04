@@ -15,6 +15,10 @@ class QuestionLayout(admin.ModelAdmin):
         'link'
     )
 
+    list_filter = (
+            'question_ticket',
+    )
+
     list_display_links = ('link', )
 
 

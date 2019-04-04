@@ -66,6 +66,7 @@ def start_test(request, quiz_id):
             'quiz': quiz,
             'questions': questions,
             'starting_quiz': starting_quiz,
+            'current_ticket': ticket
 
         }
     )
@@ -80,9 +81,9 @@ def control_work_calculate_mark(mark):
         return 6
     elif mark >= 13:
         return 5
-    elif mark >= 11:
+    elif mark >= 10:
         return 4
-    elif mark >= 4:
+    elif 0 <= mark <= 9:
         return 0
 
 
@@ -105,41 +106,45 @@ def exam_calculate_mark(fire_training_mark, statutes_mark):
 def stop_test(request, quiz_id):
     quiz = get_object_or_404(Quiz, pk=quiz_id)
     student = Student.objects.get(user=request.user)
-    ticket = Ticket.objects.filter(quiz=quiz).order_by('?').first()
-    questions = ticket.get_questions()
+
     StartingQuiz.objects.filter(quiz=quiz, student=student).first().delete()
 
     true_answers = {}
 
-    for question in questions:
-        for answer in question.get_answers():
-            if answer.is_true:
-                true_answers[question.question_content] = answer.title
-
     if request.POST:
         data = request.POST.copy()
+        ticket = Ticket.objects.get(title=data.get('current_ticket'))
+        questions = ticket.get_questions()
+        for question in questions:
+            for answer in question.get_answers():
+                if answer.is_true:
+                    true_answers[question.question_content] = answer.title
         answer_list = {}
         for item in questions:
-            answer_list[item.question_content] = data.get(str(item.question_content), "")
+            student_answer = data.get(str(item.question_content), "")
+            answer_list[item.question_content] = student_answer
         mark = 0
         fire_training_mark = 0
         statutes_mark = 0
         fire_training_dict = {k: answer_list[k] for k in list(answer_list)[:14]}
         statutes_dict = {k: answer_list[k] for k in list(answer_list)[14:]}
-        for key in true_answers:
-            if quiz.quiz_type == Quiz.CONTROL_WORK:
+
+        if quiz.quiz_type == Quiz.CONTROL_WORK:
+            for key in true_answers:
+                # print(true_answers[key], answer_list[key])
                 if true_answers[key] == answer_list[key]:
                     mark += 1
-        for key in fire_training_dict:
-            if true_answers[key] == fire_training_dict[key]:
-                fire_training_mark += 1
-        for key in statutes_dict:
-            if true_answers[key] == statutes_dict[key]:
-                statutes_mark += 1
+        elif quiz.quiz_type == Quiz.EXAM:
+            for key in fire_training_dict:
+                if true_answers[key] == fire_training_dict[key]:
+                    fire_training_mark += 1
+            for key in statutes_dict:
+                if true_answers[key] == statutes_dict[key]:
+                    statutes_mark += 1
 
         if quiz.quiz_type == Quiz.CONTROL_WORK:
             mark = control_work_calculate_mark(mark)
-        else:
+        elif quiz.quiz_type == Quiz.EXAM:
             mark = exam_calculate_mark(fire_training_mark, statutes_mark)
 
         Result.objects.create(
