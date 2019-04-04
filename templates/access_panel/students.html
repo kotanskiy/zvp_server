@@ -10,13 +10,20 @@
                 <th>
                     Надати або забрати допуск <br>
                     <small>Виберіть перед натисканняк клавіші "Оновити"</small>
+                    <br>
+                    <input type="checkbox" name="select-all-accesses" id="select-all-accesses" />
                 </th>
-                <th>Присутній</th>
+                <th>
+                    Присутній
+                </th>
                 <th>Відмітити<br>
                 <small>Виберіть перед натисканняк клавіші "Оновити"</small>
+                    <br>
+                    <input type="checkbox" name="select-all-presence" id="select-all-presence" />
                 </th>
 
             </tr>
+
         {% for student_access in student_accesses %}
             <tr>
                 <td>{{ student_access.student.student_full_name }}</td>
@@ -44,3 +51,32 @@
     </table>
     <input type="submit" value="Оновити">
 </form>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$('#select-all-presence').click(function(event) {
+    if(this.checked) {
+        $(':checkbox').each(function() {
+            if (this.name === 'presence_checkbox') {this.checked = true;}
+
+        });
+    } else {
+        $(':checkbox').each(function() {
+            this.checked = false;
+        });
+    }
+});
+
+$('#select-all-accesses').click(function(event) {
+    if(this.checked) {
+        $(':checkbox').each(function() {
+            if (this.name === 'access_checkbox') {this.checked = true;}
+
+        });
+    } else {
+        $(':checkbox').each(function() {
+            this.checked = false;
+        });
+    }
+});
+</script>

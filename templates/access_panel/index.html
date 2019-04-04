@@ -6,12 +6,14 @@
 <div class="module">
     <form id="access_form" onsubmit="getAccesses()" enctype="multipart/form-data" method="POST">
         {% csrf_token %}
+        <label for="id_troop">Взвод</label>
         <select id="id_troop">
             <option value="-">-------</option>
             {% for troop in troops %}
                 <option value="{{ troop.id }}">{{ troop.troop_id }}</option>
             {% endfor %}
         </select>
+        <label for="id_test">Тест</label>
         <select id="id_test">
             <option value="-">-------</option>
             {% for test in tests %}

@@ -11,7 +11,9 @@ STATISTICS_URL = [
     path('submit_accesses/', views.submit_accesses, name='submit_accesses'),
     path('statistics/', views.render_statistics_page, name='statistics'),
     path('load_students/', views.load_students, name='load_students'),
-    path('load_results/', views.get_student_test_result, name='load_results')
+    path('load_results/', views.get_student_test_result, name='load_results'),
+    path('troop_results/', views.troop_results_panel, name='troop_results'),
+    path('load_troop_results/', views.load_troop_results, name='load_troop_results')
 ]
 
 urlpatterns += STATISTICS_URL

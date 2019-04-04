@@ -1,0 +1,19 @@
+<table style="width: 100%">
+    <caption>Результати взводу <b>{{ current_troop }}</b> з тесту <b>{{ current_test }}</b></caption>
+    <tr>
+        <th></th>
+        <th>Студент</th>
+        <th>Оцінка за першу спробу</th>
+        <th>Оцінка за другу спробу</th>
+        <th>Оцінка за третю спробу</th>
+    </tr>
+    {% for key, value in student_marks.items %}
+        <tr>
+            <td style="margin: 2px;">{{ forloop.counter }}</td>
+            <td style="margin: 2px;">{{ key }}</td>
+            {% for nested_key, nested_value in value.items %}
+                <td style="margin: 2px;{% if nested_value == '' %}background-color: #CC3434; {% endif %}">{{ nested_value }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>

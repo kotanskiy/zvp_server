@@ -184,3 +184,49 @@ def get_student_test_result(request):
         'true_answers': true_answers
     }
     return render(request, 'statistics/result.html', context)
+
+
+def troop_results_panel(request):
+    troops = Troop.objects.all()
+    tests = Quiz.objects.all()
+
+    context = {
+        'troops': troops,
+        'tests': tests
+    }
+    return render(request, 'statistics/troop_results.html', context)
+
+
+def load_troop_results(request):
+    troop = Troop.objects.get(pk=request.GET.get('troop'))
+    test = Quiz.objects.get(pk=request.GET.get('test'))
+
+    student_marks = {}
+    students = troop.get_students()
+    for student in students:
+        mark_object = Mark.objects.filter(
+            student=student,
+            quiz=test
+        ).first()
+
+        if mark_object is not None:
+            student_marks[student] = {
+                'first_mark': mark_object.first_attempt_mark,
+                'second_mark': mark_object.second_attempt_mark if mark_object.second_attempt_mark else '',
+                'third_mark': mark_object.third_attempt_mark if mark_object.third_attempt_mark else ''
+            }
+
+        else:
+            student_marks[student] = {
+                'first_mark': '',
+                'second_mark': '',
+                'third_mark': ''
+            }
+
+    context = {
+        'current_troop': troop,
+        'current_test': test,
+        'student_marks': student_marks
+    }
+
+    return render(request, 'statistics/load_troops.html', context)

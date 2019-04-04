@@ -1,0 +1,63 @@
+{% extends 'admin/base_site.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="module">
+    <form onsubmit="getResult()" method="get" id="results_form">
+    {% csrf_token %}
+        <label for="troops">Взвод</label>
+        <select name="troops" id="troops">
+            <option value="">-------</option>
+            {% for troop in troops %}
+                <option value="{{ troop.pk }}">{{ troop.troop_id }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <label for="tests">Тест</label>
+        <select name="tests" id="tests">
+            <option value="">-------</option>
+            {% for test in tests %}
+                <option value="{{ test.pk }}">{{ test.quiz_title }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <input type="submit" onsubmit="getResult()" value="Відобразити">
+    </form>
+    <br>
+    <div id="table">
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function() {
+      $(document).on('submit', '#results_form', function() {
+        return false;
+       });
+    });
+
+function getResult() {
+    let troop_select = document.getElementById('troops');
+    let test_select = document.getElementById('tests');
+
+
+    let test_id = test_select.options[test_select.selectedIndex].value;
+    let troop_id = troop_select.options[troop_select.selectedIndex].value;
+
+    $.ajax({
+        url: {% url 'load_troop_results' %},
+        data: {
+            'troop': troop_id,
+            'test': test_id
+        },
+        success: function (data) {
+            $('#table').html(data)
+        }
+    })
+}
+</script>
+{% endblock %}
+
