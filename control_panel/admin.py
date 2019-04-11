@@ -95,12 +95,21 @@ class MarkAdmin(admin.ModelAdmin):
 
     list_display = (
         'student',
+        'get_troop',
         'discipline',
         'quiz',
         'show_mark',
-        'link'
+        'link',
+
     )
 
     list_display_links = (
         'link',
     )
+
+    def get_troop(self, obj):
+        return obj.student.student_troop.troop_id
+
+    get_troop.short_description = 'Взвод'
+
+

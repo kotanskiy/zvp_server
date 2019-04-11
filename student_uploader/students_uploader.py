@@ -10,7 +10,6 @@ import random
 import datetime
 import pytz
 
-
 class StudentUploader(object):
 
     PATH_FOR_SAVING = os.path.dirname(os.path.dirname(__file__)) + '/group_docs/'
@@ -36,20 +35,9 @@ class StudentUploader(object):
         for student in students:
             password = cls.password_generator(size=6)
             username = cls.get_username(student[0])
-            user = None
-            try:
-                user = User.objects.get(username=username)
-            except:
-                pass
-            i = 1
-            while user is not None:
-                user = None
-                username += str(i)
-                try:
-                    user = User.objects.get(username=username)
-                except:
-                    pass
-
+            user = User.objects.filter(username=username).first()
+            if user is not None:
+                username += str(random.randint(1, 100))
             try:
                 Student.objects.get(student_full_name=student[0])
             except:
